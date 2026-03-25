@@ -8,26 +8,53 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header header-shell">
-    <div class="container">
-      <div class="header-nav">
-        <a class="brand" href="index.html" aria-label="Your Online Squad home">
-          <span class="brand-logo" aria-hidden="true">
-            <img src="assets/logo-tree.svg" alt="">
-          </span>
-          <span class="brand-copy">
-            <span class="brand-mark">Your Online Squad</span>
-            <span class="brand-name">Local SEO & Web Design Growth Partner</span>
-          </span>
-        </a>
-        <nav class="header-links" aria-label="Primary navigation">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Your Online Squad home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="assets/logo-tree.svg" alt="">
+        </span>
+        <span class="brand-copy">
+          <span class="brand-mark">Your Online Squad</span>
+          <span class="brand-name">Premium Lead Generation for Established Service Businesses</span>
+          <span class="brand-note">Web design, SEO, and local visibility built for trust.</span>
+        </span>
+      </a>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
+      <label class="nav-toggle-btn" for="nav-toggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+      <div class="nav-cluster">
+        <nav class="nav-links" aria-label="Primary navigation">
           <a class="active" href="index.html">Home</a>
-          <a href="seo-services.html">SEO</a>
-          <a href="web-design.html">Web Design</a>
-          <a href="google-business-profile.html">Google Business Profile</a>
+          <div class="nav-item nav-services">
+            <a href="seo-services.html">Services</a>
+            <div class="mega-menu" role="menu" aria-label="Services">
+              <a class="mega-card" href="seo-services.html">
+                <span class="mega-icon" aria-hidden="true">📈</span>
+                <span class="mega-title">SEO Services</span>
+                <span class="mega-text">Rank for local intent keywords and convert more qualified traffic.</span>
+              </a>
+              <a class="mega-card" href="web-design.html">
+                <span class="mega-icon" aria-hidden="true">🖥️</span>
+                <span class="mega-title">Web Design</span>
+                <span class="mega-text">High-converting pages built for trust, clarity, and calls.</span>
+              </a>
+              <a class="mega-card" href="google-business-profile.html">
+                <span class="mega-icon" aria-hidden="true">📍</span>
+                <span class="mega-title">Google Business Profile</span>
+                <span class="mega-text">Map-pack visibility improvements for local lead flow.</span>
+              </a>
+              <a class="mega-card" href="contact.html">
+                <span class="mega-icon" aria-hidden="true">⚙️</span>
+                <span class="mega-title">Automation</span>
+                <span class="mega-text">Lead follow-up workflows that reduce response time.</span>
+              </a>
+            </div>
+          </div>
           <a href="about.html">About</a>
         </nav>
-        <div class="header-cta">
+        <div class="nav-actions">
           <a class="btn btn-primary" href="contact.html">Book Strategy Call</a>
         </div>
       </div>
@@ -37,12 +64,12 @@
   <main>
     <section class="hero hero-modern">
       <div class="container">
-        <div class="hero-layout">
-          <div class="hero-content">
+        <div class="grid grid-2 hero-grid">
+          <div class="hero-copy">
             <span class="eyebrow">Growth system for service businesses</span>
             <h1>Local SEO and web design services that turn search traffic into real calls.</h1>
             <p class="lead">Your Online Squad helps local service companies grow with conversion-focused websites, SEO structure, and Google Business Profile improvements that attract qualified leads in your service area.</p>
-            <div class="hero-actions hero-buttons">
+            <div class="hero-actions">
               <a class="btn btn-primary" href="contact.html">Get a Growth Plan</a>
               <a class="btn btn-secondary" href="seo-services.html">Explore Services</a>
             </div>
@@ -52,8 +79,8 @@
               <span><strong>24h</strong> average lead response setup</span>
             </div>
           </div>
-          <div class="hero-dashboard" aria-label="SEO performance dashboard visual">
-            <article class="visual-card">
+          <div class="hero-visual" aria-label="SEO performance dashboard preview">
+            <article class="visual-card rank-card">
               <p>Local Rank Tracker</p>
               <h3>Map Pack Visibility</h3>
               <div class="visual-metric">
@@ -61,14 +88,14 @@
                 <small>last 90 days</small>
               </div>
             </article>
-            <article class="visual-card">
+            <article class="visual-card leads-card">
               <p>Qualified Leads</p>
               <h3>48 this month</h3>
               <div class="bars" aria-hidden="true">
                 <span></span><span></span><span></span><span></span>
               </div>
             </article>
-            <article class="visual-card">
+            <article class="visual-card listing-card">
               <p>Google Business Profile</p>
               <h3>Profile Health 92%</h3>
               <small>Calls, direction requests, and review growth aligned.</small>
