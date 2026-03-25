@@ -7,50 +7,90 @@
   <meta name="description" content="Your Online Squad builds premium websites, SEO campaigns, and local visibility systems for service businesses that need more qualified leads.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="container navbar">
-      <a class="brand" href="index.html" aria-label="Your Online Squad home">
-        <span class="brand-mark">Your Online Squad</span>
-        <span class="brand-name">Premium Lead Generation for Established Service Businesses</span>
-        <span class="brand-note">Web design, SEO, and local visibility built for trust.</span>
+<body class="home-page">
+  <header class="site-header home-header">
+    <div class="container home-header-container">
+      <a class="home-brand" href="index.html" aria-label="Your Online Squad home">
+        <img src="assets/logo-tree.svg" alt="Your Online Squad logo">
+        <span>Your Online Squad</span>
       </a>
-      <div class="nav-cluster">
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a class="active" href="index.html">Home</a>
-          <a href="seo-services.html">SEO Services</a>
-          <a href="web-design.html">Web Design</a>
-          <a href="google-business-profile.html">Google Business Profile</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+
+      <input class="home-nav-toggle" id="home-nav-toggle" type="checkbox" aria-label="Toggle navigation menu">
+      <label class="home-nav-button" for="home-nav-toggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="home-nav-shell">
+        <nav class="home-nav" aria-label="Primary navigation">
+          <a class="tab active" href="index.html">Home</a>
+          <details class="tab services-menu">
+            <summary>Services</summary>
+            <div class="services-panel">
+              <a href="seo-services.html">
+                <strong>SEO</strong>
+                <span>Local search visibility and ranking growth.</span>
+              </a>
+              <a href="web-design.html">
+                <strong>Web Design</strong>
+                <span>Conversion-focused websites for service businesses.</span>
+              </a>
+              <a href="google-business-profile.html">
+                <strong>Google Business Profile</strong>
+                <span>Map Pack optimization and local trust signals.</span>
+              </a>
+            </div>
+          </details>
+          <a class="tab" href="about.html">About</a>
+          <a class="tab" href="contact.html">Contact</a>
         </nav>
-        <div class="nav-actions">
-          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
-        </div>
+        <a class="btn btn-primary home-cta" href="contact.html">Book a Strategy Call</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <div class="grid grid-2 hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">Professional marketing website</span>
-            <h1>Get a digital presence that makes high-value customers trust you faster.</h1>
-            <p class="lead">Your Online Squad helps contractors, home service companies, and professional service firms turn website traffic into serious inquiries with disciplined web design, structured messaging, and local search strategy.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="contact.html">Book a Strategy Call</a>
-              <a class="btn btn-secondary" href="web-design.html">View Website Services</a>
+    <section class="hero home-hero" aria-labelledby="home-hero-title">
+      <div class="container home-hero-container">
+        <div class="home-hero-layout">
+          <div class="home-hero-copy">
+            <p class="home-kicker">Local growth systems for serious service brands</p>
+            <h1 id="home-hero-title">Local SEO and web design services that turn search traffic into booked jobs.</h1>
+            <p class="lead">Your Online Squad builds high-converting websites, local SEO campaigns, and Google Business Profile strategies that help local businesses rank better, earn trust faster, and generate qualified leads consistently.</p>
+            <div class="home-hero-actions">
+              <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
+              <a class="btn btn-secondary" href="seo-services.html">View Services</a>
             </div>
-            <ul class="hero-points">
-              <li>Built for businesses selling services worth thousands of dollars.</li>
-              <li>Clear section hierarchy that answers buyer questions in the right order.</li>
-              <li>Direct calls to action without trendy startup styling or visual clutter.</li>
+            <ul class="home-proof" aria-label="Agency trust indicators">
+              <li><strong>120+</strong> local campaigns launched</li>
+              <li><strong>4.9/5</strong> client satisfaction average</li>
+              <li><strong>3-step</strong> delivery process</li>
             </ul>
           </div>
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Construction and service professionals reviewing a project plan in an office">
+          <div class="home-hero-visual" role="img" aria-label="Dashboard style visual showing local SEO rankings, lead growth, and website conversion performance">
+            <div class="visual-shell">
+              <div class="visual-chip">Google Business Profile</div>
+              <h2>Local Visibility Dashboard</h2>
+              <div class="visual-row">
+                <article class="metric-card">
+                  <p>Map Pack Ranking</p>
+                  <strong>#3</strong>
+                  <span>Up from #11 in 90 days</span>
+                </article>
+                <article class="metric-card">
+                  <p>Organic Leads</p>
+                  <strong>+42%</strong>
+                  <span>Month-over-month growth</span>
+                </article>
+              </div>
+              <article class="chart-card" aria-hidden="true">
+                <div class="chart-line"><span></span><span></span><span></span><span></span><span></span></div>
+              </article>
+              <article class="metric-wide">
+                <p>Website Conversion Rate</p>
+                <strong>8.7%</strong>
+                <span>Landing pages optimized for local intent</span>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -189,10 +229,17 @@
   <footer class="site-footer">
     <div class="container">
       <div class="grid footer-grid">
-        <div class="footer-panel">
-          <span class="brand-mark">Your Online Squad</span>
+        <div class="footer-panel footer-brand-panel">
+          <div class="footer-brand">
+            <span class="footer-logo" aria-hidden="true">
+              <img src="assets/logo-tree.svg" alt="">
+            </span>
+            <div class="footer-brand-copy">
+              <span class="brand-mark">Your Online Squad</span>
           <h3>Premium websites and local marketing systems for service businesses.</h3>
           <p>Built for companies that need to convert trust into calls, consultations, and qualified projects.</p>
+            </div>
+          </div>
         </div>
         <div class="footer-panel">
           <h3>Navigation</h3>
