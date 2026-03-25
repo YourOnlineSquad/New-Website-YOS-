@@ -114,13 +114,12 @@ ul {
 }
 
 .navbar {
-  min-height: 82px;
+  min-height: 88px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 24px;
-  padding: 14px 0;
+  flex-wrap: nowrap;  gap: 32px;
+  padding: 20px 0;
 }
 
 .brand,
@@ -146,8 +145,7 @@ ul {
   align-items: center;
   gap: 14px;
   min-width: 0;
-  flex: 1 1 440px;
-  max-width: 560px;
+  flex: 0 1 440px;
 }
 
 .brand-logo,
@@ -170,7 +168,7 @@ ul {
   min-width: 0;
   flex: 1 1 auto;
   flex-wrap: nowrap;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .brand-copy > * {
@@ -205,7 +203,7 @@ ul {
   justify-content: flex-end;
   gap: 24px;
   min-width: 0;
-  flex: 1 1 0;
+  flex: 1 1 auto;
   flex-wrap: nowrap;
 }
 
@@ -219,9 +217,7 @@ ul {
   align-items: center;
   justify-content: flex-end;
   flex: 1 1 auto;
-  min-width: 0;
   flex-wrap: nowrap;
-  gap: 10px 14px;
 }
 
 .nav-links a,
@@ -233,13 +229,6 @@ ul {
 
 .nav-links a {
   white-space: nowrap;
-  border-radius: 999px;
-  padding: 8px 12px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav-links a:hover {
-  background: #f1f5f9;
 }
 
 .nav-links a.active,
@@ -253,66 +242,6 @@ ul {
   display: flex;
   justify-content: flex-end;
   flex: 0 0 auto;
-}
-
-.nav-toggle,
-.nav-toggle-btn {
-  display: none;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.mega-menu {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(860px, calc(100vw - 48px));
-  background: #fff;
-  border: 1px solid #dbe3ef;
-  border-radius: 18px;
-  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.15);
-  padding: 18px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-item:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.mega-card {
-  display: grid;
-  gap: 6px;
-  padding: 14px;
-  border-radius: 14px;
-  background: #f8fbff;
-  border: 1px solid transparent;
-}
-
-.mega-card:hover {
-  border-color: #bfdbfe;
-  background: #eff6ff;
-}
-
-.mega-title {
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.mega-text {
-  color: #64748b;
-  font-size: 0.88rem;
-  line-height: 1.45;
 }
 
 .btn {
@@ -729,8 +658,22 @@ textarea {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .mega-menu {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .navbar,
+  .nav-cluster {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand,
+  .brand-copy,
+  .nav-links,
+  .nav-actions {
+    justify-content: flex-start;
+  }
+
+  .brand-copy,
+  .nav-links {
+    flex-wrap: wrap;
   }
 
   .photo-frame img {
@@ -821,11 +764,10 @@ textarea {
   }
 
   .navbar {
-    gap: 14px;
+    gap: 20px;
   }
 
   .brand {
-    max-width: 100%;
     align-items: flex-start;
   }
 
@@ -834,6 +776,15 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .nav-cluster,
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links {
+    gap: 12px 16px;
   }
 
   h1 {
