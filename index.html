@@ -7,67 +7,100 @@
   <meta name="description" content="Your Online Squad builds premium websites, SEO campaigns, and local visibility systems for service businesses that need more qualified leads.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home-page">
-  <header class="site-header home-header">
-    <div class="container home-header-container">
-      <a class="home-brand" href="index.html" aria-label="Your Online Squad home">
-        <img src="assets/logo-tree.svg" alt="Your Online Squad logo">
-        <span>Your Online Squad</span>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Your Online Squad home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="assets/logo-tree.svg" alt="">
+        </span>
+        <span class="brand-copy">
+          <span class="brand-mark">Your Online Squad</span>
+          <span class="brand-name">Premium Lead Generation for Established Service Businesses</span>
+          <span class="brand-note">Web design, SEO, and local visibility built for trust.</span>
+        </span>
       </a>
-      <nav class="home-nav" aria-label="Primary navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="seo-services.html">SEO Services</a>
-        <a href="web-design.html">Web Design</a>
-        <a href="google-business-profile.html">GBP</a>
-        <a href="about.html">About</a>
-      </nav>
-      <a class="btn btn-primary home-cta" href="contact.html">Request Consultation</a>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
+      <label class="nav-toggle-btn" for="nav-toggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+      <div class="nav-cluster">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="active" href="index.html">Home</a>
+          <div class="nav-item nav-services">
+            <a href="seo-services.html">Services</a>
+            <div class="mega-menu" role="menu" aria-label="Services">
+              <a class="mega-card" href="seo-services.html">
+                <span class="mega-icon" aria-hidden="true">📈</span>
+                <span class="mega-title">SEO Services</span>
+                <span class="mega-text">Rank for local intent keywords and convert more qualified traffic.</span>
+              </a>
+              <a class="mega-card" href="web-design.html">
+                <span class="mega-icon" aria-hidden="true">🖥️</span>
+                <span class="mega-title">Web Design</span>
+                <span class="mega-text">High-converting pages built for trust, clarity, and calls.</span>
+              </a>
+              <a class="mega-card" href="google-business-profile.html">
+                <span class="mega-icon" aria-hidden="true">📍</span>
+                <span class="mega-title">Google Business Profile</span>
+                <span class="mega-text">Map-pack visibility improvements for local lead flow.</span>
+              </a>
+              <a class="mega-card" href="contact.html">
+                <span class="mega-icon" aria-hidden="true">⚙️</span>
+                <span class="mega-title">Automation</span>
+                <span class="mega-text">Lead follow-up workflows that reduce response time.</span>
+              </a>
+            </div>
+          </div>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="contact.html">Book Strategy Call</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero home-hero" aria-labelledby="home-hero-title">
-      <div class="container home-hero-container">
-        <div class="home-hero-layout">
-          <div class="home-hero-copy">
-            <p class="home-kicker">Local growth systems for serious service brands</p>
-            <h1 id="home-hero-title">Local SEO and web design services that turn search traffic into booked jobs.</h1>
-            <p class="lead">Your Online Squad builds high-converting websites, local SEO campaigns, and Google Business Profile strategies that help local businesses rank better, earn trust faster, and generate qualified leads consistently.</p>
-            <div class="home-hero-actions">
-              <a class="btn btn-primary" href="contact.html">Get a Free Strategy Call</a>
-              <a class="btn btn-secondary" href="seo-services.html">View Services</a>
+    <section class="hero">
+      <div class="container">
+        <div class="grid grid-2 hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Growth system for service businesses</span>
+            <h1>Local SEO and web design services that turn search traffic into real calls.</h1>
+            <p class="lead">Your Online Squad helps local service companies grow with conversion-focused websites, SEO structure, and Google Business Profile improvements that attract qualified leads in your service area.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="contact.html">Get a Growth Plan</a>
+              <a class="btn btn-secondary" href="seo-services.html">Explore Services</a>
             </div>
-            <ul class="home-proof" aria-label="Agency trust indicators">
-              <li><strong>120+</strong> local campaigns launched</li>
-              <li><strong>4.9/5</strong> client satisfaction average</li>
-              <li><strong>3-step</strong> delivery process</li>
-            </ul>
+            <div class="hero-trust" aria-label="Trust indicators">
+              <span><strong>120+</strong> local campaigns delivered</span>
+              <span><strong>4.9/5</strong> average client rating</span>
+              <span><strong>24h</strong> average lead response setup</span>
+            </div>
           </div>
-          <div class="home-hero-visual" role="img" aria-label="Dashboard style visual showing local SEO rankings, lead growth, and website conversion performance">
-            <div class="visual-shell">
-              <div class="visual-chip">Google Business Profile</div>
-              <h2>Local Visibility Dashboard</h2>
-              <div class="visual-row">
-                <article class="metric-card">
-                  <p>Map Pack Ranking</p>
-                  <strong>#3</strong>
-                  <span>Up from #11 in 90 days</span>
-                </article>
-                <article class="metric-card">
-                  <p>Organic Leads</p>
-                  <strong>+42%</strong>
-                  <span>Month-over-month growth</span>
-                </article>
+          <div class="hero-visual" aria-label="SEO performance dashboard preview">
+            <article class="visual-card rank-card">
+              <p>Local Rank Tracker</p>
+              <h3>Map Pack Visibility</h3>
+              <div class="visual-metric">
+                <span>+37%</span>
+                <small>last 90 days</small>
               </div>
-              <article class="chart-card" aria-hidden="true">
-                <div class="chart-line"><span></span><span></span><span></span><span></span><span></span></div>
-              </article>
-              <article class="metric-wide">
-                <p>Website Conversion Rate</p>
-                <strong>8.7%</strong>
-                <span>Landing pages optimized for local intent</span>
-              </article>
-            </div>
+            </article>
+            <article class="visual-card leads-card">
+              <p>Qualified Leads</p>
+              <h3>48 this month</h3>
+              <div class="bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </article>
+            <article class="visual-card listing-card">
+              <p>Google Business Profile</p>
+              <h3>Profile Health 92%</h3>
+              <small>Calls, direction requests, and review growth aligned.</small>
+            </article>
           </div>
         </div>
       </div>
