@@ -669,6 +669,15 @@ textarea {
   .nav-links,
   .nav-actions {
     justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .header-cta {
+    width: 100%;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
   }
 
   .brand-copy,
