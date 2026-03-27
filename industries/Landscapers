@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscaping Marketing & SEO | Your Online Squad</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <main class="hero-section">
+        <h1>Grow Your Business: SEO for <span class="highlight">Landscapers</span></h1>
+        <p>From design-build projects to weekly maintenance contracts, we ensure your crews stay busy all season long.</p>
+        <a href="../contact.html" class="cta-main">Grow Your Revenue</a>
+    </main>
+</body>
+</html>
