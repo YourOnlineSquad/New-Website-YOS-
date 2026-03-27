@@ -1,32 +1,41 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Online Squad | Predictable Growth Engines</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #0b0f1a; --purple: #7c3aed; --orange: #f97316; 
-            --card: #161c2d; --border: #2d3748; --text-dim: #a0aec0; --white: #ffffff;
+            --bg: #05070a; /* Deepened the background for a more premium dark mode */
+            --bg-secondary: #0b0f1a;
+            --purple: #7c3aed; 
+            --orange: #f97316; 
+            --card: rgba(22, 28, 45, 0.6); 
+            --border: rgba(45, 55, 72, 0.5); 
+            --text-dim: #94a3b8; 
+            --white: #ffffff;
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); 
             line-height: 1.8; overflow-x: hidden; padding-top: 100px; 
         }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 4%; }
-        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; }
-        .highlight { color: var(--orange); }
+        /* --- THE MASTER CONTAINER (Fixes the Squish) --- */
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        .highlight { background: linear-gradient(135deg, var(--orange), #ff983f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- HEADER & MEGA MENU (Unchanged - Working perfectly) --- */
+        /* --- HEADER & MEGA MENU --- */
         header { 
-            background: rgba(11, 15, 26, 0.98); border-bottom: 2px solid var(--orange); 
+            background: rgba(5, 7, 10, 0.85); border-bottom: 1px solid var(--border); 
             height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
-            display: flex; align-items: center; 
+            display: flex; align-items: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
         }
-        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 4%; display: flex; justify-content: space-between; align-items: center; }
+        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; }
         .logo span { color: var(--orange); }
 
@@ -42,9 +51,9 @@
         .mega-dropdown { position: relative; }
         .mega-menu {
             position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
-            width: 800px; background: var(--card); border: 1px solid var(--border);
-            border-top: 3px solid var(--orange); border-radius: 0 0 8px 8px;
-            padding: 30px; display: none; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            width: 800px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
+            padding: 30px; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             grid-template-columns: repeat(3, 1fr); gap: 20px;
         }
         .mega-dropdown:hover .mega-menu { display: grid; }
@@ -52,54 +61,92 @@
         
         .mega-menu li a {
             color: var(--text-dim); text-decoration: none; font-size: 0.9rem;
-            font-weight: 600; padding: 8px 10px; display: block; border-radius: 4px;
+            font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px;
             transition: 0.2s; text-transform: capitalize;
         }
-        .mega-menu li a:hover { background: var(--bg); color: #fff; padding-left: 15px; }
+        .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
 
         .btn { 
             background: linear-gradient(135deg, var(--purple), var(--orange)); 
-            color: #fff !important; padding: 12px 28px; border-radius: 4px; 
+            color: #fff !important; padding: 14px 30px; border-radius: 6px; 
             font-weight: 900; font-size: 0.85rem; text-transform: uppercase; 
-            text-decoration: none; transition: 0.4s; border: none;
+            text-decoration: none; transition: 0.4s; border: none; display: inline-block;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(249, 115, 22, 0.4); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
 
-        /* --- SECTIONS --- */
-        section { padding: 120px 0; border-bottom: 1px solid var(--border); }
-        .split { display: flex; align-items: flex-start; gap: 60px; flex-wrap: wrap; }
-        .split > div { flex: 1; min-width: 400px; }
-
-        .hero { text-align: center; padding: 160px 0 120px; background: radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%); }
-        .hero h1 { font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 30px; letter-spacing: -2px; }
-        .hero p { font-size: 1.4rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px; }
-
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 10px; }
-        .card h3 { color: var(--orange); margin-bottom: 15px; font-size: 1.5rem; }
-        .card p { color: var(--text-dim); font-size: 1rem; }
-
-        /* --- NEW FAQ & METHODOLOGY CSS --- */
-        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; margin-top: 50px; }
-        .faq-box { 
-            background: rgba(11, 15, 26, 0.6); padding: 40px; border-radius: 8px;
-            border-left: 4px solid var(--orange); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
-        }
-        .faq-box h4 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-        .faq-box p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; }
-
-        /* --- NEW FOOTER CSS --- */
-        footer { background: #070a13; padding: 100px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
-        .footer-col h4 { color: var(--orange); margin-bottom: 25px; font-size: 1.2rem; }
-        .footer-col p { color: var(--text-dim); margin-bottom: 15px; }
-        .footer-col ul { list-style: none; padding: 0; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: var(--text-dim); text-decoration: none; font-size: 1rem; transition: 0.3s; }
-        .footer-col ul li a:hover { color: var(--orange); }
-        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #161c2d; color: #4a5568; font-size: 0.9rem; }
+        /* --- ADVANCED CSS GRID LAYOUTS --- */
+        section { padding: 140px 0; border-bottom: 1px solid var(--border); position: relative; }
         
-        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
+        /* Modern Split: Text on one side, Visual Asset on the other */
+        .grid-split { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; 
+        }
+        .grid-split.reverse { direction: rtl; } /* Flips the layout */
+        .grid-split.reverse > * { direction: ltr; } /* Keeps text readable when flipped */
+
+        /* --- VISUAL ASSET PLACEHOLDERS (For your Lotties/Vectors) --- */
+        .visual-asset {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,0,0,0.4);
+            position: relative; overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        /* Subtle glow behind the asset box */
+        .visual-asset::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 60%; height: 60%; background: var(--orange); filter: blur(100px); opacity: 0.15; z-index: -1;
+        }
+        .asset-label {
+            color: var(--orange); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+            font-size: 0.9rem; text-align: center; border: 1px dashed var(--orange); padding: 15px 25px; border-radius: 8px;
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+        /* --- TYPOGRAPHY UPDATES --- */
+        .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
+        
+        /* HERO */
+        .hero { background: radial-gradient(circle at top left, #1e293b 0%, var(--bg) 60%); padding: 180px 0 140px; border: none; }
+        .hero h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
+        .hero p { font-size: 1.35rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
+
+        /* CARDS */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .card { background: var(--card); padding: 50px 40px; border: 1px solid var(--border); border-radius: 16px; transition: 0.3s; }
+        .card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
+        .card h3 { color: #fff; margin-bottom: 20px; font-size: 1.6rem; }
+        
+        /* FAQ Grid */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border-bottom: 1px solid var(--border); border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; letter-spacing: 0; }
+        .faq-box p { color: var(--text-dim); font-size: 1.05rem; line-height: 1.7; }
+        .faq-full { grid-column: 1 / -1; } /* Spans both columns */
+
+        /* FOOTER */
+        footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col p { color: var(--text-dim); margin-bottom: 15px; font-size: 1rem; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--orange); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
+
+        /* Tablet/Mobile Fixes */
+        @media (max-width: 1024px) {
+            .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 40px; }
+            .grid-3, .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .visual-asset { aspect-ratio: 16/9; }
+        }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -153,24 +200,31 @@
 <main>
     <section class="hero">
         <div class="container">
-            <h1>BUILDING <span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
-            <p>We stop the "Feast or Famine" cycle. Our proprietary growth engines align Google’s technical E-EAT protocols with high-velocity lead acquisition for elite contractors.</p>
-            <a href="contact.html" class="btn">Secure Exclusivity</a>
+            <div class="grid-split">
+                <div>
+                    <h1>BUILDING <br><span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
+                    <p>We stop the "Feast or Famine" cycle. Our proprietary growth engines align Google’s technical E-EAT protocols with high-velocity lead acquisition for elite contractors.</p>
+                    <a href="contact.html" class="btn">Secure Exclusivity</a>
+                </div>
+                <div class="visual-asset">
+                    <div class="asset-label">[ Insert Lottie Animation or 3D Render Here ]</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="problem">
         <div class="container">
-            <div class="split">
+            <div class="grid-split reverse">
                 <div>
-                    <h2 style="font-size: 3.5rem; margin-bottom: 25px;">OWN THE <br><span class="highlight">EQUITY</span></h2>
-                    <p style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 20px;">For over a decade, the contracting industry has been held hostage by lead aggregators. You know the names. They sell a single "prospect" to five different companies, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins and devalues your craftsmanship.</p>
-                    <p style="font-size: 1.2rem; color: var(--text-dim);">At Your Online Squad, we recognized this systemic failure. We don't just "get you leads"—we build a fortress around your brand that ensures when a homeowner needs a roof, a pipe fixed, or an HVAC system replaced, you are the only logical choice.</p>
+                    <h2 style="font-size: 3rem; margin-bottom: 25px;">OWN THE <br><span class="highlight">EQUITY</span></h2>
+                    <div class="copy-heavy">
+                        <p>For over a decade, the contracting industry has been held hostage by lead aggregators. You know the names. They sell a single "prospect" to five different companies, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins and devalues your craftsmanship.</p>
+                        <p>At Your Online Squad, we recognized this systemic failure. We don't just "get you leads"—we build a fortress around your brand that ensures when a homeowner needs a roof, a pipe fixed, or an HVAC system replaced, you are the only logical choice.</p>
+                    </div>
                 </div>
-                <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center; border-left: 5px solid var(--orange);">
-                    <h3 style="font-size: 4.5rem; margin: 0; line-height: 1;">100%</h3>
-                    <p style="text-transform: uppercase; font-weight: 900; color: #fff; margin: 15px 0; font-size: 1.2rem;">Lead Exclusivity</p>
-                    <p style="font-size: 1.1rem; color: var(--text-dim);">Our systems eliminate lead sharing. 100% of the volume generated by your Squad Engine belongs to your office. No competition. No price wars.</p>
+                <div class="visual-asset">
+                    <div class="asset-label">[ Insert Dashboard / Analytics Vector Here ]</div>
                 </div>
             </div>
         </div>
@@ -178,40 +232,51 @@
 
     <section id="physics">
         <div class="container">
-            <h2 style="text-align: center; font-size: 4rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
-            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 20px auto 0; font-size: 1.3rem;">Search engines don't just care about where you are; they care about where you're going. We apply mechanical engineering principles to digital marketing.</p>
+            <h2 style="text-align: center; font-size: 3.5rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 20px auto 0; font-size: 1.25rem;">Search engines don't just care about where you are; they care about where you're going. We apply mechanical engineering principles to digital marketing.</p>
             
             <div class="grid-3">
                 <div class="card">
-                    <h3 style="font-size: 1.8rem;">Velocity</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7;">We track the speed of your ranking movement. By aggressively targeting high-intent commercial and residential "money terms," we force Google to recognize your site as the emerging authority in your zip code. If your terms aren't accelerating, our system pivots in real-time.</p>
+                    <div style="height: 120px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(255,255,255,0.1);">
+                        <span style="color: var(--orange); font-size: 0.8rem; text-transform: uppercase;">[ Icon / Mini-Lottie ]</span>
+                    </div>
+                    <h3>Velocity</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);">We track the speed of your ranking movement. By aggressively targeting high-intent "money terms," we force Google to recognize your site as the emerging authority in your zip code.</p>
                 </div>
                 <div class="card">
-                    <h3 style="font-size: 1.8rem;">Gravity</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7;">70% of local clicks happen in the Map Pack. We synchronize your Google Business Profile with hyper-local geo-signals, creating a "gravity well" that pulls homeowners to your brand before they ever see your competitors.</p>
+                    <div style="height: 120px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(255,255,255,0.1);">
+                        <span style="color: var(--orange); font-size: 0.8rem; text-transform: uppercase;">[ Icon / Mini-Lottie ]</span>
+                    </div>
+                    <h3>Gravity</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);">70% of local clicks happen in the Map Pack. We synchronize your Google Business Profile with hyper-local geo-signals, creating a "gravity well" that pulls homeowners to your brand.</p>
                 </div>
                 <div class="card">
-                    <h3 style="font-size: 1.8rem;">Integrity</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7;">Google’s core updates prioritize E-EAT (Experience, Expertise, Authoritativeness, and Trust). We build a technical content web that proves your field expertise, ensuring long-term ranking stability through every algorithm update.</p>
+                    <div style="height: 120px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(255,255,255,0.1);">
+                        <span style="color: var(--orange); font-size: 0.8rem; text-transform: uppercase;">[ Icon / Mini-Lottie ]</span>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);">Google’s core updates prioritize E-EAT. We build a technical content web that proves your field expertise, ensuring long-term ranking stability through every algorithm update.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="methodology" style="background: var(--card);">
+    <section id="methodology">
         <div class="container">
-            <div class="split" style="align-items: center;">
-                <div style="flex: 1;">
-                    <h2 style="font-size: 3.8rem;">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
+            <div class="grid-split">
+                <div class="visual-asset" style="aspect-ratio: 1/1;">
+                    <div class="asset-label">[ Insert Complex Diagram / Isometric Vector Here ]</div>
                 </div>
-                <div style="flex: 1.5;">
-                    <p style="font-size: 1.25rem; color: #fff; margin-bottom: 25px; line-height: 1.9;">To dominate local search results in high-ticket contracting niches, standard "SEO" is no longer sufficient. Google's algorithmic shift requires a multi-layered approach to digital infrastructure. Your Online Squad does not build brochure websites; we engineer mechanical lead-generation assets.</p>
-                    <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.8;">Our process begins with a total audit of your digital footprint, identifying "leakage" where competitors are siphoning your geographic market share. We deploy highly technical Schema markup tailored specifically for local tradesmen, ensuring search engine crawlers immediately understand your service radius, licensing, and specific commercial offerings. From there, we syndicate localized content silos—interlinking your high-profit services directly to neighborhood-specific geo-pages. This forces a proximity relevance that outsmarts generic national directories.</p>
+                <div>
+                    <h2 style="font-size: 3.5rem; margin-bottom: 30px;">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
+                    <div class="copy-heavy">
+                        <p>To dominate local search results in high-ticket contracting niches, standard "SEO" is no longer sufficient. Google's algorithmic shift requires a multi-layered approach to digital infrastructure. Your Online Squad does not build brochure websites; we engineer mechanical lead-generation assets.</p>
+                        <p>Our process begins with a total audit of your digital footprint, identifying "leakage" where competitors are siphoning your geographic market share. We deploy highly technical Schema markup tailored specifically for local tradesmen, ensuring search engine crawlers immediately understand your service radius, licensing, and specific commercial offerings.</p>
+                    </div>
                 </div>
             </div>
 
-            <h3 style="margin: 100px 0 20px; font-size: 2.5rem; text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h3>
-            
+            <h3 style="margin: 120px 0 30px; font-size: 2.5rem; text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h3>
             <div class="faq-grid">
                 <div class="faq-box">
                     <h4>How is "Digital Equity" different from buying leads?</h4>
@@ -221,7 +286,7 @@
                     <h4>Why do you require Territory Exclusivity?</h4>
                     <p>We operate as your outsourced growth department. It is a fundamental conflict of interest for us to rank two competing roofers or plumbers in the exact same city. If we take you on as a client, we lock down your zip codes. We will not take on another contractor in your specific vertical within your service area.</p>
                 </div>
-                <div class="faq-box" style="grid-column: 1 / -1; max-width: 900px; justify-self: center;">
+                <div class="faq-box faq-full">
                     <h4>How long does it take to see Lead Velocity?</h4>
                     <p>While organic E-EAT SEO is a long-term play that compounds over 6 to 12 months, our Squad Engines are built for immediate velocity. By utilizing Map Pack synchronization and targeted campaigns, we typically begin seeing qualified, exclusive lead flow within the first 30 to 45 days. The ultimate goal is to transition your primary revenue source to organic dominance.</p>
                 </div>
@@ -236,7 +301,7 @@
             <div class="footer-col">
                 <div class="logo" style="margin-bottom: 20px; font-size: 2rem;">YOUR ONLINE <span>SQUAD</span></div>
                 <p>The premier growth department for elite tradesmen and contractors. Stop buying shared leads. Start building digital equity.</p>
-                <p style="margin-top: 20px; font-weight: 700; color: #fff;">Email: growth@youronlinesquad.com</p>
+                <p style="margin-top: 25px; font-weight: 700; color: #fff;">Email: growth@youronlinesquad.com</p>
             </div>
             <div class="footer-col">
                 <h4>TOP INDUSTRIES</h4>
