@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | High-Growth Contractor Marketing</title>
+    <title>Your Online Squad | Multi-Point Growth Framework</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -21,64 +21,102 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-light);
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- MEGA NAVIGATION --- */
         header {
-            padding: 1rem 5%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
+            padding: 0 5%;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid var(--border);
+            height: 80px;
+            display: flex;
+            align-items: center;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; }
+        .logo { font-weight: 900; font-size: 1.4rem; color: #fff; text-decoration: none; }
         .logo span { color: var(--accent-orange); }
 
-        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        nav a { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: var(--accent-orange); }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-links > li { position: relative; padding: 25px 0; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-orange); }
 
-        /* REFINED DROPDOWN */
-        .dropdown { position: relative; cursor: pointer; padding: 10px 0; }
-        .submenu {
-            display: none;
+        /* MEGA MENU DROPDOWN */
+        .dropdown-menu {
+            visibility: hidden;
+            opacity: 0;
             position: absolute;
-            background: var(--card-bg);
             top: 100%;
-            left: 0;
-            min-width: 240px;
-            padding: 1.5rem;
-            border-radius: 12px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-        .dropdown:hover .submenu { display: block; }
-        .submenu li { margin-bottom: 0.8rem; }
-        .submenu a { display: block; padding: 5px 0; border-bottom: 1px solid transparent; }
-        .submenu a:hover { border-bottom: 1px solid var(--accent-orange); }
-
-        /* --- HERO & ANIMATIONS --- */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transition: 0.3s ease;
+            display: grid;
+            gap: 2rem;
         }
 
+        /* Industry Mega Layout: 3 Columns for your long list */
+        .industry-mega {
+            grid-template-columns: repeat(3, 220px);
+            width: max-content;
+        }
+
+        /* Service Layout: 1 Column */
+        .service-dropdown {
+            grid-template-columns: 280px;
+        }
+
+        .nav-links > li:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--accent-orange);
+        }
+
+        .menu-title {
+            color: var(--accent-orange);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+        }
+
+        /* --- HERO & CONTENT --- */
         .hero {
             padding: 8rem 5% 5rem;
             text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
         }
 
         .floating-logo {
@@ -87,10 +125,14 @@
             margin-bottom: 2rem;
         }
 
-        h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
         .btn {
             background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
-            color: white !important;
+            color: white;
             padding: 1.1rem 2.5rem;
             border-radius: 50px;
             font-weight: 800;
@@ -99,61 +141,64 @@
             transition: 0.4s;
             box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
         }
+
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5); /* Glowing Button Effect */
         }
-
-        /* --- CONTENT SECTIONS --- */
-        section { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-        .card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
-        .card:hover { border-color: var(--accent-orange); transform: translateY(-10px); }
-        .card h3 { color: var(--accent-orange); margin-bottom: 1rem; font-size: 1.5rem; }
-
-        .long-form { max-width: 850px; margin: 0 auto; line-height: 2; }
-        .long-form h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #fff; text-align: center; }
-        .long-form p { margin-bottom: 1.5rem; color: #cbd5e1; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
 <header>
     <nav>
-        <div class="logo">YOUR ONLINE <span>SQUAD</span></div>
-        <ul>
+        <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
+            
+            <li>
                 <a href="#">Services ▾</a>
-                <ul class="submenu">
-                    <li><a href="services/local-seo.html">Local SEO & Map Pack</a></li>
-                    <li><a href="services/lead-generation.html">Lead Generation Systems</a></li>
-                    <li><a href="services/web-design.html">Conversion-First Web Design</a></li>
-                    <li><a href="services/google-business-profile.html">Google Business Profile</a></li>
-                    <li><a href="services/automation-crm.html">Automation & CRM</a></li>
-                </ul>
+                <div class="dropdown-menu service-dropdown">
+                    <div>
+                        <div class="menu-title">Growth Strategies</div>
+                        <a href="services/local-seo.html">Local SEO & Map Pack</a>
+                        <a href="services/lead-generation.html">Lead Generation Systems</a>
+                        <a href="services/web-design.html">Conversion-First Web Design</a>
+                        <a href="services/google-business-profile.html">Google Business Profile</a>
+                        <a href="services/automation-crm.html">Automation & CRM</a>
+                    </div>
+                </div>
             </li>
-            <li class="dropdown">
+
+            <li>
                 <a href="#">Industries ▾</a>
-                <ul class="submenu">
-                    <li><a href="industries/plumbers.html">Plumbing SEO</a></li>
-                    <li><a href="industries/roofers.html">Roofing Marketing</a></li>
-                    <li><a href="industries/hvac.html">HVAC Lead Gen</a></li>
-                    <li><a href="industries/electricians.html">Electrical Contractors</a></li>
-                    <li><a href="industries/garage-doors.html">Garage Door Companies</a></li>
-                </ul>
+                <div class="dropdown-menu industry-mega">
+                    <div>
+                        <div class="menu-title">Construction</div>
+                        <a href="industries/Concrete%20Contractors.html">Concrete Contractors</a>
+                        <a href="industries/General%20Contractors.html">General Contractors</a>
+                        <a href="industries/roofers.html">Roofing Marketing</a>
+                        <a href="industries/roofing-contractor.html">Roofing Contractors</a>
+                    </div>
+                    <div>
+                        <div class="menu-title">Home Services</div>
+                        <a href="industries/plumbers.html">Plumbing SEO</a>
+                        <a href="industries/hvac.html">HVAC Lead Gen</a>
+                        <a href="industries/electricians.html">Electricians</a>
+                        <a href="industries/garage-doors.html">Garage Door Companies</a>
+                        <a href="industries/Landscapers.html">Landscapers</a>
+                    </div>
+                    <div>
+                        <div class="menu-title">Specialty</div>
+                        <a href="industries/Locksmiths.html">Locksmiths</a>
+                        <a href="industries/junk-removal.html">Junk Removal</a>
+                        <a href="industries/water-damage.html">Water Damage</a>
+                        <a href="industries/pest-control.html">Pest Control</a>
+                        <a href="industries/house-cleaning.html">House Cleaning</a>
+                    </div>
+                </div>
             </li>
+
             <li><a href="contact.html" class="btn" style="padding: 0.7rem 1.5rem;">Get Started</a></li>
         </ul>
     </nav>
@@ -162,42 +207,11 @@
 <main>
     <section class="hero">
         <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
-        <h1>Building <span style="color:var(--accent-orange)">Growth Engines</span><br>for Modern Contractors</h1>
-        <p>We align Google Business Profiles with high-velocity keyword growth to ensure you dominate your local territory with exclusive, high-ticket leads.</p>
+        <h1>Building Predictable <br><span style="color:var(--accent-orange)">Growth Engines</span></h1>
+        <p style="max-width: 700px; margin: 1.5rem auto; color: #94a3b8; font-size: 1.2rem;">
+            We align Google Business Profiles with high-velocity keyword growth to ensure your phone rings every single day.
+        </p>
         <a href="contact.html" class="btn">Claim Your Territory</a>
-    </section>
-
-    <section id="framework">
-        <div class="long-form">
-            <h2>The Science of Digital Dominance in 2026</h2>
-            <p>In the home service industry, the gap between a business that is struggling and one that is scaling is almost always the <strong>Lead Engine</strong>. Most contractors are used to "buying" leads from platforms that sell the same customer to five other companies. This is a race to the bottom. To build real authority, you must own your digital footprint.</p>
-            
-            <p>Our framework utilizes <strong>Google's E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness)</strong> guidelines. This means your website shouldn't just be a digital business card—it needs to be an educational resource. When we align your <strong>Google Business Profile</strong> with your website's keyword strategy, we are telling Google that you are the local authority.</p>
-        </div>
-
-        <div class="content-grid">
-            <div class="card">
-                <h3>Keyword Velocity</h3>
-                <p>We track how quickly your high-ticket keywords move toward Page 1. If you aren't seeing growth every 30 days, we pivot the strategy in real-time.</p>
-            </div>
-            <div class="card">
-                <h3>Map Pack Dominance</h3>
-                <p>We optimize your profile to capture the "near me" searches that drive 70% of local clicks. We ensure your business is the first choice.</p>
-            </div>
-            <div class="card">
-                <h3>Exclusive Funnels</h3>
-                <p>We build lead generation systems that belong to you. No shared leads, no price shopping—just direct calls from homeowners who need a pro.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="long-form" style="border-top: 1px solid var(--border); margin-top: 4rem; padding-top: 6rem;">
-        <h2>Transparency through Monthly Tracking</h2>
-        <p>We believe in data, not "feelings." Every month, we provide a deep-dive audit into your keyword velocity. Are you ranking for "Emergency Roofer"? Are you appearing in the Map Pack for "Best Electrician near me"?</p>
-        <p>By tracking these entry points, we can capture the highest-value jobs in your area before your competitors even know what happened. We focus on <strong>Intent-Based Traffic</strong>—homeowners with a burst pipe or a leaking roof who aren't browsing, but looking for an immediate solution. Our systems ensure you are the first professional they see.</p>
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="contact.html" class="btn">Download Your Growth Audit</a>
-        </div>
     </section>
 </main>
 
