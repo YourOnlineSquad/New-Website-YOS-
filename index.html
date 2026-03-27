@@ -1,109 +1,138 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | Premium Contractor Growth Engines</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Online Squad | Premium Growth Engines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0f172a',
+                        purple: '#7c3aed',
+                        orange: '#f97316',
+                        slate: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cooper: ['Cooper Std', 'serif'], // Fallback to serif if local font isn't loaded
+                    },
+                    animation: {
+                        'squad-float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-navy text-slate-50 font-sans antialiased">
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
-        
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+    <header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-slate-700/50 h-20 flex items-center px-[5%]">
+        <nav class="flex justify-between items-center w-full max-w-7xl mx-auto">
+            <a href="index.html" class="text-2xl font-black tracking-tighter">
+                YOUR ONLINE <span class="text-orange">SQUAD</span>
+            </a>
+
+            <ul class="hidden md:flex items-center space-x-10 text-sm font-semibold">
+                <li><a href="index.html" class="hover:text-orange transition">Home</a></li>
+                
+                <li class="group relative py-4">
+                    <a href="#" class="flex items-center hover:text-orange transition">
+                        Services <span class="ml-1 text-[10px]">▼</span>
+                    </a>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-slate border border-slate-700 p-6 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <p class="text-[10px] uppercase tracking-widest text-orange font-black mb-4">Growth Strategies</p>
+                        <div class="space-y-3">
+                            <a href="services/local-seo.html" class="block text-slate-300 hover:text-white transition">Local SEO & Map Pack</a>
+                            <a href="services/lead-generation.html" class="block text-slate-300 hover:text-white transition">Lead Generation</a>
+                            <a href="services/web-design.html" class="block text-slate-300 hover:text-white transition">Web Design</a>
+                            <a href="services/automation-crm.html" class="block text-slate-300 hover:text-white transition">Automation & CRM</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="group relative py-4">
+                    <a href="#" class="flex items-center hover:text-orange transition">
+                        Industries <span class="ml-1 text-[10px]">▼</span>
+                    </a>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-[700px] bg-slate border border-slate-700 p-8 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 grid grid-cols-3 gap-8">
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-orange font-black mb-4">Construction</p>
+                            <div class="space-y-2">
+                                <a href="industries/Concrete%20Contractors.html" class="block text-slate-400 hover:text-white transition">Concrete</a>
+                                <a href="industries/General%20Contractors.html" class="block text-slate-400 hover:text-white transition">General Contractors</a>
+                                <a href="industries/roofers.html" class="block text-slate-400 hover:text-white transition">Roofing</a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-orange font-black mb-4">Home Services</p>
+                            <div class="space-y-2">
+                                <a href="industries/plumbers.html" class="block text-slate-400 hover:text-white transition">Plumbing</a>
+                                <a href="industries/hvac.html" class="block text-slate-400 hover:text-white transition">HVAC</a>
+                                <a href="industries/electricians.html" class="block text-slate-400 hover:text-white transition">Electricians</a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-orange font-black mb-4">Specialty</p>
+                            <div class="space-y-2">
+                                <a href="industries/Locksmiths.html" class="block text-slate-400 hover:text-white transition">Locksmiths</a>
+                                <a href="industries/junk-removal.html" class="block text-slate-400 hover:text-white transition">Junk Removal</a>
+                                <a href="industries/water-damage.html" class="block text-slate-400 hover:text-white transition">Water Damage</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="bg-gradient-to-r from-purple to-orange px-6 py-2.5 rounded-full font-black text-white hover:scale-105 transition shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]">
+                        Get Started
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="relative pt-20 pb-32 px-[5%] text-center overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <img src="Untitled design.png" alt="Squad Tree" class="w-64 mx-auto mb-10 animate-squad-float drop-shadow-[0_0_50px_rgba(124,58,237,0.3)]">
             
-            <li>
-                <a href="#">Services ▾</a>
-                <div class="dropdown-menu service-list">
-                    <div class="menu-col">
-                        <h4 class="menu-title">Growth Strategies</h4>
-                        <a href="services/local-seo.html">Local SEO & Map Pack</a>
-                        <a href="services/lead-generation.html">Lead Generation Systems</a>
-                        <a href="services/web-design.html">Conversion Web Design</a>
-                        <a href="services/google-business-profile.html">Google Business Profile</a>
-                        <a href="services/automation-crm.html">Automation & CRM</a>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <a href="#">Industries ▾</a>
-                <div class="dropdown-menu industry-grid">
-                    <div class="menu-col">
-                        <h4 class="menu-title">Construction</h4>
-                        <a href="industries/Concrete%20Contractors.html">Concrete</a>
-                        <a href="industries/General%20Contractors.html">General Contractors</a>
-                        <a href="industries/roofers.html">Roofing Professionals</a>
-                        <a href="industries/landscapers.html">Landscaping</a>
-                    </div>
-                    <div class="menu-col">
-                        <h4 class="menu-title">Home Services</h4>
-                        <a href="industries/plumbers.html">Plumbing</a>
-                        <a href="industries/hvac.html">HVAC</a>
-                        <a href="industries/electricians.html">Electricians</a>
-                        <a href="industries/garage-doors.html">Garage Doors</a>
-                    </div>
-                    <div class="menu-col">
-                        <h4 class="menu-title">Specialty</h4>
-                        <a href="industries/Locksmiths.html">Locksmiths</a>
-                        <a href="industries/junk-removal.html">Junk Removal</a>
-                        <a href="industries/water-damage.html">Water Damage</a>
-                        <a href="industries/pest-control.html">Pest Control</a>
-                    </div>
-                </div>
-            </li>
-
-            <li><a href="contact.html" class="btn" style="padding: 0.7rem 1.5rem;">Get Started</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section class="hero">
-        <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
-        <h1>Building Predictable <br><span class="highlight">Growth Engines</span></h1>
-        <p>We transform contractor websites into high-velocity lead generators by aligning local search authority with premium conversion systems.</p>
-        <br><br>
-        <a href="contact.html" class="btn">Claim Your Local Territory</a>
-    </section>
-
-    <section style="padding: 6rem 10%; background: #111b2d; border-top: 1px solid #334155;">
-        <div style="max-width: 1000px; margin: 0 auto; line-height: 1.8;">
-            <h2 style="text-align: center; margin-bottom: 3rem;">The Science of Digital Dominance</h2>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tight">
+                Building Predictable <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple to-orange">Growth Engines</span>
+            </h1>
             
-            <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2rem;">
-                In the modern contracting landscape, simply "having a website" is a liability if it isn't ringing your phone. To scale a business in 2026, you need <strong>Intent-Based Traffic</strong>. Our framework utilizes Google’s <strong>E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness)</strong> guidelines to ensure your business isn't just another name in a directory—it's the local authority.
+            <p class="text-slate-400 text-xl md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                We transform contractor websites into high-velocity lead generators by aligning local search authority with premium conversion systems.
             </p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem;">
-                <div style="background: #1e293b; padding: 2.5rem; border-radius: 20px; border: 1px solid #334155;">
-                    <h3 style="color:#f97316; margin-bottom: 1rem; font-family: sans-serif; font-weight: 800;">Keyword Velocity Tracking</h3>
-                    <p>We don't just "rank" you. We track the velocity of your most profitable service keywords. If you aren't seeing movement toward the top 3 spots every 30 days, we pivot the strategy. Transparency is our baseline.</p>
-                </div>
+            <a href="contact.html" class="inline-block bg-gradient-to-r from-purple to-orange px-10 py-5 rounded-full font-black text-xl text-white hover:scale-110 transition-all shadow-[0_0_40px_rgba(249,115,22,0.4)]">
+                Claim Your Local Territory
+            </a>
+        </div>
+        
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_20%,#1e293b_0%,#0f172a_100%)] -z-10"></div>
+    </section>
 
-                <div style="background: #1e293b; padding: 2.5rem; border-radius: 20px; border: 1px solid #334155;">
-                    <h3 style="color:#f97316; margin-bottom: 1rem; font-family: sans-serif; font-weight: 800;">Exclusive Lead Ownership</h3>
-                    <p>Stop paying for shared leads that are sold to four of your competitors. We build custom lead funnels that belong to you. When the phone rings, that customer is yours—and yours alone.</p>
-                </div>
-
-                <div style="background: #1e293b; padding: 2.5rem; border-radius: 20px; border: 1px solid #334155;">
-                    <h3 style="color:#f97316; margin-bottom: 1rem; font-family: sans-serif; font-weight: 800;">Google Map Pack Sync</h3>
-                    <p>We align your onsite SEO signals with your Google Business Profile. This "Double Entry" strategy ensures you capture both the Map Pack clicks and the organic search results, giving you 2x the Page 1 real estate.</p>
-                </div>
-            </div>
+    <section class="max-w-5xl mx-auto px-[5%] py-24 border-t border-slate-800">
+        <h2 class="text-4xl font-black mb-12 text-center">The Science of Digital Dominance</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-slate-400 text-lg leading-relaxed">
+            <p>
+                In the modern contracting landscape, simply "having a website" is a liability if it isn't ringing your phone. To scale a business in 2026, you need <strong class="text-white">Intent-Based Traffic</strong>. Our framework utilizes Google's E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness) guidelines to ensure your business isn't just another name in a directory—it's the local authority.
+            </p>
+            <p>
+                By tracking <strong class="text-orange">Keyword Velocity</strong>, we ensure you are winning the battle for high-ticket service keywords every single month. We don't just "rank" you; we build a safety net of lead sources including the Google Map Pack, Organic search results, and Strategic Paid Accelerators.
+            </p>
         </div>
     </section>
-
-    <section style="padding: 8rem 5%; text-align: center;">
-        <h2 style="margin-bottom: 1.5rem;">Ready to Own Your <span class="highlight">Local Market?</span></h2>
-        <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 3rem;">We only work with one contractor per trade per area. Secure your territory before your competitor does.</p>
-        <a href="contact.html" class="btn">Start Your Growth Audit</a>
-    </section>
-</main>
 
 </body>
 </html>
