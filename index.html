@@ -3,144 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | SEO & Digital Marketing Experts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --primary: #3b82f6;
-            --accent: #f97316; /* Orange */
-            --yellow: #fbce1e; /* From your screenshot */
-            --text: #ffffff;
-            --text-dim: #94a3b8;
-            --heading-font: 'Fraunces', serif;
-            --body-font: 'Inter', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: var(--body-font); 
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        /* Navigation */
-        nav { padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .flex-nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--heading-font); font-size: 1.5rem; text-decoration: none; color: white; }
-        .logo span { color: var(--yellow); }
-        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-
-        /* Hero Section */
-        .hero { padding: 6rem 0; position: relative; }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        
-        .badge { color: var(--text-dim); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
-        h1 { font-family: var(--heading-font); font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem; }
-        .hero p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2.5rem; }
-
-        /* Image Stack (Futuristic Layout) */
-        .image-container { position: relative; }
-        .main-img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .float-card { 
-            position: absolute; 
-            background: white; 
-            padding: 1.5rem; 
-            border-radius: 12px; 
-            top: -20px; left: -20px; 
-            width: 180px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: float 4s infinite ease-in-out;
-        }
-
-        /* Buttons */
-        .btn-yellow { 
-            background: var(--yellow); 
-            color: black; 
-            padding: 1rem 2rem; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: 800; 
-            display: inline-block;
-            transition: 0.3s ease;
-        }
-        .btn-yellow:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(251, 206, 30, 0.3); }
-
-        /* Animation */
-        @keyframes float { 
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Services Grid */
-        .services { padding: 4rem 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .card { background: var(--surface); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
-        .card h3 { font-family: var(--heading-font); margin-bottom: 1rem; color: var(--yellow); }
-
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            .services { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>Your Online Squad | SEO & Web Growth Experts Orange County</title>
+    <meta name="description" content="Custom-coded website builds and ongoing monthly SEO growth for contractors. We manage GMB, Backlinking, and Ads to scale your business organically.">
+    <meta name="keywords" content="SEO Orange County, Contractor Marketing, Web Design, Lead Generation, Google Business Profile Management">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav>
+    <nav class="navbar">
         <div class="container flex-nav">
-            <a href="#" class="logo">Your Online <span>Squad</span></a>
+            <a href="/" class="logo">YOUR ONLINE <span>SQUAD</span></a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#" class="btn-yellow" style="padding: 0.6rem 1.2rem;">Brief Your Project</a></li>
+                <li><a href="#growth">Monthly Growth</a></li>
+                <li><a href="#contact" class="btn-yellow small">Brief Your Project</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-grid">
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
                 <div class="hero-text">
-                    <span class="badge">About Us</span>
-                    <h1>Hire the top SEO and Digital Marketing Experts for Your <span style="color:var(--yellow)">Small Business.</span></h1>
-                    <p>In a world where automation dominates, we believe SEO success requires personalization and direct collaboration. We have your back, generating revenue while you handle your business.</p>
-                    <a href="#" class="btn-yellow">Talk to an Expert</a>
+                    <span class="badge">Performance-Driven Marketing</span>
+                    <h1>We Build, Maintain, & <span class="highlight">Grow Your Revenue.</span></h1>
+                    <p>Stop settling for stagnant websites. We follow Google’s strict guidelines to build organic success through custom code, monthly keyword growth, and elite backlinking.</p>
+                    <div class="cta-group">
+                        <a href="#contact" class="btn-yellow">Start Growing Today</a>
+                        <div class="trust-pill">Based in Orange County, CA</div>
+                    </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="image-container">
-                        <div class="float-card">
-                            <div style="height: 10px; width: 100%; background: #eee; border-radius: 5px; margin-bottom: 8px;"></div>
-                            <div style="height: 10px; width: 80%; background: var(--yellow); border-radius: 5px;"></div>
-                            <p style="color: black; font-size: 0.7rem; margin-top: 10px; font-weight: bold;">SEO Growth +40%</p>
+                    <div class="image-stack">
+                        <div class="floating-stat-card">
+                            <div class="chart-bars">
+                                <div class="bar" style="height:40%"></div>
+                                <div class="bar" style="height:70%"></div>
+                                <div class="bar" style="height:100%"></div>
+                            </div>
+                            <p>Monthly Keywords +240%</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team meeting" class="main-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="SEO Growth Data" class="hero-img">
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <section id="services" class="container services">
-        <div class="card">
-            <h3>01. Strategy</h3>
-            <p>Every strategy is crafted based on real business goals and marketing objectives.</p>
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Comprehensive <span class="highlight">Squad Support</span></h2>
+                <div class="service-grid">
+                    <div class="card">
+                        <h3>Custom Code Builds</h3>
+                        <p>We replace bloated WordPress templates with clean HTML/CSS. Faster load speeds mean higher Google rankings.</p>
+                    </div>
+                    <div class="card">
+                        <h3>GMB & Citations</h3>
+                        <p>Total Google Business Profile management and citation building to dominate the local map pack.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Multi-Platform Ads</h3>
+                        <p>Precision-targeted lead generation across Google, Meta, and Bing to fuel immediate revenue.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth" class="mission">
+            <div class="container mission-flex">
+                <div class="mission-content">
+                    <h2>Monthly Growth <span class="highlight">is the Mission.</span></h2>
+                    <p>SEO isn't a one-time setup. Like our logo represents, we plant the seeds of your digital presence and cultivate it every month through high-authority backlinking and keyword expansion.</p>
+                    <ul class="check-list">
+                        <li>✓ Direct Collaboration—No Automation Bots</li>
+                        <li>✓ 10+ Years of Organic SEO Expertise</li>
+                        <li>✓ Transparent Lead Generation Reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Your Online Squad LLC | Built for Growth.</p>
         </div>
-        <div class="card">
-            <h3>02. Growth</h3>
-            <p>We provide a more effective SEO experience where you are involved in the process.</p>
-        </div>
-        <div class="card">
-            <h3>03. Results</h3>
-            <p>10+ years of experience helping small businesses generate revenue organically.</p>
-        </div>
-    </section>
+    </footer>
 
 </body>
 </html>
