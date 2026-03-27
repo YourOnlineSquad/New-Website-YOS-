@@ -1,52 +1,64 @@
- /* --- NAVIGATION: CLEAN & ALWAYS VISIBLE --- */
-        header { 
-            background: #0b0f1a; 
-            border-bottom: 2px solid var(--orange); 
-            height: 100px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 2000; 
-            display: flex; 
-            align-items: center; 
-        }
-        nav { 
-            width: 90%; 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo { font-size: 1.8rem; color: #fff; font-weight: 900; } 
-        .logo span { color: var(--orange); }
+ /* --- THE ENGINE COLORS --- */
+:root { 
+    --bg: #0b0f1a; 
+    --purple: #7c3aed; 
+    --orange: #f97316; 
+    --card: #161c2d; 
+    --border: #2d3748; 
+    --text-dim: #a0aec0;
+}
 
-        .nav-links { 
-            display: flex; 
-            gap: 2.5rem; 
-            align-items: center; 
-            list-style: none;
-        }
-        .nav-links a { 
-            color: #fff; 
-            font-weight: 700; 
-            font-size: 0.9rem; 
-            text-transform: uppercase;
-        }
-        .nav-links a:hover { color: var(--orange); }
+/* --- NAVIGATION: CLEAN & ALWAYS VISIBLE --- */
+header { 
+    background: #0b0f1a; 
+    border-bottom: 2px solid var(--orange); 
+    height: 100px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 2000; 
+    display: flex; 
+    align-items: center; 
+}
 
-        /* --- MOBILE RESPONSIVENESS FIX --- */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 4rem; }
-            .split { flex-direction: column !important; text-align: center; }
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
-            h2 { font-size: 2.8rem; }
-            .nav-links { gap: 1rem; }
-        }
+nav { 
+    width: 90%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
 
-        @media (max-width: 768px) {
-            /* On phones, this hides the text links but KEEPS the "Get Started" button */
-            .nav-links li:not(:last-child) { 
-                display: none; 
-            }
-            .logo { font-size: 1.2rem; }
-        }
+.logo { font-size: 1.8rem; color: #fff; font-weight: 900; text-decoration: none; font-family: sans-serif; } 
+.logo span { color: var(--orange); }
+
+.nav-links { 
+    display: flex; 
+    gap: 2.5rem; 
+    align-items: center; 
+    list-style: none;
+}
+
+.nav-links a { 
+    color: #fff; 
+    font-weight: 700; 
+    font-size: 0.9rem; 
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-links a:hover { color: var(--orange); }
+
+/* --- MOBILE RESPONSIVENESS FIX --- */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 4rem; }
+    .nav-links { gap: 1rem; }
+}
+
+@media (max-width: 768px) {
+    /* On phones, this hides the text links but KEEPS the "Get Started" button */
+    .nav-links li:not(:last-child) { 
+        display: none; 
+    }
+    .logo { font-size: 1.2rem; }
+}
