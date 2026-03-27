@@ -1,8 +1,18 @@
+/* YOUR ONLINE SQUAD - DEFINITIVE BRAND STYLES 
+   Colors: Navy (#0F172A), Purple (#7C3AED), Orange (#F97316)
+   Fonts: Cooper Hewitt (Headlines), Inter (Body)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+/* Loading a Cooper-style font for the H1/H2 */
+@import url('https://fonts.cdnfonts.com/css/cooper-hewitt');
+
 :root {
-    --bg-deep: #0f172a;
-    --premium-purple: #7c3aed;
-    --accent-orange: #f97316;
+    --bg-deep: #0f172a;        /* Primary Navy */
+    --premium-purple: #7c3aed; /* Premium Brand Color */
+    --accent-orange: #f97316;  /* Logo Orange */
     --text-light: #f8fafc;
+    --text-dim: #94a3b8;
     --card-bg: #1e293b;
     --border: #334155;
 }
@@ -14,88 +24,148 @@ body {
     background-color: var(--bg-deep);
     color: var(--text-light);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* --- TYPOGRAPHY --- */
+h1, h2, .mega-title {
+    font-family: 'Cooper Hewitt', sans-serif;
+    font-weight: 900;
+}
+
+h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+h2 { font-size: 2.8rem; margin-bottom: 2rem; }
+
+/* --- NAVIGATION --- */
 header {
-    background: rgba(15, 23, 42, 0.95);
+    height: 90px;
+    background: rgba(15, 23, 42, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 5%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.logo { font-weight: 900; font-size: 1.5rem; color: #fff; text-decoration: none; }
+.logo { 
+    font-family: 'Cooper Hewitt', sans-serif;
+    font-size: 1.6rem; 
+    font-weight: 900; 
+    text-decoration: none; 
+    color: #fff;
+}
 .logo span { color: var(--accent-orange); }
 
-/* --- THE NAVIGATION FIX --- */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
-.nav-links > li { position: relative; }
+.nav-links > li { position: relative; padding: 30px 0; }
 
 .nav-links a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
 }
 
-/* --- THE DROPDOWN FIX --- */
+.nav-links a:hover { color: var(--accent-orange); }
+
+/* --- MEGA MENU (THE FIX) --- */
 .dropdown-menu {
-    display: none; /* Keeps it hidden until hover */
+    display: none; /* Hidden by default */
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--card-bg);
     border: 1px solid var(--border);
-    padding: 1.5rem;
     border-radius: 12px;
-    min-width: 250px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
+/* Show on hover */
 .nav-links li:hover .dropdown-menu {
-    display: block; /* Shows only on hover */
+    display: grid;
+    gap: 2.5rem;
+}
+
+/* 3-Column Industry Layout */
+.industry-grid { grid-template-columns: repeat(3, 200px); }
+/* 1-Column Service Layout */
+.service-list { grid-template-columns: 260px; }
+
+.menu-col h4 {
+    color: var(--accent-orange);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 .dropdown-menu a {
     display: block;
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
+    padding: 6px 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
 }
 
-/* --- HERO SECTION --- */
+.dropdown-menu a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+/* --- HERO & COMPONENTS --- */
 .hero {
-    padding: 8rem 5%;
+    padding: 10rem 5% 6rem;
     text-align: center;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
 }
 
-.hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 1rem; }
-.hero span { color: var(--accent-orange); }
+.floating-logo {
+    width: 240px;
+    margin-bottom: 2rem;
+    animation: squadFloat 5s ease-in-out infinite;
+}
 
+@keyframes squadFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* --- BUTTONS & GLOW --- */
 .btn {
     background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
-    color: white;
-    padding: 1rem 2.5rem;
+    color: white !important;
+    padding: 1.2rem 3rem;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: 800;
+    text-decoration: none;
     display: inline-block;
-    margin-top: 2rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
 }
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.5); /* Glowing Orange Effect */
+}
+
+/* Utility for text span */
+.highlight { color: var(--accent-orange); }
