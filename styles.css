@@ -1,160 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | Premium Contractor Growth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-deep: #0f172a;        /* Trustworthy Navy */
-            --premium-purple: #7c3aed; /* Premium Accent */
-            --accent-orange: #f97316;  /* Logo Orange */
-            --text-light: #f8fafc;
-            --card-bg: #1e293b;
-        }
+ /* MODERN CONTRACTOR THEME */
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --yellow: #facc15;
+    --text: #f8fafc;
+    --dim: #94a3b8;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-light);
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+}
 
-        /* TYPOGRAPHY - Headlines use Cooper-style bolding */
-        h1, h2, h3 { 
-            font-weight: 900; 
-            letter-spacing: -1px;
-            color: #fff;
-        }
+/* NAV BAR */
+header {
+    background: rgba(15, 23, 42, 0.98);
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #334155;
+}
 
-        /* FLOATING IMAGE ANIMATION */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .floating-logo {
-            width: 300px;
-            animation: float 4s ease-in-out infinite;
-            display: block;
-            margin: 0 auto 2rem;
-        }
+.logo { font-size: 1.6rem; font-weight: 800; color: var(--yellow); }
 
-        /* GLOWING BUTTONS */
-        .btn {
-            background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
-            color: white !important;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.4s;
-            border: none;
-            box-shadow: 0 0 0 rgba(124, 58, 237, 0);
-        }
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
 
-        .btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 0 25px rgba(249, 115, 22, 0.6); /* Orange Glow */
-            filter: brightness(1.1);
-        }
+nav a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.95rem; }
 
-        /* NAV BAR */
-        header {
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* DROPDOWNS */
+.dropdown { position: relative; cursor: pointer; }
+.submenu {
+    display: none;
+    position: absolute;
+    background: var(--card);
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+    min-width: 220px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+.dropdown:hover .submenu { display: block; }
+.submenu li { margin: 0.5rem 0; }
 
-        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        nav a { color: var(--text-light); text-decoration: none; font-weight: 600; }
-        nav a:hover { color: var(--accent-orange); }
+/* SECTIONS */
+section { padding: 6rem 10%; max-width: 1400px; margin: 0 auto; }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 10rem 5% 5rem;
-            text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
-        }
+.hero { text-align: center; padding: 10rem 10% 6rem; }
+h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 1.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--yellow); }
+.highlight { color: var(--yellow); }
 
-        .hero h1 { font-size: 4.5rem; margin-bottom: 1.5rem; line-height: 1; }
-        .hero p { font-size: 1.3rem; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+.card { background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid #334155; }
+.card h3 { color: var(--yellow); margin-bottom: 1rem; }
 
-        /* GRID CARDS */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 5rem 5%;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid #334155;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--premium-purple);
-            background: #243147;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .card h3 { color: var(--accent-orange); margin-bottom: 1rem; }
-
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="logo" style="font-weight: 900; font-size: 1.5rem;">YOUR ONLINE <span style="color:var(--accent-orange)">SQUAD</span></div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#strategy">Our Strategy</a></li>
-            <li><a href="contact.html" class="btn" style="padding: 0.8rem 1.5rem;">Get Started</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section class="hero">
-        <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
-        
-        <h1>Beyond SEO: Build Your <br><span style="color:var(--accent-orange)">Growth Engine</span></h1>
-        <p>We combine deep-blue authority with premium-purple strategy to turn your contracting business into a lead-generating machine. No more shared leads—just pure growth.</p>
-        
-        <a href="contact.html" class="btn">Scale Your Business Today</a>
-    </section>
-
-    <section id="strategy" class="grid">
-        <div class="card">
-            <h3>Keyword Velocity</h3>
-            <p>We don't just "rank" you. We track the speed of your growth, ensuring you hit the top spots for high-ticket emergency services faster than the competition.</p>
-        </div>
-        <div class="card">
-            <h3>Premium Funnels</h3>
-            <p>Your site should feel high-end. We use premium UX design to build trust before the customer ever picks up the phone.</p>
-        </div>
-        <div class="card">
-            <h3>Google Maps Sync</h3>
-            <p>Your website and Maps profile become a synchronized force, capturing two spots on Page 1 instead of just one.</p>
-        </div>
-    </section>
-</main>
-
-</body>
-</html>
+/* BUTTONS */
+.btn {
+    background: var(--yellow);
+    color: #000 !important;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+}
