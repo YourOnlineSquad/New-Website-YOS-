@@ -3,23 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | SEO & Growth for OC Contractors</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=sump" rel="stylesheet">
+    <title>Your Online Squad | SEO & Digital Marketing Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --primary: #3b82f6;
+            --accent: #f97316; /* Orange */
+            --yellow: #fbce1e; /* From your screenshot */
+            --text: #ffffff;
+            --text-dim: #94a3b8;
+            --heading-font: 'Fraunces', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: var(--body-font); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav { padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .flex-nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--heading-font); font-size: 1.5rem; text-decoration: none; color: white; }
+        .logo span { color: var(--yellow); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+        /* Hero Section */
+        .hero { padding: 6rem 0; position: relative; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        
+        .badge { color: var(--text-dim); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
+        h1 { font-family: var(--heading-font); font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem; }
+        .hero p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+        /* Image Stack (Futuristic Layout) */
+        .image-container { position: relative; }
+        .main-img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .float-card { 
+            position: absolute; 
+            background: white; 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            top: -20px; left: -20px; 
+            width: 180px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: float 4s infinite ease-in-out;
+        }
+
+        /* Buttons */
+        .btn-yellow { 
+            background: var(--yellow); 
+            color: black; 
+            padding: 1rem 2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+        .btn-yellow:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(251, 206, 30, 0.3); }
+
+        /* Animation */
+        @keyframes float { 
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Services Grid */
+        .services { padding: 4rem 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { background: var(--surface); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .card h3 { font-family: var(--heading-font); margin-bottom: 1rem; color: var(--yellow); }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .services { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="animated-bg"></div>
-
-    <nav class="navbar">
+    <nav>
         <div class="container flex-nav">
-            <a href="/" class="logo">YOUR ONLINE <span class="orange">SQUAD</span></a>
+            <a href="#" class="logo">Your Online <span>Squad</span></a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#process">The Process</a></li>
-                <li><a href="#contact" class="btn-primary">Brief Your Project</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" class="btn-yellow" style="padding: 0.6rem 1.2rem;">Brief Your Project</a></li>
             </ul>
         </div>
     </nav>
@@ -28,71 +108,39 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text">
-                    <span class="badge">Built in Orange County</span>
-                    <h1>Boost Your Business with <span class="purple-gradient">Smart SEO.</span></h1>
-                    <p>We build, maintain, and grow websites for local contractors. Stop chasing leads and start generating revenue organically.</p>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Get Started Today</a>
-                        <span class="phone-link">(714) 406-4065</span>
-                    </div>
+                    <span class="badge">About Us</span>
+                    <h1>Hire the top SEO and Digital Marketing Experts for Your <span style="color:var(--yellow)">Small Business.</span></h1>
+                    <p>In a world where automation dominates, we believe SEO success requires personalization and direct collaboration. We have your back, generating revenue while you handle your business.</p>
+                    <a href="#" class="btn-yellow">Talk to an Expert</a>
                 </div>
                 <div class="hero-visual">
-                    <div class="floating-circle circle-1"></div>
-                    <div class="floating-circle circle-2"></div>
-                    <div class="vector-graphic">
-                        <div class="line-grow"></div>
-                        <div class="line-grow"></div>
-                        <div class="line-grow"></div>
+                    <div class="image-container">
+                        <div class="float-card">
+                            <div style="height: 10px; width: 100%; background: #eee; border-radius: 5px; margin-bottom: 8px;"></div>
+                            <div style="height: 10px; width: 80%; background: var(--yellow); border-radius: 5px;"></div>
+                            <p style="color: black; font-size: 0.7rem; margin-top: 10px; font-weight: bold;">SEO Growth +40%</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team meeting" class="main-img">
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">High-Impact <span class="blue">Solutions</span></h2>
-            <div class="service-grid">
-                <div class="service-card reveal">
-                    <div class="icon-box">01</div>
-                    <h3>Custom Site Build</h3>
-                    <p>Hand-coded HTML & CSS. Zero bloat, instant load speeds, and maximum Google trust.</p>
-                </div>
-                <div class="service-card reveal">
-                    <div class="icon-box pulse">02</div>
-                    <h3>Google Business</h3>
-                    <p>Dominating the map pack so local customers call you before your competitors.</p>
-                </div>
-                <div class="service-card reveal">
-                    <div class="icon-box">03</div>
-                    <h3>Lead Generation</h3>
-                    <p>Studying Google guidelines to build organic success and sustainable growth.</p>
-                </div>
-            </div>
+    <section id="services" class="container services">
+        <div class="card">
+            <h3>01. Strategy</h3>
+            <p>Every strategy is crafted based on real business goals and marketing objectives.</p>
+        </div>
+        <div class="card">
+            <h3>02. Growth</h3>
+            <p>We provide a more effective SEO experience where you are involved in the process.</p>
+        </div>
+        <div class="card">
+            <h3>03. Results</h3>
+            <p>10+ years of experience helping small businesses generate revenue organically.</p>
         </div>
     </section>
-
-    <section class="cta-banner">
-        <div class="container">
-            <div class="glass-box">
-                <h2>Ready to scale? <span class="orange">The Squad has your back.</span></h2>
-                <p>Simple, effective, and results-driven marketing for service-based businesses.</p>
-                <a href="#contact" class="btn-white">Claim Your Free Audit</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-flex">
-                <p>&copy; 2026 Your Online Squad LLC</p>
-                <div class="footer-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>
