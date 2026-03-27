@@ -1,87 +1,77 @@
-:root {
-    --primary-blue: #007bff;
-    --yellow: #ffcc00;
-    --text-dark: #1a1a1a;
-    --text-light: #555;
-    --heading-font: 'Fraunces', serif;
-    --body-font: 'Inter', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Online Squad | SEO & Web Optimization Orange County</title>
+    <meta name="description" content="Expert SEO, website optimization, and content strategies to help businesses stand out and thrive online.">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--body-font); background: #ffffff; color: var(--text-dark); overflow-x: hidden; }
+    <nav class="main-nav">
+        <div class="container nav-flex">
+            <ul class="left-nav">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown"><a href="#">Services ▾</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="logo-area">
+                <img src="https://youronlinesquad.com/wp-content/uploads/2024/02/cropped-Your-Online-Squad-Logo-1.png" alt="Your Online Squad" class="nav-logo">
+            </div>
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+            <div class="right-nav">
+                <span class="phone-number">(714) 406-4065</span>
+                <a href="/contact.html" class="btn-yellow-nav">Brief Your Project</a>
+            </div>
+        </div>
+    </nav>
 
-/* Navigation */
-.main-nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="sub-label">ABOUT US</span>
+                <h1>Hire the top SEO And Digital Marketing Experts for Your <span class="highlight">Small Business.</span></h1>
+                <p>In a world where automation dominates digital marketing, Your Online Squad takes a different approach. We believe that SEO Success <strong>Requires Personalization</strong> and Direct Collaboration With Business Owners.</p>
+                
+                <div class="hero-actions">
+                    <a href="/contact.html" class="btn-yellow-main">Talk to an Expert</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="image-wrapper">
+                    <img src="https://youronlinesquad.com/wp-content/uploads/2024/02/team-meeting.jpg" alt="SEO Team" class="main-hero-img">
+                    <div class="floating-stat">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 30%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 90%"></div>
+                            <div class="bar" style="height: 40%"></div>
+                        </div>
+                        <p>SEO Growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-.left-nav { list-style: none; display: flex; gap: 20px; }
-.left-nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; }
+    <section class="services-intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="stat-card">
+                    <div class="ten-years">10+</div>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="intro-text">
+                    <p>By working closely with our clients, we provide a <strong>More Effective SEO Experience</strong> where business owners are Actively Involved In The Process. Our team ensures that Every Step Of Your SEO Journey is explained.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.nav-logo { height: 70px; }
-
-.right-nav { display: flex; align-items: center; gap: 25px; }
-.phone-number { color: var(--primary-blue); font-weight: 700; font-size: 18px; }
-
-.btn-yellow-nav { 
-    background: var(--yellow); 
-    color: #000; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    text-decoration: none; 
-    font-weight: 700; 
-    font-size: 13px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* Hero Section */
-.hero { padding: 80px 0; }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-
-.sub-label { font-size: 14px; font-weight: 800; color: #333; letter-spacing: 1px; margin-bottom: 15px; display: block; }
-h1 { font-family: var(--heading-font); font-size: 48px; line-height: 1.1; margin-bottom: 25px; }
-.highlight { color: #000; border-bottom: 4px solid var(--yellow); }
-.hero p { font-size: 17px; color: var(--text-light); line-height: 1.6; margin-bottom: 35px; }
-
-.btn-yellow-main { 
-    background: var(--yellow); 
-    color: #000; 
-    padding: 15px 35px; 
-    border-radius: 5px; 
-    text-decoration: none; 
-    font-weight: 800; 
-    font-size: 16px;
-    display: inline-block;
-}
-
-/* Visuals & Moving Elements */
-.image-wrapper { position: relative; }
-.main-hero-img { width: 100%; border-radius: 15px; }
-
-.floating-stat {
-    position: absolute; top: 10%; left: -30px;
-    background: #fff; padding: 20px; border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    width: 130px; text-align: center;
-    animation: float 4s infinite ease-in-out;
-}
-
-.bar-chart { display: flex; gap: 5px; align-items: flex-end; height: 40px; margin-bottom: 10px; justify-content: center; }
-.bar { width: 8px; background: var(--primary-blue); border-radius: 2px; animation: grow 2s infinite alternate; }
-
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes grow { from { transform: scaleY(0.5); } to { transform: scaleY(1); } }
-
-/* 10+ Years Section */
-.services-intro { padding: 60px 0; }
-.intro-grid { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: center; }
-
-.stat-card { background: var(--yellow); padding: 30px; border-radius: 15px; text-align: center; }
-.ten-years { font-family: var(--heading-font); font-size: 50px; font-weight: 900; line-height: 1; }
-.intro-text { font-size: 18px; color: var(--text-light); line-height: 1.6; }
-
-@media (max-width: 768px) {
-    .hero-grid, .intro-grid { grid-template-columns: 1fr; text-align: center; }
-    .nav-flex { flex-direction: column; gap: 20px; }
-}
+</body>
+</html>
