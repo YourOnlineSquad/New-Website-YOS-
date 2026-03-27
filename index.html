@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,20 +19,21 @@
         h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
         .highlight { color: var(--orange); }
 
+        /* Fluid Typography for Headers so they don't break on mobile */
+        .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
+
         /* --- HEADER --- */
         header { 
             background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
             height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
             display: flex; align-items: center; backdrop-filter: blur(12px);
         }
-        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; position: relative; }
         .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; z-index: 10000; }
         .logo span { color: var(--orange); }
 
         ul { list-style: none; }
         .nav-links { display: flex; gap: 30px; align-items: center; }
-        
-        /* FIX: The :not(.btn) stops the button from stretching into an ugly rectangle */
         .nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 40px 0; display: inline-block; transition: 0.3s; }
         .nav-links > li > a:not(.btn):hover { color: var(--orange); }
 
@@ -56,7 +57,8 @@
             text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
-        .menu-toggle { display: none; color: #fff; font-size: 2rem; cursor: pointer; z-index: 10000; user-select: none; }
+        
+        .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
 
         /* --- LAYOUTS --- */
         section { padding: 140px 0; border-bottom: 1px solid var(--border); }
@@ -64,7 +66,7 @@
         .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
         .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
 
-        /* HERO SECTION (Tech Grid Background) */
+        /* HERO SECTION */
         .hero { 
             background-color: var(--bg);
             background-image: 
@@ -74,15 +76,12 @@
             background-size: 100% 100%, 40px 40px, 40px 40px;
             padding: 160px 0 120px; border: none; 
         }
-        .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
+        .hero h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
         .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
 
-        /* IMAGE CONTAINERS & FLOATING LABELS */
+        /* IMAGE CONTAINERS */
         .hero-image-container { text-align: center; position: relative; }
-        .hero-image-container img { 
-            width: 100%; max-width: 650px; height: auto; border-radius: 16px;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); 
-        }
+        .hero-image-container img { width: 100%; max-width: 650px; height: auto; border-radius: 16px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); }
         .tree-float { animation: float 6s ease-in-out infinite; position: relative; z-index: 2; }
         
         .float-tag {
@@ -94,7 +93,6 @@
         .tag-1 { top: 15%; right: 5%; animation-delay: 0s; }
         .tag-2 { bottom: 25%; left: 0%; animation-delay: 1s; }
         .tag-3 { bottom: 20%; right: 0%; animation-delay: 2s; }
-
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
         /* GRIDS & CARDS */
@@ -120,7 +118,7 @@
         .footer-col ul li a:hover { color: var(--orange); }
         .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* --- MOBILE RESPONSIVENESS (THE FIXES) --- */
         @media (max-width: 1024px) {
             .container { padding: 0 25px; }
             .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 50px; text-align: center; }
@@ -129,7 +127,10 @@
             .grid-3, .faq-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             
-            .menu-toggle { display: block; }
+            /* FORCE MOBILE MENU TO BE VISIBLE */
+            .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
+            nav { justify-content: flex-start; } /* Keeps logo on the left */
+
             .nav-links { 
                 position: fixed; top: 100px; left: 0; width: 100%; height: calc(100vh - 100px);
                 background: rgba(5, 7, 10, 0.98); flex-direction: column; justify-content: flex-start;
@@ -221,7 +222,7 @@
         <div class="container">
             <div class="grid-split reverse">
                 <div>
-                    <h2 style="font-size: 3rem; margin-bottom: 25px;">OWN THE <br><span class="highlight">EQUITY</span></h2>
+                    <h2 class="fluid-h2">OWN THE <br><span class="highlight">EQUITY</span></h2>
                     <div class="copy-heavy">
                         <p>For over a decade, the contracting industry has been held hostage by lead aggregators. You know the names. They sell a single "prospect" to five different companies, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins and devalues your craftsmanship.</p>
                         <p>At Your Online Squad, we recognized this systemic failure. We don't just "get you leads"—we build a fortress around your brand that ensures when a homeowner needs a roof, a pipe fixed, or an HVAC system replaced, you are the only logical choice.</p>
@@ -236,7 +237,7 @@
 
     <section id="physics">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3.5rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
+            <h2 class="fluid-h2" style="text-align: center;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
             <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 20px auto 0; font-size: 1.25rem;">Search engines don't just care about where you are; they care about where you're going. We apply mechanical engineering principles to digital marketing.</p>
             
             <div style="text-align: center; margin-top: 60px;">
@@ -267,7 +268,7 @@
                     <img src="assets/methodology-diagram.png" alt="Squad Methodology Diagram">
                 </div>
                 <div>
-                    <h2 style="font-size: 3.5rem; margin-bottom: 30px;">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
+                    <h2 class="fluid-h2">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
                     <div class="copy-heavy">
                         <p>To dominate local search results in high-ticket contracting niches, standard "SEO" is no longer sufficient. Google's algorithmic shift requires a multi-layered approach to digital infrastructure. Your Online Squad does not build brochure websites; we engineer mechanical lead-generation assets.</p>
                         <p>Our process begins with a total audit of your digital footprint, identifying "leakage" where competitors are siphoning your geographic market share. We deploy highly technical Schema markup tailored specifically for local tradesmen, ensuring search engine crawlers immediately understand your service radius, licensing, and specific commercial offerings.</p>
@@ -275,7 +276,7 @@
                 </div>
             </div>
 
-            <h3 style="margin: 120px 0 30px; font-size: 2.5rem; text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h3>
+            <h3 class="fluid-h2" style="margin: 120px 0 30px; text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h3>
             <div class="faq-grid">
                 <div class="faq-box">
                     <h4>How is "Digital Equity" different from buying leads?</h4>
