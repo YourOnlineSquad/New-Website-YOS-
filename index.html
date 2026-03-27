@@ -3,95 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | SEO & Website Growth in Orange County</title>
+    <title>Your Online Squad | SEO & Web Growth Experts</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --yellow: #ffcc00;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --heading-font: 'Fraunces', serif; /* Closest to Cooper Std */
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body-font); background: #ffffff; color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation mimicking your screenshot */
+        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1000; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; }
+        .nav-logo { height: 60px; }
+        .phone { color: var(--primary-blue); font-weight: 700; font-size: 18px; }
+
+        .btn-yellow { 
+            background: var(--yellow); color: #000; padding: 10px 20px; 
+            border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 13px;
+        }
+
+        /* Hero Section */
+        .hero { padding: 80px 0; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .sub-label { font-size: 14px; font-weight: 800; color: #333; letter-spacing: 1px; margin-bottom: 15px; display: block; }
+        h1 { font-family: var(--heading-font); font-size: 48px; line-height: 1.1; margin-bottom: 25px; }
+        .highlight { border-bottom: 5px solid var(--yellow); }
+        .hero p { font-size: 17px; color: var(--text-light); margin-bottom: 35px; }
+
+        /* Visuals */
+        .image-wrapper { position: relative; }
+        .main-hero-img { width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .floating-stat {
+            position: absolute; top: -20px; left: -20px; background: #fff; padding: 20px; 
+            border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); width: 150px;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            h1 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="main-nav">
+    <nav>
         <div class="container nav-flex">
-            <ul class="nav-links left">
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li class="dropdown">
-                    <a href="/services">Services ▾</a>
-                    <ul class="submenu">
-                        <li><a href="/services/seo-services">SEO Services</a></li>
-                        <li><a href="/services/web-design">Web Design</a></li>
-                        <li><a href="/services/google-business-profile-optimization">GMB Optimization</a></li>
-                        <li><a href="/services/automation-crm">Automation & CRM</a></li>
-                    </ul>
-                </li>
-                <li><a href="/industries">Industries</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About</a></li>
             </ul>
-
-            <div class="logo-box">
-                <img src="https://youronlinesquad.com/wp-content/uploads/2024/02/cropped-Your-Online-Squad-Logo-1.png" alt="Your Online Squad" class="logo">
+            <img src="https://youronlinesquad.com/wp-content/uploads/2024/02/cropped-Your-Online-Squad-Logo-1.png" alt="Logo" class="nav-logo">
+            <div class="nav-links">
+                <span class="phone">(714) 406-4065</span>
+                <a href="/contact.html" class="btn-yellow">Brief Your Project</a>
             </div>
-
-            <ul class="nav-links right">
-                <li><a href="/results-portfolio">Results</a></li>
-                <li><a href="/process">Process</a></li>
-                <li class="phone-link">(714) 406-4065</li>
-                <li><a href="/contact" class="btn-yellow">Brief Your Project</a></li>
-            </ul>
         </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <span class="badge">Performance-Driven Marketing</span>
-                    <h1>Hire the top SEO and Digital Marketing Experts for Your <span class="highlight">Small Business.</span></h1>
-                    <p>We build, maintain, and grow websites for local contractors. Our mission is monthly keyword growth and high-authority backlinking to generate real revenue.</p>
-                    <div class="hero-cta">
-                        <a href="/contact" class="btn-yellow-main">Talk to an Expert</a>
-                        <a href="/results-portfolio" class="btn-outline">See Our Results</a>
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="sub-label">ABOUT US</span>
+                <h1>Hire the top SEO and Digital Marketing Experts for Your <span class="highlight">Small Business.</span></h1>
+                <p>In a world of automation, we provide personalization. Our mission is monthly keyword growth and high-authority backlinking to generate real revenue for your business.</p>
+                <a href="/contact.html" class="btn-yellow" style="padding: 15px 35px; font-size: 16px;">Talk to an Expert</a>
+            </div>
+            <div class="hero-visual">
+                <div class="image-wrapper">
+                    <div class="floating-stat">
+                        <p style="font-weight: 800; color: var(--primary-blue);">SEO Growth</p>
+                        <p style="font-size: 12px;">Monthly Keywords +240%</p>
                     </div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team" class="main-hero-img">
                 </div>
-                <div class="hero-visual">
-                    <div class="image-stack">
-                        <div class="floating-graph">
-                            <div class="bar-chart">
-                                <div class="bar" style="height: 40%"></div>
-                                <div class="bar" style="height: 70%"></div>
-                                <div class="bar" style="height: 100%"></div>
-                            </div>
-                            <p>Monthly Keywords</p>
-                        </div>
-                        <img src="https://youronlinesquad.com/wp-content/uploads/2024/02/team-meeting.jpg" alt="Your Online Squad Team" class="main-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services-preview">
-            <div class="container">
-                <h2 class="section-title">Specialized Industry <span class="blue-text">Solutions</span></h2>
-                <div class="silo-grid">
-                    <a href="/industries/contractors" class="silo-card">Marketing for Contractors</a>
-                    <a href="/industries/plumbers" class="silo-card">Marketing for Plumbers</a>
-                    <a href="/industries/roofers" class="silo-card">Marketing for Roofers</a>
-                    <a href="/industries/hvac" class="silo-card">Marketing for HVAC</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <p>Built in Orange County, CA</p>
-                <p>Your Online Squad LLC © 2026</p>
-            </div>
-            <div class="footer-col">
-                <h4>Service Locations</h4>
-                <a href="/locations/seo-orange-county">Orange County</a>
-                <a href="/locations/seo-los-angeles">Los Angeles</a>
             </div>
         </div>
-    </footer>
+    </header>
 
 </body>
 </html>
