@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | Predictable Growth Engines</title>
+    <title>Your Online Squad | Predictable Growth Engines for Elite Contractors</title>
+    <meta name="description" content="Stop buying shared leads. Your Online Squad builds proprietary E-EAT SEO and Local Map Pack growth engines for roofers, plumbers, and elite contractors.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -19,7 +20,6 @@
         h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
         .highlight { color: var(--orange); }
 
-        /* Fluid Typography for Headers so they don't break on mobile */
         .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
 
         /* --- HEADER --- */
@@ -37,7 +37,6 @@
         .nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 40px 0; display: inline-block; transition: 0.3s; }
         .nav-links > li > a:not(.btn):hover { color: var(--orange); }
 
-        /* MEGA MENU */
         .mega-dropdown { position: relative; }
         .mega-menu {
             position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
@@ -57,7 +56,6 @@
             text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
-        
         .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
 
         /* --- LAYOUTS --- */
@@ -66,7 +64,6 @@
         .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
         .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
 
-        /* HERO SECTION */
         .hero { 
             background-color: var(--bg);
             background-image: 
@@ -79,7 +76,6 @@
         .hero h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
         .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
 
-        /* IMAGE CONTAINERS */
         .hero-image-container { text-align: center; position: relative; }
         .hero-image-container img { width: 100%; max-width: 650px; height: auto; border-radius: 16px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); }
         .tree-float { animation: float 6s ease-in-out infinite; position: relative; z-index: 2; }
@@ -95,18 +91,16 @@
         .tag-3 { bottom: 20%; right: 0%; animation-delay: 2s; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
-        /* GRIDS & CARDS */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
         .card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
         .card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
         .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
 
-        /* FAQ & FOOTER */
+        /* UPDATED FAQ GRID */
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
         .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
-        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; }
+        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
         .faq-box p { color: var(--text-dim); font-size: 1.05rem; }
-        .faq-full { grid-column: 1 / -1; }
 
         footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
@@ -118,7 +112,6 @@
         .footer-col ul li a:hover { color: var(--orange); }
         .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
 
-        /* --- MOBILE RESPONSIVENESS (THE FIXES) --- */
         @media (max-width: 1024px) {
             .container { padding: 0 25px; }
             .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 50px; text-align: center; }
@@ -127,9 +120,8 @@
             .grid-3, .faq-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             
-            /* FORCE MOBILE MENU TO BE VISIBLE */
             .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
-            nav { justify-content: flex-start; } /* Keeps logo on the left */
+            nav { justify-content: flex-start; } 
 
             .nav-links { 
                 position: fixed; top: 100px; left: 0; width: 100%; height: calc(100vh - 100px);
@@ -224,12 +216,34 @@
                 <div>
                     <h2 class="fluid-h2">OWN THE <br><span class="highlight">EQUITY</span></h2>
                     <div class="copy-heavy">
-                        <p>For over a decade, the contracting industry has been held hostage by lead aggregators. You know the names. They sell a single "prospect" to five different companies, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins and devalues your craftsmanship.</p>
-                        <p>At Your Online Squad, we recognized this systemic failure. We don't just "get you leads"—we build a fortress around your brand that ensures when a homeowner needs a roof, a pipe fixed, or an HVAC system replaced, you are the only logical choice.</p>
+                        <p>For over a decade, the contracting industry has been held hostage by massive lead aggregators like HomeAdvisor, Angi, and Thumbtack. You know the names. They sell a single "prospect" to five different companies simultaneously, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins, devalues your craftsmanship, and leaves you dependent on a system you don't control.</p>
+                        <p>At Your Online Squad, we recognized this systemic failure in the home services industry. We don't just "get you leads"—we build a proprietary fortress around your brand. By investing in your own digital infrastructure, your Google Business Profile, and your website authority, you build equity. When a homeowner needs an emergency roof repair, a pipe fixed, or an HVAC system replaced, our systems ensure you are the undisputed, logical choice. No bidding wars. Just exclusive calls.</p>
                     </div>
                 </div>
                 <div class="hero-image-container">
                     <img src="assets/equity-dashboard.png" alt="Digital Equity Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">VERTICALS WE <span class="highlight">DOMINATE</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 20px auto 50px; font-size: 1.15rem;">Our E-EAT framework is heavily customized for high-ticket home services. We understand the distinct difference between an emergency call out and a long-term remodel cycle.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">Roofing SEO & Leads</h3>
+                    <p style="font-size: 1rem; color: var(--text-dim);">Storm damage and roof replacements require rapid trust signals. We synchronize your Google Business Profile to capture high-intent, immediate "roofer near me" searches, dominating the Local Map Pack when homeowners are in a panic.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">Plumbing Contractor SEO</h3>
+                    <p style="font-size: 1rem; color: var(--text-dim);">Plumbing queries are highly competitive. We build deep service silos—separating emergency drain cleaning from water heater installations—ensuring Google views your domain as the definitive local authority for every specific plumbing service.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">HVAC Marketing</h3>
+                    <p style="font-size: 1rem; color: var(--text-dim);">HVAC operates on seasonality. Our methodology predicts search volume shifts from AC repair in July to furnace installation in November. We build velocity ahead of the season, capturing exclusive territory leads before your competitors realize the weather changed.</p>
                 </div>
             </div>
         </div>
@@ -247,7 +261,7 @@
             <div class="grid-3">
                 <div class="card">
                     <h3>Velocity</h3>
-                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);">We track the speed of your ranking movement. By aggressively targeting high-intent "money terms," we force Google to recognize your site as the emerging authority in your zip code.</p>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);">We track the speed of your ranking movement. By aggressively targeting high-intent commercial and residential "money terms," we force Google to recognize your site as the emerging authority in your zip code.</p>
                 </div>
                 <div class="card">
                     <h3>Gravity</h3>
@@ -275,20 +289,54 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h3 class="fluid-h2" style="margin: 120px 0 30px; text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h3>
+    <section id="faqs" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px;">Real answers to the most critical local ranking and contractor growth questions.</p>
+
             <div class="faq-grid">
                 <div class="faq-box">
-                    <h4>How is "Digital Equity" different from buying leads?</h4>
-                    <p>When you buy leads from massive directories, you are renting access to their traffic. The moment you stop paying, your phone stops ringing. Furthermore, those platforms sell the exact same homeowner's information to multiple contractors. Digital Equity means we build the website, the GBP, and the organic ranking structure so that the traffic comes directly to you. You own the asset.</p>
+                    <h4>Why is my Google Business Profile (GBP) not ranking in the Local Map Pack?</h4>
+                    <p>Nearly 70% of local contractor calls come from the top 3 spots in the Map Pack. If you aren't there, it is usually due to poor geo-relevance, lack of localized Schema markup on your website, or inconsistent NAP (Name, Address, Phone) citations across the web. Our system focuses heavily on Map Pack Synchronization to force your profile into that top 3 radius.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What are Google's E-EAT guidelines, and why do contractors need them?</h4>
+                    <p>E-EAT stands for Experience, Expertise, Authoritativeness, and Trustworthiness. Google's recent core updates specifically penalize "thin" contractor websites. To rank, your site must technically prove you are a licensed, experienced professional through specific content silos, author bios, project case studies, and advanced local schema code.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Is Local SEO better than paying for Google Local Services Ads (LSAs)?</h4>
+                    <p>LSAs are a great short-term strategy, but they are a rented asset. The second you stop paying Google, your leads drop to zero. Local SEO builds "Digital Equity." Once your site and GBP rank organically, you generate continuous, exclusive leads 24/7 without paying per click. The ultimate goal is to transition your budget away from expensive ads and into owned organic traffic.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How does website speed and mobile design affect my contractor ranking?</h4>
+                    <p>Over 80% of emergency searches (like "plumber near me") happen on a smartphone. Google uses "Mobile-First Indexing," meaning if your site is slow or hard to use on a phone, Google will refuse to rank you—even if your content is great. We build highly optimized, conversion-focused websites that load instantly on all devices.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is Technical Schema Markup for local service businesses?</h4>
+                    <p>Schema is the hidden code that speaks directly to search engines. For a contractor, we inject LocalBusiness Schema, ServiceArea Schema, and FAQ Schema into your website's backend. This explicitly tells Google exactly what services you offer, your exact service radius, and your credentials, allowing you to bypass competitors who rely purely on text.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How do online reviews impact local search visibility?</h4>
+                    <p>Reviews are one of the strongest "Trust" signals in the E-EAT algorithm. However, it's not just about the star rating; Google scans the actual text of your reviews for keywords. A review that says "Great roof replacement in Santa Ana" is mathematically worth more than a review that just says "Good job." We help implement review generation strategies to build velocity.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How is "Digital Equity" different from buying HomeAdvisor leads?</h4>
+                    <p>When you buy leads from directories, you are renting access. Those platforms sell the exact same homeowner's information to 4 or 5 other contractors, forcing a bidding war. Digital Equity means we build the website and organic ranking structure so the traffic comes directly to your brand. The leads generated are 100% exclusive to your business.</p>
                 </div>
                 <div class="faq-box">
                     <h4>Why do you require Territory Exclusivity?</h4>
-                    <p>We operate as your outsourced growth department. It is a fundamental conflict of interest for us to rank two competing roofers or plumbers in the exact same city. If we take you on as a client, we lock down your zip codes. We will not take on another contractor in your specific vertical within your service area.</p>
+                    <p>We operate as your outsourced growth department. It is a fundamental conflict of interest for us to rank two competing roofers or HVAC companies in the exact same city. If we take you on as a client, we lock down your zip codes. We dedicate all our resources, backlinks, and content generation to making you the sole market leader in your area.</p>
                 </div>
-                <div class="faq-box faq-full" style="text-align: center;">
-                    <h4>How long does it take to see Lead Velocity?</h4>
-                    <p style="max-width: 800px; margin: 0 auto;">While organic E-EAT SEO is a long-term play that compounds over 6 to 12 months, our Squad Engines are built for immediate velocity. By utilizing Map Pack synchronization and targeted campaigns, we typically begin seeing qualified, exclusive lead flow within the first 30 to 45 days. The ultimate goal is to transition your primary revenue source to organic dominance.</p>
+                <div class="faq-box">
+                    <h4>Do I own the website and assets if I work with Your Online Squad?</h4>
+                    <p>Yes. Unlike "churn and burn" marketing agencies that hold your domain hostage or lease you a generic template, we build assets that you own. We view our relationship as a partnership to increase the total valuation of your contracting business through proprietary digital real estate.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How long does it take to see Lead Velocity and a return on investment?</h4>
+                    <p>While organic E-EAT SEO is a compounding long-term play that fully matures over 6 to 12 months, our Squad Engines are built for immediate velocity. By optimizing your GBP and fixing technical errors, we typically begin seeing an increase in qualified, exclusive lead flow within the first 45 to 60 days of our campaign launch.</p>
                 </div>
             </div>
         </div>
