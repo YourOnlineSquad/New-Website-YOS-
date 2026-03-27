@@ -133,3 +133,25 @@ nav {
     transform: translateY(-3px);
     box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
 }
+/* This prevents the "Stacked" look seen in your screenshots */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: grid; /* Shows on hover */
+}
