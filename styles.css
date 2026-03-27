@@ -1,3 +1,7 @@
+:root {
+    --card-bg: #1e293b; /* The dark slate color from your design */
+    --border: #334155;  /* The subtle outline color */
+}
 /* GLOBAL THEME SETTINGS */
 :root {
     --bg-deep: #0f172a;        
