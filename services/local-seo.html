@@ -1,21 +1,212 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local SEO & Map Pack Dominance | Your Online Squad</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Local SEO for Contractors | Your Online Squad</title>
+    <meta name="description" content="Dominate the Local Map Pack and organic search results. We engineer high-velocity Local SEO growth engines exclusively for elite contractors and tradesmen.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #05070a; --bg-secondary: #0b0f1a;
+            --purple: #7c3aed; --orange: #f97316; 
+            --card: rgba(22, 28, 45, 0.6); --border: rgba(45, 55, 72, 0.5); 
+            --text-dim: #94a3b8; --white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; padding-top: 100px; }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        .highlight { color: var(--orange); }
+
+        .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
+
+        /* --- HEADER & NAV (Adjusted for subfolder) --- */
+        header { 
+            background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
+            height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
+            display: flex; align-items: center; backdrop-filter: blur(12px);
+        }
+        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; z-index: 10000; }
+        .logo span { color: var(--orange); }
+
+        ul { list-style: none; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 40px 0; display: inline-block; transition: 0.3s; }
+        .nav-links > li > a:not(.btn):hover { color: var(--orange); }
+
+        .mega-dropdown { position: relative; }
+        .mega-menu {
+            position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
+            width: 800px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
+            padding: 30px; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .mega-dropdown:hover .mega-menu { display: grid; }
+        .services-menu { width: 300px; grid-template-columns: 1fr; left: 0; transform: none; }
+        .mega-menu li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px; transition: 0.2s; text-transform: capitalize; }
+        .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
+
+        .btn { 
+            background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; 
+            padding: 14px 30px; border-radius: 6px; font-weight: 900; font-size: 0.85rem; 
+            text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
+        .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
+
+        /* --- LAYOUTS --- */
+        section { padding: 140px 0; border-bottom: 1px solid var(--border); }
+        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
+        .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
+
+        .hero { 
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at top left, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            padding: 160px 0 120px; border: none; 
+        }
+        .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
+        .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
+
+        /* --- GLOWING ASSET PLACEHOLDERS --- */
+        .visual-asset {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(249, 115, 22, 0.5);
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,0,0,0.4);
+            position: relative; overflow: hidden;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+        .visual-asset::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 60%; height: 60%; background: var(--orange); filter: blur(100px); opacity: 0.15; z-index: -1;
+        }
+        .asset-label {
+            color: var(--orange); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+            font-size: 0.9rem; text-align: center; padding: 15px 25px; border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px;
+            background: rgba(11, 15, 26, 0.8);
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
+
+        .float-tag {
+            position: absolute; background: rgba(11, 15, 26, 0.9); border: 1px solid var(--orange);
+            color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+            backdrop-filter: blur(5px); z-index: 5; box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            animation: float 5s ease-in-out infinite reverse;
+        }
+        .tag-1 { top: 10%; right: -5%; animation-delay: 0s; }
+        .tag-2 { bottom: 15%; left: -5%; animation-delay: 1s; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+        .card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
+        .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
+
+        /* UPDATED FAQ GRID */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
+        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
+        .faq-box p { color: var(--text-dim); font-size: 1.05rem; }
+        .faq-full { grid-column: 1 / -1; }
+
+        footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col p { color: var(--text-dim); margin-bottom: 15px; font-size: 1rem; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--orange); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .container { padding: 0 25px; }
+            .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .hero p { margin: 0 auto 40px; }
+            .grid-split.reverse { direction: ltr; } 
+            .grid-3, .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            
+            .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
+            nav { justify-content: flex-start; } 
+
+            .nav-links { 
+                position: fixed; top: 100px; left: 0; width: 100%; height: calc(100vh - 100px);
+                background: rgba(5, 7, 10, 0.98); flex-direction: column; justify-content: flex-start;
+                gap: 0; padding: 20px 0; display: none; overflow-y: auto;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links > li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .nav-links > li > a:not(.btn) { padding: 25px; display: block; font-size: 1.1rem; }
+            .mega-menu { position: relative; top: 0; left: 0; transform: none; width: 100%; grid-template-columns: 1fr; box-shadow: none; border: none; padding: 10px 0 30px; }
+            .mega-dropdown:hover .mega-menu { display: none; } 
+            .mega-dropdown.active .mega-menu { display: grid; } 
+            .btn { margin: 30px auto; width: 80%; }
+        }
+        @media (max-width: 768px) { 
+            .footer-grid { grid-template-columns: 1fr; text-align: center; } 
+            .float-tag { display: none; } 
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <nav>
-        <a href="../index.html" class="logo-text">YOUR ONLINE <span>SQUAD</span></a>
+        <a href="../index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+        <div class="menu-toggle">☰</div>
         <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#services">Services</a></li>
-            <li><a href="../index.html#industries">Industries</a></li>
-            <li><a href="../contact.html" class="btn" style="padding: 0.7rem 1.5rem;">Get Started</a></li>
+            <li class="mega-dropdown">
+                <a href="#" class="mobile-drop-btn">Industries &nbsp;&#9662;</a>
+                <ul class="mega-menu">
+                    <div>
+                        <li><a href="../industries/roofers.html">Roofing</a></li>
+                        <li><a href="../industries/plumbers.html">Plumbing</a></li>
+                        <li><a href="../industries/hvac.html">HVAC</a></li>
+                        <li><a href="../industries/electricians.html">Electricians</a></li>
+                        <li><a href="../industries/concrete-contractors.html">Concrete</a></li>
+                    </div>
+                    <div>
+                        <li><a href="../industries/general-contractors.html">General Contractors</a></li>
+                        <li><a href="../industries/home-services.html">Home Services</a></li>
+                        <li><a href="../industries/landscapers.html">Landscapers</a></li>
+                        <li><a href="../industries/locksmiths.html">Locksmiths</a></li>
+                        <li><a href="../industries/garage-doors.html">Garage Doors</a></li>
+                    </div>
+                    <div>
+                        <li><a href="../industries/gutter-installation.html">Gutters</a></li>
+                        <li><a href="../industries/house-cleaning.html">Cleaning</a></li>
+                        <li><a href="../industries/junk-removal.html">Junk Removal</a></li>
+                        <li><a href="../industries/pest-control.html">Pest Control</a></li>
+                        <li><a href="../industries/water-damage.html">Water Damage</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="mega-dropdown">
+                <a href="#" class="mobile-drop-btn">Services &nbsp;&#9662;</a>
+                <ul class="mega-menu services-menu">
+                    <li><a href="local-seo.html">Local SEO</a></li>
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="lead-generation.html">Lead Generation</a></li>
+                    <li><a href="google-business-profile.html">GBP Management</a></li>
+                    <li><a href="automation-crm.html">Automation & CRM</a></li>
+                </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html" class="btn">Claim Territory</a></li>
         </ul>
     </nav>
 </header>
@@ -23,51 +214,176 @@
 <main>
     <section class="hero">
         <div class="container">
-            <h1>Weaponizing the <span class="highlight">Google Map Pack</span> for Call Volume</h1>
-            <p style="font-size: 1.3rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 3rem;">
-                If you aren't in the Top 3, you're invisible. We solve the local visibility gap by aligning technical onsite SEO with aggressive Google Business Profile optimization.
-            </p>
-            <a href="../contact.html" class="btn">Audit My Local Ranking</a>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2 style="text-align: center;">The "Near Me" Economy: Why <span class="highlight">Traditional SEO</span> is Failing</h2>
-            <div class="video-container">
-                <p style="color: var(--accent-orange); font-weight: 800;">[LOCAL SEO STRATEGY VIDEO]</p>
+            <div class="grid-split">
+                <div>
+                    <h1>ENGINEERING <br><span class="highlight">LOCAL DOMINANCE</span></h1>
+                    <p>Standard SEO is dead. We engineer hyper-local Map Pack gravity and technical E-EAT architecture to capture exclusive, high-ticket contractor leads.</p>
+                    <a href="../contact.html" class="btn">Secure Your Territory</a>
+                </div>
+                <div style="position: relative;">
+                    <div class="visual-asset" style="aspect-ratio: 1/1; border-radius: 50%;">
+                        <div class="asset-label">[ Insert 3D Geo-Grid / Map Pack Vector Here ]</div>
+                    </div>
+                    <div class="float-tag tag-1">📍 Local Map Pack</div>
+                    <div class="float-tag tag-2">📈 Page 1 Organic</div>
+                </div>
             </div>
-            <p style="margin-top: 2rem;">
-                For home service providers, standard SEO is often a trap. Agencies focus on vanity metrics like "organic traffic" to your blog, but traffic doesn't pay the mortgage—estimates do. In the contracting world, over 70% of high-intent clicks happen within the **Google Map Pack**. If your business is sitting on Page 2, or even at the bottom of Page 1 below the maps, you are losing thousands in potential revenue every single month.
-            </p>
-            <br>
-            <p>
-                The problem isn't your skill; it's your **proximity authority**. Google’s algorithm for local search prioritizes Relevance, Distance, and Prominence. Most contractors focus only on relevance (keywords), ignoring the technical signals that prove prominence. We solve this by building a "Proximity Shield" around your primary service area, forcing Google to recognize your business as the most authoritative option.
-            </p>
         </div>
     </section>
 
-    <section style="background: rgba(124, 58, 237, 0.03);">
+    <section id="reality">
         <div class="container">
-            <h3 style="text-align: center; font-size: 2.8rem;">Solving the <span class="highlight">Invisibility Gap</span></h3>
+            <div class="grid-split reverse">
+                <div>
+                    <h2 class="fluid-h2">THE MYTH OF <br><span class="highlight">TRADITIONAL SEO</span></h2>
+                    <div class="copy-heavy">
+                        <p>Most marketing agencies sell "SEO" as a generic package. They write a few blog posts, sprinkle keywords on a homepage, and hope for the best. In the competitive home services sector—where roofers, plumbers, and HVAC technicians battle for high-ticket jobs—this amateur approach is guaranteed to fail.</p>
+                        <p>Google has fundamentally changed how it ranks local businesses. The algorithm no longer just scans for keywords; it measures <strong>Proximity Gravity</strong> and <strong>Data Footprints</strong>. When a homeowner types "emergency plumber near me," Google analyzes thousands of micro-signals in milliseconds to determine which contractor is the most legitimate, experienced, and geographically relevant.</p>
+                        <p>At Your Online Squad, we don't guess. We deploy technical local SEO architecture that mathematically proves your authority to search engines, pulling exclusive, high-intent traffic directly away from your competitors and into your CRM.</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div class="visual-asset" style="aspect-ratio: 4/5;">
+                        <div class="asset-label">[ Insert Analytics Dashboard Vector Here ]</div>
+                    </div>
+                    <div class="float-tag tag-1" style="border-color: var(--purple);">⚙️ Algorithm Sync</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">THE ANATOMY OF A <br><span class="highlight">SQUAD ENGINE</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 20px auto 50px; font-size: 1.15rem;">A high-performing contractor website isn't just a digital brochure; it is a mechanical lead generation asset built on three distinct pillars of technical SEO.</p>
             
             <div class="grid-3">
                 <div class="card">
-                    <h3>Geo-Targeted Content</h3>
-                    <p>We build hyper-local service pages that mention specific neighborhoods and landmarks. This proves to Google that you aren't just a "national brand" pretending to be local—you are the neighborhood expert.</p>
+                    <h3 style="color: #fff; font-size: 1.5rem;">Technical Code & Speed</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">Google utilizes Mobile-First Indexing. If your site is slow to load on a 4G network or features broken mobile elements, you are mathematically penalized. We engineer lightning-fast digital architecture, optimizing image payloads, minifying CSS/JS, and ensuring a frictionless user experience that satisfies Google’s Core Web Vitals.</p>
                 </div>
                 <div class="card">
-                    <h3>Citation Clean-Up</h3>
-                    <p>Inconsistent "Name, Address, Phone" (NAP) data is the #1 reason Map Pack rankings stall. We solve this by scrubbing the internet and locking in your data so your authority scores never dip.</p>
+                    <h3 style="color: #fff; font-size: 1.5rem;">Advanced Schema Markup</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">Schema is the hidden language of search engines. We inject highly specialized JSON-LD code into your backend, explicitly tagging your business with <code>LocalBusiness</code>, <code>ServiceArea</code>, and <code>FAQPage</code> markup. This spoon-feeds Google your exact credentials, service radius, and offerings, bypassing the need for algorithms to "guess" what you do.</p>
                 </div>
                 <div class="card">
-                    <h3>Review Velocity</h3>
-                    <p>It’s not just about having reviews; it’s about the speed at which you get them. We implement automation to ensure a steady stream of "fresh" social proof, which is a massive ranking factor in 2026.</p>
+                    <h3 style="color: #fff; font-size: 1.5rem;">Hyper-Local Content Silos</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">To dominate a 30-mile radius, you cannot rely on a single "Areas We Serve" page. We build interconnected content silos—dedicated, high-authority pages for every individual service in every specific city and neighborhood. This creates a dense web of geographic relevance that captures hyper-local, high-intent searches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map-pack">
+        <div class="container">
+            <div class="grid-split">
+                <div class="visual-asset" style="aspect-ratio: 16/9;">
+                    <div class="asset-label">[ Insert Google Map Pack Vector Here ]</div>
+                </div>
+                <div>
+                    <h2 class="fluid-h2">MAP PACK <br><span class="highlight">SYNCHRONIZATION</span></h2>
+                    <div class="copy-heavy">
+                        <p>Up to 70% of phone calls generated from local searches come directly from the Google Map Pack—the three businesses featured at the very top of the search results. If you are not in the "Top 3," you are invisible to the majority of homeowners in your market.</p>
+                        <p>Ranking in the Map Pack requires absolute precision. We synchronize your Google Business Profile (GBP) with your on-page website data, creating a unified digital footprint. We manage your NAP consistency (Name, Address, Phone) across hundreds of premium local directories and data aggregators.</p>
+                        <p>Furthermore, we implement review velocity strategies and GBP post automations to signal constant, active engagement to the algorithm, expanding your proximity radius so you rank not just in your home zip code, but across your entire service territory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">LOCAL SEO <span class="highlight">FAQS</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px;">Deep-dive technical answers on how we engineer local dominance.</p>
+
+            <div class="faq-grid">
+                <div class="faq-box">
+                    <h4>How does E-EAT affect Local SEO for contractors?</h4>
+                    <p>E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness) is Google's core framework for evaluating content quality, particularly for "Your Money or Your Life" (YMYL) sectors like home services. If a homeowner is trusting you to fix a gas line or replace a roof, Google demands proof of your expertise. We structure your site with detailed author bios, project case studies, licensing badges, and technically accurate service content to fulfill these stringent E-EAT requirements and secure top rankings.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is a "Content Silo" and why is it necessary?</h4>
+                    <p>A content silo is a method of grouping related web pages together to establish keyword-based topical authority. Instead of cramming all your plumbing services onto one page, we build a master "Plumbing" hub, interlinked with dedicated child pages for "Emergency Drain Cleaning," "Water Heater Repair," and "Slab Leaks." This mechanical structure forces search crawlers to recognize your deep, comprehensive expertise in specific verticals.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How do backlinks impact my local rankings?</h4>
+                    <p>Backlinks (links from other websites pointing to yours) act as digital "votes of confidence." However, in Local SEO, relevance trumps volume. A thousand links from spammy foreign directories will penalize you. We focus on building high-authority, hyper-local link profiles through local sponsorships, industry associations, and niche contractor directories, signaling immense localized trust to the algorithm.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Why is my competitor ranking higher when their website looks worse?</h4>
+                    <p>Search engines cannot "see" beautiful design; they read code and authority signals. Your competitor likely has an older, more established domain with a stronger backlink profile, better technical schema, or a highly optimized Google Business Profile with greater review velocity. Our Squad Audits reverse-engineer their success, identifying exactly which technical levers we need to pull to overtake their position.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is NAP Consistency and why does it break Map Pack rankings?</h4>
+                    <p>NAP stands for Name, Address, and Phone Number. Google verifies the legitimacy of your business by cross-referencing your NAP data across the entire internet (Yelp, BBB, local chambers of commerce). If your address is listed as "Suite B" on your website but "Ste. B" on Facebook, this data fragmentation confuses the algorithm, resulting in a loss of trust and a drop in Map Pack rankings. We deploy data aggregators to enforce 100% NAP parity across the web.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Can you rank my business in a city where I don't have a physical address?</h4>
+                    <p>Yes, but it requires an advanced "Service Area SEO" strategy. While Google heavily biases Map Pack rankings toward physical proximity, we can capture immense organic search volume in surrounding cities by building highly targeted Geo-Pages. These pages combine localized keyword data, specific neighborhood project portfolios, and precise ServiceArea Schema to dominate organic listings outside your immediate zip code.</p>
                 </div>
             </div>
         </div>
     </section>
 </main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px; font-size: 2rem;">YOUR ONLINE <span>SQUAD</span></div>
+                <p>The premier growth department for elite tradesmen and contractors. Stop buying shared leads. Start building digital equity.</p>
+            </div>
+            <div class="footer-col">
+                <h4>INDUSTRIES</h4>
+                <ul>
+                    <li><a href="../industries/roofers.html">Roofing</a></li>
+                    <li><a href="../industries/plumbers.html">Plumbing</a></li>
+                    <li><a href="../industries/hvac.html">HVAC</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="local-seo.html">Local SEO</a></li>
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="google-business-profile.html">GBP Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SQUAD HQ</h4>
+                <ul>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Claim Territory</a></li>
+                    <li><a href="mailto:growth@youronlinesquad.com">growth@youronlinesquad.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Your Online Squad LLC. Engineered for Scale.
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const mobileDropBtns = document.querySelectorAll('.mobile-drop-btn');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    mobileDropBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                btn.parentElement.classList.toggle('active');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
