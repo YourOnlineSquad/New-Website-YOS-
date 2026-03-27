@@ -1,192 +1,160 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | High-Growth Contractor Marketing & SEO</title>
+    <title>Your Online Squad | Premium Contractor Growth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* ALL STYLING INCLUDED HERE TO ENSURE IT WORKS IMMEDIATELY */
         :root {
-            --primary-dark: #0f172a;
-            --accent-yellow: #facc15;
+            --bg-deep: #0f172a;        /* Trustworthy Navy */
+            --premium-purple: #7c3aed; /* Premium Accent */
+            --accent-orange: #f97316;  /* Logo Orange */
             --text-light: #f8fafc;
             --card-bg: #1e293b;
-            --border: #334155;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--primary-dark);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
             color: var(--text-light);
-            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* NAVIGATION */
+        /* TYPOGRAPHY - Headlines use Cooper-style bolding */
+        h1, h2, h3 { 
+            font-weight: 900; 
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        /* FLOATING IMAGE ANIMATION */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-logo {
+            width: 300px;
+            animation: float 4s ease-in-out infinite;
+            display: block;
+            margin: 0 auto 2rem;
+        }
+
+        /* GLOWING BUTTONS */
+        .btn {
+            background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
+            color: white !important;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.4s;
+            border: none;
+            box-shadow: 0 0 0 rgba(124, 58, 237, 0);
+        }
+
+        .btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.6); /* Orange Glow */
+            filter: brightness(1.1);
+        }
+
+        /* NAV BAR */
         header {
-            background: rgba(15, 23, 42, 0.98);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav {
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--accent-yellow); text-transform: uppercase; letter-spacing: 1px; }
-
-        nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
-
-        nav a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
-
-        nav a:hover { color: var(--accent-yellow); }
-
-        /* DROPDOWN LOGIC */
-        .dropdown { position: relative; padding-bottom: 5px; }
-        .submenu {
-            display: none;
-            position: absolute;
-            background: var(--card-bg);
-            top: 100%;
-            left: 0;
-            padding: 1rem;
-            min-width: 220px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        .dropdown:hover .submenu { display: block; }
-        .submenu li { margin: 0.6rem 0; list-style: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-light); text-decoration: none; font-weight: 600; }
+        nav a:hover { color: var(--accent-orange); }
 
         /* HERO SECTION */
         .hero {
-            padding: 10rem 5% 6rem;
+            padding: 10rem 5% 5rem;
             text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
         }
 
-        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 900; }
-        .highlight { color: var(--accent-yellow); }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 1.5rem; line-height: 1; }
+        .hero p { font-size: 1.3rem; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem; }
 
-        /* CONTENT BLOCKS */
-        section { padding: 5rem 5%; max-width: 1300px; margin: 0 auto; }
-        h2 { font-size: 2.8rem; margin-bottom: 2rem; line-height: 1.2; }
-
+        /* GRID CARDS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 5%;
         }
 
         .card {
             background: var(--card-bg);
             padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: 0.4s ease;
-        }
-
-        .card:hover { transform: translateY(-12px); border-color: var(--accent-yellow); }
-        .card h3 { color: var(--accent-yellow); font-size: 1.6rem; margin-bottom: 1.2rem; }
-
-        /* BUTTONS */
-        .btn {
-            background: var(--accent-yellow);
-            color: #000 !important;
-            padding: 1.1rem 2.8rem;
-            border-radius: 10px;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-block;
+            border-radius: 24px;
+            border: 1px solid #334155;
             transition: 0.3s;
-            font-size: 1.1rem;
         }
-        .btn:hover { transform: scale(1.05); background: #fff; }
 
-        /* TEXT STYLING */
-        .long-form { max-width: 900px; margin: 0 auto; font-size: 1.15rem; color: #cbd5e1; }
-        .long-form p { margin-bottom: 2rem; }
-        .long-form h3 { color: #fff; font-size: 2rem; margin: 3rem 0 1.5rem; }
+        .card:hover {
+            border-color: var(--premium-purple);
+            background: #243147;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h3 { color: var(--accent-orange); margin-bottom: 1rem; }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Your Online Squad</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Services ▾</a>
-                    <ul class="submenu">
-                        <li><a href="services/local-seo.html">Local SEO</a></li>
-                        <li><a href="services/lead-generation.html">Lead Generation</a></li>
-                        <li><a href="services/web-design.html">Web Design</a></li>
-                        <li><a href="services/google-business-profile.html">Google Maps</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Industries ▾</a>
-                    <ul class="submenu">
-                        <li><a href="industries/plumbers.html">Plumbing</a></li>
-                        <li><a href="industries/roofers.html">Roofing</a></li>
-                        <li><a href="industries/hvac.html">HVAC</a></li>
-                        <li><a href="industries/electricians.html">Electrical</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html" class="btn">Get Started</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo" style="font-weight: 900; font-size: 1.5rem;">YOUR ONLINE <span style="color:var(--accent-orange)">SQUAD</span></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#strategy">Our Strategy</a></li>
+            <li><a href="contact.html" class="btn" style="padding: 0.8rem 1.5rem;">Get Started</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero">
-            <h1>We Build <span class="highlight">Predictable Growth Engines</span> for Local Contractors</h1>
-            <p style="font-size: 1.4rem; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">We help business owners grow their website monthly by tracking keyword growth and aligning with Google Business for multiple entry points of lead generation.</p>
-            <a href="contact.html" class="btn">Scale Your Business Today</a>
-        </section>
+<main>
+    <section class="hero">
+        <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
+        
+        <h1>Beyond SEO: Build Your <br><span style="color:var(--accent-orange)">Growth Engine</span></h1>
+        <p>We combine deep-blue authority with premium-purple strategy to turn your contracting business into a lead-generating machine. No more shared leads—just pure growth.</p>
+        
+        <a href="contact.html" class="btn">Scale Your Business Today</a>
+    </section>
 
-        <section id="strategy">
-            <h2 style="text-align: center;">The Multi-Point Lead Generation Framework</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Keyword Velocity Tracking</h3>
-                    <p>We don't just "rank" your site; we track the velocity of your most profitable keywords. Our monthly reports show your keyword growth in real-time, ensuring your business is always gaining ground on the competition.</p>
-                </div>
-                <div class="card">
-                    <h3>Google Business Alignment</h3>
-                    <p>Your website and your Google Business Profile must speak the same language. We sync your local signals to dominate the Map Pack, creating a secondary entry point for emergency service leads.</p>
-                </div>
-                <div class="card">
-                    <h3>Exclusive Lead Ownership</h3>
-                    <p>Tired of sharing leads with five other contractors? We build exclusive systems that send calls and estimates directly to you, and only you. You own the engine; you own the leads.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="long-form">
-            <h2>Harnessing Google's E-EAT for Contractor Success</h2>
-            <p>In the modern digital landscape, <strong>Google's E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness)</strong> guidelines are the secret sauce to ranking. For home service professionals, this means your website must do more than just list your phone number. It must demonstrate that you are the premier authority in your local territory.</p>
-            
-            <h3>Why Monthly Keyword Growth Matters</h3>
-            <p>Most contractors see SEO as a "one and done" task. In reality, it is a monthly battle for market share. By tracking your keyword growth every 30 days, we can identify which services—whether it's emergency plumbing, roof replacements, or HVAC installs—are gaining traction. This allows us to pivot your content strategy to capture the highest-value jobs in your area before your competitors even know what happened.</p>
-
-            <h3>Creating Multiple Entry Points</h3>
-            <p>A single point of failure is a dangerous thing in business. If you rely solely on one lead source, you are at the mercy of algorithm changes. Our framework creates a "web" of entry points. From organic search and local map listings to high-converting landing pages, we ensure that no matter how a homeowner searches for help, they find your business first.</p>
-
-            <p>Our commitment is to transparency and measurable results. We don't hide behind technical jargon. Instead, we show you the data: how many people found you, what they searched for, and how many of those searches turned into booked estimates. This is how you scale a contracting business from a local shop to a market leader.</p>
-        </section>
-    </main>
+    <section id="strategy" class="grid">
+        <div class="card">
+            <h3>Keyword Velocity</h3>
+            <p>We don't just "rank" you. We track the speed of your growth, ensuring you hit the top spots for high-ticket emergency services faster than the competition.</p>
+        </div>
+        <div class="card">
+            <h3>Premium Funnels</h3>
+            <p>Your site should feel high-end. We use premium UX design to build trust before the customer ever picks up the phone.</p>
+        </div>
+        <div class="card">
+            <h3>Google Maps Sync</h3>
+            <p>Your website and Maps profile become a synchronized force, capturing two spots on Page 1 instead of just one.</p>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
