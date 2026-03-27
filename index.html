@@ -3,43 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | High-Velocity Growth Engines for Elite Contractors</title>
+    <title>Your Online Squad | High-Velocity Growth</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --bg: #0b0f1a; --purple: #7c3aed; --orange: #f97316; 
-            --card: #161c2d; --border: #2d3748; --text-dim: #a0aec0;
-            --white: #f8fafc;
+            --card: #161c2d; --border: #2d3748; --text-dim: #a0aec0; --white: #ffffff;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; }
-        
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        .highlight { color: var(--orange); }
-        h1, h2, h3 { text-transform: uppercase; font-weight: 900; line-height: 1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.7; overflow-x: hidden; }
 
-        /* HEADER */
-        header { background: rgba(11, 15, 26, 0.98); border-bottom: 2px solid var(--orange); height: 100px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; }
+        /* --- THE SQUAD GRID (Fixes the "Squished" look) --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        
+        /* --- NAVIGATION (Pro-Level) --- */
+        header { 
+            background: rgba(11, 15, 26, 0.95); 
+            border-bottom: 2px solid var(--orange); 
+            height: 90px; position: fixed; width: 100%; top: 0; z-index: 9999;
+            display: flex; align-items: center; backdrop-filter: blur(10px);
+        }
         nav { width: 100%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 2rem; color: #fff; font-weight: 900; } .logo span { color: var(--orange); }
-        .btn { background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; padding: 1.2rem 2.8rem; border-radius: 4px; font-weight: 900; display: inline-block; transition: 0.4s; }
-
-        /* SECTIONS */
-        section { padding: 10rem 0; border-bottom: 1px solid var(--border); }
-        .hero { text-align: center; padding: 15rem 0; background: radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%); }
-        .hero h1 { font-size: clamp(3.5rem, 10vw, 7rem); margin-bottom: 2rem; }
-        .hero p { font-size: 1.8rem; color: var(--text-dim); max-width: 900px; margin: 0 auto 3rem; }
-
-        .content-block { margin-bottom: 4rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; }
-        .card { background: var(--card); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; }
-        .card h3 { color: var(--orange); margin-bottom: 1rem; font-size: 1.8rem; }
+        .logo { font-size: 1.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+        .logo span { color: var(--orange); }
         
-        .copy-heavy { font-size: 1.1rem; color: var(--text-dim); max-width: 800px; margin-bottom: 2rem; }
-        .split { display: flex; align-items: flex-start; gap: 6rem; flex-wrap: wrap; }
-        .split > div { flex: 1; min-width: 400px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { color: var(--white); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+        .nav-links a:hover { color: var(--orange); }
 
-        footer { background: #070a13; padding: 5rem 0; text-align: center; }
+        /* --- BUTTONS --- */
+        .btn { 
+            background: linear-gradient(135deg, var(--purple), var(--orange)); 
+            color: #fff !important; padding: 14px 32px; border-radius: 4px; 
+            font-weight: 900; font-size: 0.9rem; text-transform: uppercase; transition: 0.4s; 
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3); }
+
+        /* --- SECTIONS --- */
+        section { padding: 140px 0; border-bottom: 1px solid var(--border); }
+        
+        /* --- HERO (E-EAT Authority) --- */
+        .hero { 
+            padding-top: 220px; text-align: center;
+            background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0b0f1a 70%);
+        }
+        .hero h1 { 
+            font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 0.9; 
+            margin-bottom: 30px; text-transform: uppercase; letter-spacing: -2px;
+        }
+        .hero p { font-size: 1.4rem; color: var(--text-dim); max-width: 850px; margin: 0 auto 40px; }
+
+        /* --- THE "PHYSICS" GRID --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 60px; }
+        .card { background: var(--card); padding: 50px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+        .card:hover { border-color: var(--orange); transform: scale(1.02); }
+        .card h3 { color: var(--orange); font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase; }
+
+        /* --- CONTENT WRAPPER --- */
+        .split { display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
+        .split > div { flex: 1; min-width: 450px; }
+        .split h2 { font-size: 3.5rem; line-height: 1; margin-bottom: 30px; }
+        
+        /* --- FOOTER (Actual Footer) --- */
+        footer { background: #070a13; padding: 80px 0; border-top: 2px solid var(--orange); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; }
+        .footer-col h4 { color: var(--orange); margin-bottom: 25px; font-weight: 900; }
+        .footer-col p, .footer-col li { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 10px; }
+
+        /* --- MOBILE FIXES --- */
+        @media (max-width: 768px) {
+            .container { padding: 0 25px; }
+            .nav-links { display: none; } /* Hide nav on mobile for now */
+            .split > div { min-width: 100%; }
+            .hero h1 { font-size: 3rem; }
+            section { padding: 80px 0; }
+        }
     </style>
 </head>
 <body>
@@ -47,8 +85,13 @@
 <header>
     <div class="container">
         <nav>
-            <div class="logo">YOUR ONLINE <span>SQUAD</span></div>
-            <a href="contact.html" class="btn">CLAIM YOUR TERRITORY</a>
+            <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+            <ul class="nav-links">
+                <li><a href="industries/roofing-contractor.html">Industries</a></li>
+                <li><a href="services/local-seo.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="btn">Claim Territory</a></li>
+            </ul>
         </nav>
     </div>
 </header>
@@ -56,25 +99,24 @@
 <main>
     <section class="hero">
         <div class="container">
-            <h1>BUILDING <span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
-            <p>We engineer proprietary revenue systems for elite contractors, transforming digital presence into high-velocity equity.</p>
-            <a href="contact.html" class="btn">SECURE EXCLUSIVITY</a>
+            <h1>BUILDING <span style="color:var(--orange)">PREDICTABLE</span><br>GROWTH ENGINES</h1>
+            <p>We stop the "Feast or Famine" cycle. Our proprietary growth engines align Google’s technical E-EAT protocols with high-velocity lead acquisition for elite contractors.</p>
+            <a href="contact.html" class="btn">Secure Exclusivity</a>
         </div>
     </section>
 
-    <section id="problem">
+    <section id="equity">
         <div class="container">
             <div class="split">
                 <div>
-                    <h2>THE DEATH OF THE <br><span class="highlight">SHARED LEAD</span></h2>
-                    <div class="copy-heavy">
-                        <p>For over a decade, the contracting industry has been held hostage by lead aggregators. You know the names. They sell a single "prospect" to five different companies, forcing a high-stakes race to the bottom on price. This isn't marketing—it's a commodity trap that guts your profit margins and devalues your craftsmanship.</p>
-                        <p>At Your Online Squad, we recognized this systemic failure. Our experience in the trenches of local service industries proved that the only way to scale sustainably is through <strong>Digital Equity</strong>. We don't just "get you leads"—we build a fortress around your brand that ensures when a homeowner needs a roof, a pipe fixed, or an HVAC system replaced, you are the only logical choice.</p>
-                    </div>
+                    <h2>OWN THE <br><span style="color:var(--orange)">EQUITY</span></h2>
+                    <p>Standard lead aggregators sell the same lead to 5 of your competitors. At <strong>Your Online Squad</strong>, we build proprietary assets that you own. Every call, every click, and every conversion is exclusively yours. We don't just "market"—we build high-value digital real estate for your business.</p>
+                    <p style="color:var(--text-dim);">Google's latest algorithm updates (2025-2026) prioritize <strong>Authority</strong> and <strong>Trust</strong>. Our system is engineered to force your business into the "Top 3" Map Pack and stay there through technical dominance.</p>
                 </div>
-                <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
-                    <h3>0% Leakage</h3>
-                    <p>Our systems eliminate lead sharing. 100% of the volume generated by your Squad Engine belongs to your office. No competition. No price wars.</p>
+                <div class="card" style="text-align: center; border-left: 5px solid var(--orange);">
+                    <h3 style="font-size: 3rem; margin: 0;">100%</h3>
+                    <p style="text-transform: uppercase; font-weight: 900; color: #fff;">Lead Exclusivity</p>
+                    <p style="font-size: 0.9rem;">No sharing. No bidding wars. No leakage.</p>
                 </div>
             </div>
         </div>
@@ -82,62 +124,48 @@
 
     <section id="physics">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 5rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
+            <h2 style="text-align:center; margin-bottom: 20px;">THE <span style="color:var(--orange)">PHYSICS</span> OF DOMINANCE</h2>
+            <p style="text-align:center; color:var(--text-dim); max-width: 700px; margin: 0 auto 50px;">We apply mechanical engineering principles to digital marketing. Our systems are built on three core pillars of E-EAT authority.</p>
             <div class="grid">
                 <div class="card">
-                    <h3>Keyword Velocity</h3>
-                    <p>Search engines don't just care about where you are; they care about where you're going. We monitor the velocity of your rankings. By aggressively targeting high-intent commercial and residential "money terms," we force Google to recognize your site as the emerging authority in your zip code.</p>
+                    <h3>Velocity</h3>
+                    <p>We track the speed of your ranking movement. If your high-ticket service terms aren't accelerating toward Page 1, our system pivots in real-time to capture the volume.</p>
                 </div>
                 <div class="card">
-                    <h3>Map Pack Synchronization</h3>
-                    <p>70% of local clicks happen in the "Map Pack." We use advanced geo-gridding to synchronize your Google Business Profile with technical local signals. This creates a "gravity well" that pulls in high-ticket calls from a 20-mile radius around your shop.</p>
+                    <h3>Gravity</h3>
+                    <p>We synchronize your Google Business Profile with hyper-local geo-signals, creating a "gravity well" that pulls homeowners to your brand before they see your competitors.</p>
                 </div>
                 <div class="card">
-                    <h3>Technical E-EAT</h3>
-                    <p>Google’s 2024-2026 core updates prioritize Expertise and Trust. We bake your field experience into a content architecture that proves you aren't just a business, but an industry leader. We build the authority that search algorithms crave.</p>
+                    <h3>Integrity</h3>
+                    <p>Search engines rank trust. We build a technical content web that proves your field expertise (E-EAT), ensuring long-term ranking stability through every Google update.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="system">
-        <div class="container">
-            <div class="split">
-                <div class="card" style="border: 2px solid var(--orange);">
-                    <h2 style="font-size: 2.5rem;">PROPRIETARY <br>ASSET BUILDING</h2>
-                    <p style="margin: 2rem 0; color: #fff;">We aren't an "agency." We are your outsourced growth department. We build the following assets for your company:</p>
-                    <ul style="color: var(--text-dim); font-size: 1.1rem; line-height: 2;">
-                        <li>✔ Hyper-Local Industry Silos</li>
-                        <li>✔ Conversion-Optimized UX Architecture</li>
-                        <li>✔ Technical Schema Markup for Contractors</li>
-                        <li>✔ High-Velocity Backlink Profiles</li>
-                        <li>✔ Automated Lead Capture & CRM Sync</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>SCALING THE <br><span class="highlight">UNBREAKABLE</span></h2>
-                    <div class="copy-heavy">
-                        <p>Most agencies focus on "traffic." Traffic is a vanity metric. We focus on <strong>Conversion Velocity</strong>. By aligning our growth engine with the actual physics of how homeowners search for contractors, we create an unbreakable pipeline of revenue. Whether it's a storm-chasing roofing campaign or a steady-state plumbing maintenance contract, our systems adapt in real-time to market demand.</p>
-                        <p>This is the difference between "buying leads" and "owning the market." One is a bill you pay every month; the other is an asset that increases the valuation of your business when you're eventually ready to sell.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="trust">
-        <div class="container" style="text-align: center;">
-            <h2>TERRITORY <span class="highlight">EXCLUSIVITY</span></h2>
-            <p class="copy-heavy" style="margin: 3rem auto;">We do not work with your competitors. Once we lock a territory for a specific trade, that door is closed. We provide 100% transparency, weekly velocity reports, and a direct line to your squad leader. No account managers. No fluff. Just results.</p>
-            <a href="contact.html" class="btn">CHECK YOUR ZIPS</a>
         </div>
     </section>
 </main>
 
 <footer>
     <div class="container">
-        <div class="logo">YOUR ONLINE <span>SQUAD</span></div>
-        <p style="margin-top: 2rem; color: var(--text-dim);">&copy; 2026 Your Online Squad LLC. Built for Contractors. Engineered for Growth.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">YOUR ONLINE <span>SQUAD</span></div>
+                <p>The premier growth department for elite tradesmen and contractors.</p>
+            </div>
+            <div class="footer-col">
+                <h4>INDUSTRIES</h4>
+                <ul>
+                    <li><a href="industries/roofers.html">Roofing Professionals</a></li>
+                    <li><a href="industries/plumbers.html">Master Plumbers</a></li>
+                    <li><a href="industries/hvac.html">HVAC Specialists</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SQUAD HQ</h4>
+                <p>Status: <span style="color:var(--orange);">Accepting Territory Requests</span></p>
+                <p>Email: growth@youronlinesquad.com</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">&copy; 2026 Your Online Squad LLC. All Rights Reserved.</p>
     </div>
 </footer>
 
