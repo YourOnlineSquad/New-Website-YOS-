@@ -3,23 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | Premium Growth Engines</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Online Squad | Premium Contractor Growth Engines</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet">
+
+    <style>
+        /* DEFINITIVE BRAND STYLES - LOCKED */
+        :root {
+            --bg-deep: #0f172a;        /* Navy */
+            --premium-purple: #7c3aed; /* Purple */
+            --accent-orange: #f97316;  /* Logo Orange */
+            --text-light: #f8fafc;
+            --card-bg: #1e293b;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADLINES - COOPER STYLE */
+        h1, h2, h3, .logo-text {
+            font-family: 'Cooper Hewitt', 'Inter', sans-serif;
+            font-weight: 900;
+        }
+
+        h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; text-align: center; }
+        .highlight { color: var(--accent-orange); }
+
+        /* NAVIGATION */
+        header {
+            background: rgba(15, 23, 42, 0.98);
+            border-bottom: 2px solid var(--accent-orange);
+            height: 90px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            padding: 0 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-text { font-size: 1.6rem; color: #fff; text-decoration: none; }
+        .logo-text span { color: var(--accent-orange); }
+
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-links > li { position: relative; padding: 30px 0; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-orange); }
+
+        /* MEGA MENU - FIXES THE SPILLAGE */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            z-index: 3000;
+        }
+
+        .nav-links li:hover .dropdown-menu {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .industry-grid { grid-template-columns: repeat(3, 220px); width: max-content; }
+        .service-list { grid-template-columns: 280px; }
+
+        .menu-col h4 { color: var(--accent-orange); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; }
+        .dropdown-menu a { display: block; padding: 6px 0; color: #94a3b8; font-weight: 400; font-size: 0.9rem; }
+        .dropdown-menu a:hover { color: #fff; }
+
+        /* HERO & BUTTONS */
+        .hero { padding: 10rem 5% 6rem; text-align: center; }
+        
+        .floating-logo {
+            width: 240px;
+            margin-bottom: 2rem;
+            animation: squadFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes squadFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
+            color: white !important;
+            padding: 1.2rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(249, 115, 22, 0.5);
+        }
+
+        /* SECTION STYLING */
+        .strategy-section { padding: 8rem 10%; background: #111b2d; border-top: 1px solid var(--border); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        .card { background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid var(--border); }
+        .card h3 { color: var(--accent-orange); margin-bottom: 1.5rem; font-size: 1.6rem; }
+    </style>
 </head>
 <body>
 
 <header>
     <nav>
-        <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+        <a href="index.html" class="logo-text">YOUR ONLINE <span>SQUAD</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="#">Services ▾</a>
                 <div class="dropdown-menu service-list">
-                    <div>
-                        <span class="menu-title">Growth Strategies</span>
-                        <a href="services/local-seo.html">Local SEO</a>
+                    <div class="menu-col">
+                        <h4>Growth Strategies</h4>
+                        <a href="services/local-seo.html">Local SEO & Map Pack</a>
                         <a href="services/lead-generation.html">Lead Generation</a>
                         <a href="services/web-design.html">Web Design</a>
                         <a href="services/google-business-profile.html">Google Maps</a>
@@ -29,43 +155,60 @@
             <li>
                 <a href="#">Industries ▾</a>
                 <div class="dropdown-menu industry-grid">
-                    <div>
-                        <span class="menu-title">Construction</span>
+                    <div class="menu-col">
+                        <h4>Construction</h4>
                         <a href="industries/Concrete%20Contractors.html">Concrete</a>
-                        <a href="industries/roofers.html">Roofing</a>
+                        <a href="industries/General%20Contractors.html">General Contractors</a>
+                        <a href="industries/roofers.html">Roofing Professionals</a>
                     </div>
-                    <div>
-                        <span class="menu-title">Home Services</span>
+                    <div class="menu-col">
+                        <h4>Home Services</h4>
                         <a href="industries/plumbers.html">Plumbing</a>
                         <a href="industries/hvac.html">HVAC</a>
                         <a href="industries/electricians.html">Electricians</a>
                     </div>
-                    <div>
-                        <span class="menu-title">Specialty</span>
+                    <div class="menu-col">
+                        <h4>Specialty</h4>
                         <a href="industries/Locksmiths.html">Locksmiths</a>
                         <a href="industries/junk-removal.html">Junk Removal</a>
                         <a href="industries/water-damage.html">Water Damage</a>
                     </div>
                 </div>
             </li>
-            <li><a href="contact.html" class="btn" style="padding: 0.8rem 1.5rem;">Get Started</a></li>
+            <li><a href="contact.html" class="btn" style="padding: 0.8rem 2rem;">Get Started</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero">
+        <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
         <h1>Building Predictable <br><span class="highlight">Growth Engines</span></h1>
-        <p style="font-size: 1.3rem; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
-            We transform contractor websites into high-velocity lead generators by aligning local search authority with exclusive leads.
-        </p>
+        <p style="color: #94a3b8; font-size: 1.3rem; max-width: 800px; margin: 0 auto 3rem;">We align Google Business Profiles with high-velocity keyword growth to ensure your business dominates the local market with exclusive leads.</p>
         <a href="contact.html" class="btn">Claim Your Territory</a>
     </section>
 
-    <section style="padding: 6rem 10%; background: #111b2d; border-top: 1px solid #334155;">
-        <div style="max-width: 900px; margin: 0 auto; line-height: 2;">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 2rem;">The Science of Digital Dominance</h2>
-            <p>Our framework utilizes <strong>Google's E-EAT standards</strong> to ensure your business isn't just another name in a directory—it's the local authority. By tracking <strong>Keyword Velocity</strong>, we ensure you are capturing the "near me" searches that drive revenue every single day.</p>
+    <section class="strategy-section">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="text-align: center;">The Science of Digital Dominance</h2>
+            <p style="text-align: center; color: #cbd5e1; font-size: 1.2rem; margin-top: 1rem;">
+                Stop buying shared leads. We build conversion-first assets that turn searchers into long-term clients using the E-EAT framework.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Keyword Velocity</h3>
+                    <p>We track how fast your business climbs the rankings. If your high-ticket keywords aren't moving every 30 days, we pivot the strategy.</p>
+                </div>
+                <div class="card">
+                    <h3>Map Pack Sync</h3>
+                    <p>We synchronize your website signals with your Google Business Profile to capture the 70% of clicks that happen in the Map Pack.</p>
+                </div>
+                <div class="card">
+                    <h3>Exclusive Funnels</h3>
+                    <p>We build assets that belong to you. No more competing for the same phone number on a lead aggregator site.</p>
+                </div>
+            </div>
         </div>
     </section>
 </main>
