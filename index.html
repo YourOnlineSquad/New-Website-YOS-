@@ -1,282 +1,150 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Online Squad | High-Growth Contractor Marketing & SEO Strategy</title>
-    <meta name="description" content="We build predictable growth engines for elite contractors. Exclusive leads, Map Pack dominance, and high-velocity keyword tracking.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Your Online Squad | Premium Contractor Growth Engines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet">
-
     <style>
-        /* BRAND FOUNDATION - LOCKED */
-        :root {
-            --bg-deep: #0f172a;        
-            --premium-purple: #7c3aed; 
-            --accent-orange: #f97316;  
-            --text-light: #f8fafc;
-            --text-dim: #94a3b8;
-            --card-bg: #1e293b;
+        :root { 
+            --bg: #0f172a; 
+            --purple: #7c3aed; 
+            --orange: #f97316; 
+            --card: #1e293b; 
             --border: #334155;
+            --text-dim: #94a3b8;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #f8fafc; line-height: 1.8; }
+        h1, h2, h3, h4, .logo { font-family: 'Cooper Hewitt', sans-serif; font-weight: 900; text-transform: uppercase; }
+        .highlight { color: var(--orange); }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* NAVIGATION */
+        header { background: rgba(15,23,42,0.98); border-bottom: 2px solid var(--orange); height: 90px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; }
+        nav { width: 92%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; color: #fff; } .logo span { color: var(--orange); }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a { color: #fff; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .btn { background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; padding: 1rem 2rem; border-radius: 4px; font-weight: 900; text-transform: uppercase; border: none; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4); }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-deep); 
-            color: var(--text-light); 
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        /* TYPOGRAPHY - COOPER STD STYLE */
-        h1, h2, h3, h4, h5, .logo-text { 
-            font-family: 'Cooper Hewitt', 'Inter', sans-serif; 
-            font-weight: 900; 
-            letter-spacing: -0.02em;
-        }
-
-        .highlight { color: var(--accent-orange); }
-
-        /* HEADER & NAVIGATION */
-        header { 
-            background: rgba(15, 23, 42, 0.98); 
-            border-bottom: 2px solid var(--accent-orange); 
-            height: 90px; 
-            display: flex; 
-            align-items: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 3000; 
-            padding: 0 5%; 
-        }
-
-        nav { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; }
+        /* UX SPACING & LAYOUT */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        section { padding: 10rem 0; border-bottom: 1px solid var(--border); }
         
-        .logo-text { font-size: 1.8rem; color: #fff; text-decoration: none; }
-        .logo-text span { color: var(--accent-orange); }
+        /* SIDE-BY-SIDE FLEX BOX */
+        .split-row { display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; }
+        .split-text { flex: 1; min-width: 350px; }
+        .split-visual { flex: 1; min-width: 350px; background: var(--card); border: 1px solid var(--border); padding: 3rem; border-radius: 4px; position: relative; }
 
-        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
-        .nav-links > li { position: relative; padding: 30px 0; }
-        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent-orange); }
+        /* HERO AREA */
+        .hero { text-align: center; padding: 12rem 0; background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%); border: none; }
+        .hero h1 { font-size: 5rem; line-height: 1; margin-bottom: 2rem; }
 
-        /* MEGA MENU - 3 COLUMN RESTORATION */
-        .dropdown-menu { 
-            display: none; 
-            position: absolute; 
-            top: 100%; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            z-index: 4000; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
-        }
+        /* GRID SYSTEM */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-top: 5rem; }
+        .card { background: var(--card); padding: 4rem; border-radius: 4px; border: 1px solid var(--border); transition: 0.4s; }
+        .card:hover { border-color: var(--orange); transform: translateY(-10px); }
+        .card h3 { color: var(--orange); font-size: 1.8rem; margin-bottom: 1.5rem; }
 
-        .nav-links li:hover .dropdown-menu { display: grid; }
-        .industry-grid { grid-template-columns: repeat(3, 220px); gap: 2.5rem; width: max-content; }
-        .service-list { grid-template-columns: 280px; }
-
-        .menu-title { color: var(--accent-orange); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1rem; display: block; }
-        .dropdown-menu a { display: block; padding: 6px 0; color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 400; }
-        .dropdown-menu a:hover { color: #fff; padding-left: 5px; }
-
-        /* SECTION STYLES */
-        section { padding: 8rem 10%; border-top: 1px solid var(--border); position: relative; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        
-        /* HERO */
-        .hero { padding: 10rem 5% 8rem; text-align: center; border: none; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
-        h1 { font-size: 4.8rem; line-height: 1.1; margin-bottom: 2rem; }
-
-        /* VIDEO PLACEHOLDER SECTION */
-        .video-container {
-            width: 100%;
-            height: 450px;
-            background: #000;
-            border-radius: 24px;
-            margin: 3rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* CARDS */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
-        .card { 
-            background: var(--card-bg); 
-            padding: 3.5rem; 
-            border-radius: 24px; 
-            border: 1px solid var(--border); 
-            transition: 0.4s ease;
-        }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent-orange); box-shadow: 0 10px 40px rgba(249, 115, 22, 0.2); }
-        .card h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent-orange); }
-
-        /* BUTTONS */
-        .btn { 
-            background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange)); 
-            color: white !important; 
-            padding: 1.3rem 3.8rem; 
-            border-radius: 60px; 
-            font-weight: 800; 
-            text-decoration: none; 
-            display: inline-block; 
-            transition: 0.4s; 
-            border: none;
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
-        }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(249, 115, 22, 0.5); }
-
-        /* ANIMATIONS */
-        .floating-logo { width: 260px; margin-bottom: 3rem; animation: squadFloat 5s ease-in-out infinite; }
-        @keyframes squadFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
-
-        [data-aos="fade-up"] { opacity: 0; transform: translateY(30px); transition: 1s ease; }
-        .reveal { opacity: 1 !important; transform: translateY(0) !important; }
-
+        /* ADDING "LIGHT" TO THE DARKNESS - SOFT GLOWS */
+        .glow-box { position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--orange); filter: blur(80px); opacity: 0.2; z-index: -1; }
     </style>
 </head>
 <body>
 
 <header>
     <nav>
-        <a href="index.html" class="logo-text">YOUR ONLINE <span>SQUAD</span></a>
+        <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li>
-                <a href="#">Services ▾</a>
-                <div class="dropdown-menu service-list">
-                    <div class="menu-col">
-                        <span class="menu-title">Growth Strategies</span>
-                        <a href="services/local-seo.html">Local SEO & Map Pack</a>
-                        <a href="services/lead-generation.html">Lead Generation Systems</a>
-                        <a href="services/web-design.html">Conversion Web Design</a>
-                        <a href="services/google-business-profile.html">Google Maps Dominance</a>
-                        <a href="services/automation-crm.html">Automation & CRM</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#">Industries ▾</a>
-                <div class="dropdown-menu industry-grid">
-                    <div class="menu-col">
-                        <span class="menu-title">Construction</span>
-                        <a href="industries/Concrete%20Contractors.html">Concrete Contractors</a>
-                        <a href="industries/General%20Contractors.html">General Contractors</a>
-                        <a href="industries/roofers.html">Roofing Professionals</a>
-                    </div>
-                    <div class="menu-col">
-                        <span class="menu-title">Home Services</span>
-                        <a href="industries/plumbers.html">Expert Plumbers</a>
-                        <a href="industries/hvac.html">HVAC Specialists</a>
-                        <a href="industries/electricians.html">Certified Electricians</a>
-                    </div>
-                    <div class="menu-col">
-                        <span class="menu-title">Specialty</span>
-                        <a href="industries/Locksmiths.html">Locksmiths</a>
-                        <a href="industries/junk-removal.html">Junk Removal</a>
-                        <a href="industries/water-damage.html">Water Damage Restoration</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="contact.html" class="btn" style="padding: 0.8rem 2rem;">Get Started</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#growth">GROWTH</a></li>
+            <li><a href="#dominance">DOMINANCE</a></li>
+            <li><a href="contact.html" class="btn">GET STARTED</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero">
-        <img src="Untitled design.png" alt="Squad Tree Logo" class="floating-logo">
-        <h1>Building <span class="highlight">Predictable Growth Engines</span> for Elite Contractors</h1>
-        <p style="font-size: 1.4rem; color: var(--text-dim); max-width: 850px; margin: 0 auto 3.5rem;">
-            Stop gambling on "visibility." We engineer mechanical revenue systems that align high-velocity keyword growth with exclusive intent-based traffic.
-        </p>
-        <a href="contact.html" class="btn">Claim Your Exclusive Territory</a>
+        <div class="container">
+            <h1 data-aos="fade-up">BUILDING <span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
+            <p style="font-size: 1.5rem; color: var(--text-dim); max-width: 900px; margin: 0 auto 4rem;">
+                Stop gambling on "visibility." We engineer mechanical revenue systems that align high-velocity keyword growth with exclusive intent-based traffic.
+            </p>
+            <a href="contact.html" class="btn">CLAIM YOUR TERRITORY</a>
+        </div>
     </section>
 
-    <section class="strategy-section">
+    <section id="growth">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3.2rem;">Stop Buying Shared Leads: Transitioning to <span class="highlight">Exclusive Digital Equity</span></h2>
-            
-            <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&loop=1" frameborder="0" allowfullscreen style="opacity: 0.5;"></iframe>
-                <div style="position:absolute; text-align:center;">
-                    <h3 style="color:#fff;">[EDUCATIONAL VIDEO COMPONENT]</h3>
-                    <p>Solving the "Feast or Famine" Cycle</p>
+            <div class="split-row">
+                <div class="split-text">
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">SOLVING THE <br><span class="highlight">FEAST OR FAMINE</span> CYCLE</h2>
+                    <p>Most contracting business owners are masters of their trade but prisoners of their marketing. The cycle isn't a result of your work quality; it’s a result of a broken lead-generation model. When you buy shared leads from platforms like Angi or HomeAdvisor, you are participating in a "race to the bottom" on price.</p>
+                    <br>
+                    <p>The leads are sold to you and four of your hungriest competitors simultaneously. The homeowner is conditioned to choose the lowest bidder, devaluing your expertise and gutting your net profit margins. We solve this by building a proprietary <strong>Predictable Growth Engine</strong>—a mechanical, repeatable system that identifies high-intent homeowners, educates them on your specific value, and delivers them to your phone as an exclusive opportunity.</p>
+                </div>
+                <div class="split-visual">
+                    <div class="glow-box"></div>
+                    <h3 style="color: var(--orange); margin-bottom: 1rem;">THE SQUAD MISSION</h3>
+                    <p style="color: var(--text-dim);">Move your business from "begging for leads" to "market authority." We help you own the attention so you can dictate the price.</p>
+                    <br>
+                    <a href="contact.html" style="color: var(--orange); font-weight: 800;">EXPLORE EXCLUSIVITY &rarr;</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <p style="margin-top: 2rem;">For many contractors, the traditional model of lead generation is a slow death for profit margins. Platforms like Angi and HomeAdvisor have built billion-dollar empires by selling the exact same homeowner data to five or six different contractors simultaneously. This creates a "race to the bottom" on pricing, where the winner is usually the one who sacrifices the most profit just to stay busy.</p>
-            <br>
-            <p>Our solution is simple: **We build assets that you own.** Instead of renting space on someone else's platform, we develop integrated digital equity for your brand. When the phone rings, that customer is calling *you*—not a directory. This transition allows you to move from a cost-per-lead mindset to an asset-appreciation mindset, where every dollar spent on marketing increases the long-term valuation of your company.</p>
+    <section id="dominance">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3.5rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 2rem auto 0;">In 2026, Google’s AI doesn't just look for keywords; it looks for "entities" that demonstrate real-world Experience and Expertise. We build Digital Equity.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>KEYWORD VELOCITY</h3>
+                    <p>We track the speed at which your business is gaining ground. If your high-ticket terms aren't moving toward the Top 3 every 30 days, we pivot the strategy. Transparency is our baseline.</p>
+                </div>
+                <div class="card">
+                    <h3>MAP PACK SYNC</h3>
+                    <p>Over 70% of clicks happen in the Map Pack. We synchronize your website’s technical signals with your Google Business Profile to create a "Double Entry" on Page 1.</p>
+                </div>
+                <div class="card">
+                    <h3>E-EAT AUTHORITY</h3>
+                    <p>We build a content web that mirrors the work you do in the field, satisfying Google's strict requirements for Authoritativeness and Trustworthiness.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section>
         <div class="container">
-            <h3 style="text-align: center; font-size: 2.8rem;">The Physics of <span class="highlight">Keyword Velocity</span> & Local Map Pack Dominance</h3>
-            <p style="text-align: center; margin: 1.5rem auto 3rem; color: var(--text-dim); max-width: 800px;">We solve the visibility gap by forcing Google to recognize your business as the logical authority in your service area.</p>
-
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Velocity Tracking</h3>
-                    <p>Standard SEO reports are dead. We track "Keyword Velocity"—the speed at which your profitable service terms are moving toward the Top 3. If you aren't seeing movement every 30 days, we pivot your content strategy instantly to maintain momentum.</p>
+            <div class="split-row" style="flex-direction: row-reverse;">
+                <div class="split-text">
+                    <h2 style="font-size: 2.8rem; margin-bottom: 2rem;">TURNING <span class="highlight">SEARCHERS</span> INTO ESTIMATES</h2>
+                    <p>The biggest barrier to a high-ticket estimate isn't your price—it's the homeowner's trust. We use the <strong>E-EAT Authority Framework</strong> to transform the psychology of the searcher. By the time a prospect reaches your "Get Started" button, they should already view you as the mentor in their story.</p>
+                    <br>
+                    <p>When a searcher finds a guide on your site explaining why their HVAC unit is freezing or how to identify roofing storm damage, you have already won the job. This integrated approach ensures that when your sales team arrives, the customer is already sold on your expertise, not just your quote.</p>
                 </div>
-                <div class="card">
-                    <h3>GMB/GBP Alignment</h3>
-                    <p>Over 70% of local contractor clicks happen in the Map Pack. We synchronize your website’s technical signals with your Google Business Profile to create a "double entry" on Page 1, capturing twice the real estate as your competitors.</p>
-                </div>
-                <div class="card">
-                    <h3>Semantic Authority</h3>
-                    <p>Google doesn't just look for keywords; it looks for "entities." We build a web of semantic content that proves your expertise in emergency services, high-ticket installs, and specialized repairs, making your rankings bulletproof against algorithm updates.</p>
+                <div class="split-visual">
+                    <div class="glow-box" style="left: -20px; background: var(--purple);"></div>
+                    <h3 style="color: var(--purple); margin-bottom: 1rem;">CONVERSION TECH</h3>
+                    <p style="color: var(--text-dim);">Speed-to-Lead Automation ensures your team is talking to the prospect within 60 seconds of their inquiry. The first responder wins 78% of the time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background: rgba(124, 58, 237, 0.03);">
+    <section style="text-align: center; border: none;">
         <div class="container">
-            <h4 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Leveraging <span class="highlight">E-EAT Frameworks</span> to Turn Searchers Into Estimates</h4>
-            <p>The biggest barrier to a high-ticket estimate isn't your price—it's the homeowner's trust. By 2026, Google’s E-EAT (Experience, Expertise, Authoritativeness, and Trustworthiness) standards will be the only way to survive. We solve the trust barrier by producing educational content that positions your technicians as the mentors.</p>
-            <br>
-            <p>When a searcher finds a guide on your site explaining *why* their HVAC unit is freezing up or *how* to identify storm damage on a shingle, you have already won the job. We leverage this educational authority to warm up cold leads before they even dial your number. This integrated approach ensures that when your sales team arrives for an estimate, the customer is already sold on your expertise, not just your quote.</p>
-        </div>
-    </section>
-
-    <section style="text-align: center;">
-        <div class="container">
-            <h5 style="font-size: 2.2rem; margin-bottom: 2rem;">Securing Your Territory: <span class="highlight">Market Authority</span> via Integrated Automation</h5>
-            <p style="max-width: 800px; margin: 0 auto 3rem;">We only work with one contractor per trade, per territory. This isn't a sales tactic—it's a mathematical necessity. We cannot build two competing engines in the same city. By integrating your high-velocity SEO with automated CRM systems, we ensure your "Speed to Lead" is unmatched, capturing revenue while your competitors are still checking their emails.</p>
-            
-            <a href="contact.html" class="btn">Secure Your Market Audit</a>
-            <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-dim);">*Limited availability for 2026 partner intake.</p>
+            <h2 style="font-size: 3rem; margin-bottom: 2rem;">SECURE YOUR <span class="highlight">EXCLUSIVE</span> TERRITORY</h2>
+            <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto 4rem;">We only work with one contractor per trade per area. Don't let your competitor lock you out of the most profitable keywords in your territory. Secure your market authority today.</p>
+            <a href="contact.html" class="btn">START YOUR GROWTH AUDIT</a>
         </div>
     </section>
 </main>
-
-<script>
-    // Simple Scroll Reveal Logic
-    window.addEventListener('scroll', () => {
-        const reveals = document.querySelectorAll('.card, .container');
-        reveals.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const revealTop = el.getBoundingClientRect().top;
-            if (revealTop < windowHeight - 150) {
-                el.classList.add('reveal');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
