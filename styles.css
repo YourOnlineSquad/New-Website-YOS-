@@ -1,73 +1,147 @@
- /* RESET & CORE BRANDING */
+/* PROJECT: YOUR ONLINE SQUAD 
+   BRANDING: NAVY (#0F172A), PURPLE (#7C3AED), ORANGE (#F97316)
+   FONTS: Cooper Hewitt (Headlines), Inter (Body)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/cooper-hewitt');
+
 :root {
-    --bg-deep: #0f172a;        /* Navy */
-    --premium-purple: #7c3aed; /* Purple */
-    --accent-orange: #f97316;  /* Logo Orange */
+    --bg-deep: #0f172a;
+    --premium-purple: #7c3aed;
+    --accent-orange: #f97316;
     --text-light: #f8fafc;
+    --text-dim: #94a3b8;
     --card-bg: #1e293b;
     --border: #334155;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg-deep); color: var(--text-light); }
 
-/* HEADER & NAV STRUCTURE */
-header {
-    background: rgba(15, 23, 42, 0.95);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0; z-index: 1000;
-    padding: 1rem 5%;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+/* --- HEADLINES (Cooper Style) --- */
+h1, h2, h3, .logo {
+    font-family: 'Cooper Hewitt', sans-serif;
+    font-weight: 900;
+}
 
-.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+h2 { font-size: 3rem; margin-bottom: 2rem; color: #fff; }
 
-/* THE "VISIBLE" FIX: This stops the stacking */
+/* --- NAVIGATION & MEGA MENU --- */
+header {
+    height: 90px;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo { font-size: 1.6rem; text-decoration: none; color: #fff; }
+.logo span { color: var(--accent-orange); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links > li { position: relative; padding: 30px 0; }
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* MEGA MENU LOGIC */
 .dropdown-menu {
-    display: none; /* MUST be none to hide initially */
+    display: none;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
 }
 
-.nav-links li:hover .dropdown-menu {
-    display: grid; /* Shows on hover */
+.nav-links li:hover .dropdown-menu { display: grid; }
+
+.industry-grid { grid-template-columns: repeat(3, 220px); gap: 3rem; }
+.service-list { grid-template-columns: 280px; }
+
+.menu-col h4 {
+    color: var(--accent-orange);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
 }
 
-/* THE 3-COLUMN MEGA MENU */
-.industry-grid {
-    grid-template-columns: repeat(3, 220px);
-    gap: 2rem;
+.dropdown-menu a {
+    display: block;
+    padding: 8px 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
 }
 
-.menu-col h4 { color: var(--accent-orange); margin-bottom: 1rem; font-size: 0.8rem; text-transform: uppercase; }
-.menu-col a { display: block; color: #cbd5e1; text-decoration: none; padding: 5px 0; font-size: 0.9rem; }
-.menu-col a:hover { color: #fff; }
+.dropdown-menu a:hover { color: #fff; }
 
-/* HERO ANIMATION */
+/* --- HERO & ANIMATIONS --- */
+.hero { padding: 8rem 5% 5rem; text-align: center; }
+
 .floating-logo {
-    width: 250px;
-    animation: float 6s ease-in-out infinite;
+    width: 240px;
+    margin-bottom: 2rem;
+    animation: squadFloat 5s ease-in-out infinite;
 }
-@keyframes float {
+
+@keyframes squadFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
 }
 
-/* BUTTONS */
+/* --- BUTTONS & GLOW --- */
 .btn {
     background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
-    color: white;
-    padding: 1rem 2.5rem;
+    color: white !important;
+    padding: 1.2rem 3rem;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.4s;
 }
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.5);
+}
+
+.highlight { color: var(--accent-orange); }
