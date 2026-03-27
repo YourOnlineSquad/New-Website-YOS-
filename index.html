@@ -7,83 +7,32 @@
   <meta name="description" content="Your Online Squad builds premium websites, SEO campaigns, and local visibility systems for service businesses that need more qualified leads.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="container navbar">
-      <a class="brand" href="index.html" aria-label="Your Online Squad home">
-        <span class="brand-logo" aria-hidden="true">
-          <img src="assets/logo-tree.svg" alt="">
-        </span>
-        <span class="brand-copy">
-          <span class="brand-mark">Your Online Squad</span>
-          <span class="brand-name">Premium Lead Generation for Established Service Businesses</span>
-          <span class="brand-note">Web design, SEO, and local visibility built for trust.</span>
-        </span>
-      </a>
-      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle menu">
-      <label class="nav-toggle-btn" for="nav-toggle" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </label>
-      <div class="nav-cluster">
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a class="active" href="index.html">Home</a>
-          <div class="nav-item nav-services">
-            <a href="seo-services.html">Services</a>
-            <div class="mega-menu" role="menu" aria-label="Services">
-              <a class="mega-card" href="seo-services.html">
-                <span class="mega-icon" aria-hidden="true">📈</span>
-                <span class="mega-title">SEO Services</span>
-                <span class="mega-text">Rank for local intent keywords and convert more qualified traffic.</span>
-              </a>
-              <a class="mega-card" href="web-design.html">
-                <span class="mega-icon" aria-hidden="true">🖥️</span>
-                <span class="mega-title">Web Design</span>
-                <span class="mega-text">High-converting pages built for trust, clarity, and calls.</span>
-              </a>
-              <a class="mega-card" href="google-business-profile.html">
-                <span class="mega-icon" aria-hidden="true">📍</span>
-                <span class="mega-title">Google Business Profile</span>
-                <span class="mega-text">Map-pack visibility improvements for local lead flow.</span>
-              </a>
-              <a class="mega-card" href="contact.html">
-                <span class="mega-icon" aria-hidden="true">⚙️</span>
-                <span class="mega-title">Automation</span>
-                <span class="mega-text">Lead follow-up workflows that reduce response time.</span>
-              </a>
-            </div>
-          </div>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <a class="btn btn-primary" href="contact.html">Book Strategy Call</a>
-        </div>
-      </div>
+      <a class="brand" href="index.html" aria-label="Your Online Squad home">Your Online Squad</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="contact.html">Book Strategy Call</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80">
-          <source src="https://videos.pexels.com/video-files/4050254/4050254-uhd_2560_1440_24fps.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-overlay" aria-hidden="true"></div>
+    <section class="hero" aria-labelledby="home-hero-heading">
       <div class="container hero-container">
         <div class="hero-content">
-          <span class="eyebrow hero-eyebrow">Premium growth system for local service brands</span>
-          <h1>Local SEO, Web Design &amp; Lead Generation Built to Win More Calls.</h1>
-          <p class="lead">We help serious service businesses dominate local search with conversion-focused websites, Google Business Profile optimization, and SEO campaigns engineered to turn high-intent searches into booked jobs.</p>
+          <h1 id="home-hero-heading">Local SEO and web design that help service businesses book better leads.</h1>
+          <p>We build clear, conversion-focused digital systems so your company shows up professionally and turns search traffic into qualified calls.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="contact.html">Book a Strategy Call</a>
-            <a class="btn btn-secondary" href="web-design.html">View Web Design Work</a>
           </div>
-          <div class="hero-trust" aria-label="Trust indicators">
-            <span><strong>120+</strong> campaigns launched</span>
-            <span><strong>4.9/5</strong> client satisfaction</span>
-            <span><strong>90-day</strong> SEO growth roadmaps</span>
-          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="placeholder hero-placeholder">Image / Media Placeholder</div>
         </div>
       </div>
     </section>
