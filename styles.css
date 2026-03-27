@@ -1,66 +1,4 @@
-/* PROJECT: YOUR ONLINE SQUAD 
-   BRANDING: NAVY (#0F172A), PURPLE (#7C3AED), ORANGE (#F97316)
-   FONTS: Cooper Hewitt (Headlines), Inter (Body)
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-@import url('https://fonts.cdnfonts.com/css/cooper-hewitt');
-
-:root {
-    --bg-deep: #0f172a;
-    --premium-purple: #7c3aed;
-    --accent-orange: #f97316;
-    --text-light: #f8fafc;
-    --text-dim: #94a3b8;
-    --card-bg: #1e293b;
-    --border: #334155;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-deep);
-    color: var(--text-light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* --- HEADLINES (Cooper Style) --- */
-h1, h2, h3, .logo {
-    font-family: 'Cooper Hewitt', sans-serif;
-    font-weight: 900;
-}
-
-h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
-h2 { font-size: 3rem; margin-bottom: 2rem; color: #fff; }
-
-/* --- NAVIGATION & MEGA MENU --- */
-header {
-    height: 90px;
-    background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.logo { font-size: 1.6rem; text-decoration: none; color: #fff; }
-.logo span { color: var(--accent-orange); }
-
+/* THE NAV RESTORATION BLOCK */
 .nav-links {
     display: flex;
     list-style: none;
@@ -68,80 +6,35 @@ nav {
     align-items: center;
 }
 
-.nav-links > li { position: relative; padding: 30px 0; }
-
-.nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-/* MEGA MENU LOGIC */
+/* This is the "Cloak" that hides the mess in your screenshot */
 .dropdown-menu {
-    display: none;
+    display: none; 
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
     padding: 2.5rem;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    border-radius: 12px;
+    z-index: 2000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
-.nav-links li:hover .dropdown-menu { display: grid; }
-
-.industry-grid { grid-template-columns: repeat(3, 220px); gap: 3rem; }
-.service-list { grid-template-columns: 280px; }
-
-.menu-col h4 {
-    color: var(--accent-orange);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.2rem;
+/* This is the "Trigger" that only shows it on hover */
+.nav-links li:hover .dropdown-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    gap: 2rem;
 }
 
+/* Clean up the boxes seen in your screenshot */
 .dropdown-menu a {
     display: block;
     padding: 8px 0;
     color: var(--text-dim);
-    font-size: 0.9rem;
-}
-
-.dropdown-menu a:hover { color: #fff; }
-
-/* --- HERO & ANIMATIONS --- */
-.hero { padding: 8rem 5% 5rem; text-align: center; }
-
-.floating-logo {
-    width: 240px;
-    margin-bottom: 2rem;
-    animation: squadFloat 5s ease-in-out infinite;
-}
-
-@keyframes squadFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-/* --- BUTTONS & GLOW --- */
-.btn {
-    background: linear-gradient(135deg, var(--premium-purple), var(--accent-orange));
-    color: white !important;
-    padding: 1.2rem 3rem;
-    border-radius: 50px;
-    font-weight: 800;
     text-decoration: none;
-    display: inline-block;
-    transition: 0.4s;
+    font-size: 0.9rem;
+    background: none; /* Removes the white/blue box look */
+    border: none;
 }
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(249, 115, 22, 0.5);
-}
-
-.highlight { color: var(--accent-orange); }
