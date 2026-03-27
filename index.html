@@ -6,140 +6,29 @@
     <title>Your Online Squad | High-Velocity Contractor Growth Engines</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/cooper-hewitt" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
     <style>
-        :root { 
-            --bg: #0b0f1a; --purple: #7c3aed; --orange: #f97316; 
-            --card: #161c2d; --border: #2d3748; --text-dim: #a0aec0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: var(--bg); 
-            color: #f8fafc; 
-            line-height: 1.8; 
-            overflow-x: hidden; 
-        }
-
-        h1, h2, h3, h4, .logo { 
-            font-family: 'Cooper Hewitt', sans-serif; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            letter-spacing: -0.02em; 
-        }
-        
-        .highlight { color: var(--orange); }
-
-        /* --- NAVIGATION --- */
-        header { 
-            background: rgba(11, 15, 26, 0.98); 
-            backdrop-filter: blur(15px); 
-            border-bottom: 1px solid var(--border); 
-            height: 100px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 2000; 
-            display: flex; 
-            align-items: center; 
-        }
-        nav { width: 90%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 2rem; color: #fff; } .logo span { color: var(--orange); }
-        .nav-links { display: flex; gap: 2.5rem; }
-        .nav-links a { color: #fff; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--orange); }
-
-        /* --- UX BUTTONS --- */
-        .btn { 
-            background: linear-gradient(135deg, var(--purple), var(--orange)); 
-            color: #fff !important; 
-            padding: 1.2rem 2.8rem; 
-            border-radius: 4px; 
-            font-weight: 900; 
-            font-size: 1rem;
-            text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
-            transition: 0.4s;
-            display: inline-block;
-        }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 45px rgba(249, 115, 22, 0.5); }
-
-        /* --- HERO --- */
-        .hero { 
-            padding: 12rem 5% 10rem; 
-            text-align: center; 
-            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%); 
-        }
-        .hero h1 { font-size: 6.5rem; line-height: 0.85; margin-bottom: 2.5rem; }
-        .hero p { font-size: 1.8rem; color: var(--text-dim); max-width: 1000px; margin: 0 auto 4rem; font-weight: 400; }
-
-        /* --- GRID & FLEX (MOBILE READY) --- */
+        /* This local style ensures the container & hero look perfect 
+           while the rest of the design pulls from styles.css */
         .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
         section { padding: 12rem 0; border-bottom: 1px solid var(--border); }
+        .hero { text-align: center; padding: 15rem 0 10rem; background: radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%); }
+        .hero h1 { font-size: 6.5rem; line-height: 0.85; margin-bottom: 2.5rem; }
+        .hero p { font-size: 1.8rem; color: var(--text-dim); max-width: 1000px; margin: 0 auto 4rem; }
         
-        .split { 
-            display: flex; 
-            align-items: center; 
-            gap: 5rem; 
-            margin-bottom: 4rem;
-        }
+        .split { display: flex; align-items: center; gap: 5rem; margin-bottom: 4rem; }
         .split.rev { flex-direction: row-reverse; }
         .split > div { flex: 1; }
-
-        .visual-placeholder {
-            background: var(--card);
-            border: 1px solid var(--border);
-            height: 450px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* --- CONTENT TYPOGRAPHY --- */
-        h2 { font-size: 4rem; line-height: 1; margin-bottom: 2rem; }
-        .seo-text { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem; }
-
-        /* --- COMPARISON TABLE --- */
-        .comparison-table { 
-            width: 100%; 
-            margin: 5rem 0; 
-            border-collapse: collapse; 
-            background: var(--card); 
-            border-radius: 12px; 
-            overflow: hidden; 
-        }
-        .comparison-table th, .comparison-table td { padding: 2.5rem; text-align: left; border-bottom: 1px solid var(--border); }
-        .comparison-table th { font-size: 1.5rem; color: var(--orange); background: #1a202e; }
-
-        /* --- PROCESS STEPS --- */
-        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 5rem; }
-        .step { text-align: center; }
-        .step-num { 
-            width: 80px; height: 80px; background: var(--orange); 
-            border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; margin: 0 auto 2rem; font-size: 2rem; font-weight: 900; 
-        }
-
-        /* --- CARDS --- */
+        
+        .visual-placeholder { background: var(--card); border: 1px solid var(--border); height: 450px; border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; }
+        
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; margin-top: 5rem; }
         .card { background: var(--card); padding: 4.5rem; border-radius: 8px; border: 1px solid var(--border); transition: 0.4s; }
-        .card:hover { border-color: var(--orange); transform: translateY(-10px); background: #1a2336; }
+        .card:hover { border-color: var(--orange); transform: translateY(-10px); }
         .card h3 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--orange); }
 
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 4rem; }
-            .hero p { font-size: 1.3rem; }
-            .split { flex-direction: column !important; text-align: center; }
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
-            h2 { font-size: 2.8rem; }
-        }
-        @media (max-width: 600px) {
-            .process-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Standard Mobile Practice */
-        }
+        .btn { background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; padding: 1.2rem 2.8rem; border-radius: 4px; font-weight: 900; display: inline-block; }
     </style>
 </head>
 <body>
@@ -150,7 +39,6 @@
         <ul class="nav-links">
             <li><a href="#leads">THE PROBLEM</a></li>
             <li><a href="#physics">THE PHYSICS</a></li>
-            <li><a href="#framework">THE FRAMEWORK</a></li>
             <li><a href="contact.html" class="btn" style="padding: 0.8rem 1.8rem;">GET STARTED</a></li>
         </ul>
     </nav>
@@ -169,13 +57,12 @@
         <div class="container">
             <div class="split">
                 <div>
-                    <h2>STOP BUYING <br><span class="highlight">SHARED LEADS</span></h2>
-                    <p class="seo-text">Most contractors are masters of their trade but prisoners of their marketing. You’re forced into a "race to the bottom" on price because aggregators sell your leads to 5 competitors at once. This devalues your expertise and guts your profit margins.</p>
-                    <p class="seo-text">At Your Online Squad, we solve the margin killer. We build "Digital Equity." Instead of renting space on someone else's platform, we build proprietary lead engines that you own forever. When the phone rings, that lead is yours—and yours alone.</p>
+                    <h2 style="font-size: 4rem; line-height: 1;">STOP BUYING <br><span class="highlight">SHARED LEADS</span></h2>
+                    <p style="font-size: 1.2rem; color: var(--text-dim); margin-top: 2rem;">Most contractors are masters of their trade but prisoners of their marketing. You’re forced into a "race to the bottom" on price because aggregators sell your leads to 5 competitors at once.</p>
+                    <p style="font-size: 1.2rem; color: var(--text-dim); margin-top: 1rem;">At Your Online Squad, we build "Digital Equity." When the phone rings, that lead is yours—and yours alone.</p>
                 </div>
                 <div class="visual-placeholder">
-                    <img src="Untitled design.png" alt="Squad Logo" style="width: 250px; opacity: 0.5;">
-                    <div style="position:absolute; bottom:20px; font-weight:900; color:var(--orange);">[EXCLUSIVE SYSTEM VISUAL]</div>
+                    <img src="Untitled design.png" alt="Squad Logo" style="width: 250px; opacity: 0.3;">
                 </div>
             </div>
 
@@ -184,7 +71,7 @@
                     <tr><th>MARKETPLACE LEADS</th><th>YOUR ONLINE SQUAD ENGINE</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Shared with 4-6 hungry competitors</td><td>100% Exclusive lead ownership</td></tr>
+                    <tr><td>Shared with 4-6 competitors</td><td>100% Exclusive lead ownership</td></tr>
                     <tr><td>Price Shoppers & Low Margins</td><td>Value-Based, High-Intent Clients</td></tr>
                     <tr><td>Rented Visibility (Stops when you pay)</td><td>Owned Asset (Grows in Equity Yearly)</td></tr>
                 </tbody>
@@ -194,98 +81,60 @@
 
     <section id="physics">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
-            <p style="text-align: center; max-width: 900px; margin: 0 auto 5rem; font-size: 1.4rem; color: var(--text-dim);">Google AI doesn't just look for keywords; it looks for "entities" that demonstrate real-world Experience and Expertise. We build Digital Equity through three technical pillars.</p>
-            
+            <h2 style="text-align: center; font-size: 4rem;">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
             <div class="grid-3">
                 <div class="card">
                     <h3>KEYWORD VELOCITY</h3>
-                    <p>We track the speed at which your business is gaining ground. If your high-ticket terms aren't moving toward the Top 3 every 30 days, we pivot the strategy. Transparency is our baseline.</p>
+                    <p style="font-size: 1.1rem; color: var(--text-dim);">We track the speed of your rankings. If your high-ticket terms aren't moving toward the Top 3 every 30 days, we pivot the strategy immediately.</p>
                 </div>
                 <div class="card">
                     <h3>MAP PACK SYNC</h3>
-                    <p>Over 70% of clicks happen in the Map Pack. We synchronize your website’s technical signals with your Google Business Profile to create a "Double Entry" on Page 1.</p>
+                    <p style="font-size: 1.1rem; color: var(--text-dim);">Over 70% of clicks happen in the Map Pack. We synchronize your GBP with technical local signals to capture Page 1 real estate.</p>
                 </div>
                 <div class="card">
                     <h3>E-EAT AUTHORITY</h3>
-                    <p>We build a content web that mirrors the work you do in the field, satisfying Google's strict requirements for Authoritativeness and Trustworthiness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="framework">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 6rem;">THE <span class="highlight">SQUAD</span> FRAMEWORK</h2>
-            <div class="process-grid">
-                <div class="step"><div class="step-num">01</div><h4>AUDIT</h4><p class="seo-text" style="font-size: 1rem;">We find the technical leaks in your current lead funnel.</p></div>
-                <div class="step"><div class="step-num">02</div><h4>ALIGN</h4><p class="seo-text" style="font-size: 1rem;">We sync your GBP with aggressive local proximity signals.</p></div>
-                <div class="step"><div class="step-num">03</div><h4>SCALE</h4><p class="seo-text" style="font-size: 1rem;">We launch the high-velocity keyword engine in your territory.</p></div>
-                <div class="step"><div class="step-num">04</div><h4>OWN</h4><p class="seo-text" style="font-size: 1rem;">You dominate the market and lock out your competitors.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="split rev">
-                <div>
-                    <h2>SECURE YOUR <br><span class="highlight">EXCLUSIVE</span> TERRITORY</h2>
-                    <p class="seo-text">We only work with one contractor per trade per area. To build a true Growth Engine, we must focus all ranking authority on a single partner. This is territorial exclusivity in action.</p>
-                    <p class="seo-text">By the time a prospect reaches your "Get Started" button, they already view you as the authority. Our E-EAT framework ensures that when your sales team arrives, the customer is already sold on your expertise, not just your quote.</p>
-                    <br>
-                    <a href="contact.html" class="btn">START YOUR GROWTH AUDIT</a>
-                </div>
-                <div class="visual-placeholder">
-                    <div style="text-align:center;">
-                        <h3 style="color:var(--purple);">[PROXIMITY MAP]</h3>
-                        <p style="color:var(--text-dim); font-size: 0.9rem;">Visualizing your territory dominance</p>
-                    </div>
+                    <p style="font-size: 1.1rem; color: var(--text-dim);">We satisfy Google's strict requirements for Authoritativeness and Trustworthiness, making you the only logical choice for high-ticket jobs.</p>
                 </div>
             </div>
         </div>
     </section>
 </main>
+
 <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
-                    <p style="margin-top: 1.5rem;">The premier growth engine for elite contractors. We don't just generate leads; we engineer market dominance through technical SEO and E-EAT authority.</p>
-                    <a href="contact.html" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">GET AN AUDIT</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>SOLUTIONS</h4>
-                    <ul class="footer-links">
-                        <li><a href="services/local-seo.html">Local SEO & Maps</a></li>
-                        <li><a href="services/lead-generation.html">Exclusive Lead Gen</a></li>
-                        <li><a href="services/web-design.html">Conversion Design</a></li>
-                        <li><a href="services/google-business-profile.html">GBP Optimization</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>INDUSTRIES</h4>
-                    <ul class="footer-links">
-                        <li><a href="industries/roofers.html">Roofing Pros</a></li>
-                        <li><a href="industries/plumbers.html">Expert Plumbers</a></li>
-                        <li><a href="industries/hvac.html">HVAC Specialists</a></li>
-                        <li><a href="industries/electricians.html">Electricians</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>SQUAD HQ</h4>
-                    <p>Building Digital Equity for contractors across North America. Territory exclusivity strictly enforced.</p>
-                    <p style="color: #fff; font-weight: 800;">Email: <span style="font-weight: 400; color: var(--text-dim);">growth@youronlinesquad.com</span></p>
-                </div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 2.2rem;">YOUR ONLINE <span>SQUAD</span></a>
+                <p>The premier growth engine for elite contractors. Engineering market dominance through technical SEO.</p>
+                <a href="contact.html" class="btn" style="padding: 0.8rem 1.8rem; font-size: 0.9rem;">GET AN AUDIT</a>
             </div>
-
-            <div class="copyright">
-                <p>&copy; 2026 Your Online Squad LLC. All Rights Reserved. Built for Market Authority.</p>
+            <div class="footer-col">
+                <h4>SOLUTIONS</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Local SEO & Maps</a></li>
+                    <li><a href="#">Exclusive Lead Gen</a></li>
+                    <li><a href="#">Conversion Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>INDUSTRIES</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Roofing Professionals</a></li>
+                    <li><a href="#">Expert Plumbers</a></li>
+                    <li><a href="#">HVAC Specialists</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SQUAD HQ</h4>
+                <p>Building Digital Equity across North America. Territory exclusivity strictly enforced.</p>
+                <p style="color: #fff; font-weight: 800; font-size: 1.1rem;">EMAIL: <br><span style="font-weight: 400; color: var(--orange);">growth@youronlinesquad.com</span></p>
             </div>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>&copy; 2026 Your Online Squad LLC. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
