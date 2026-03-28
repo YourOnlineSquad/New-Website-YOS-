@@ -1,4 +1,4 @@
-/* YOUR ONLINE SQUAD - MASTER BRAND KIT */
+ /* YOUR ONLINE SQUAD - MASTER BRAND KIT */
 :root { 
     --bg: #05070a; 
     --bg-secondary: #0b0f1a;
@@ -12,61 +12,134 @@
 
 /* Global Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; padding-top: 100px; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg); 
+    color: var(--white); 
+    line-height: 1.8; 
+    overflow-x: hidden; 
+    padding-top: 100px; 
+}
 .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
 .highlight { color: var(--orange); }
 .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
 
-/* Navigation Styles */
+/* --- HEADER & NAVIGATION (The "Squad" Look) --- */
 header { 
-    background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
-    height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
-    display: flex; align-items: center; backdrop-filter: blur(12px);
+    background: rgba(5, 7, 10, 0.95); 
+    border-bottom: 1px solid var(--border); 
+    height: 100px; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 9999;
+    display: flex; 
+    align-items: center; 
+    backdrop-filter: blur(12px);
 }
-nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+nav { 
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 0 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+}
 .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; }
 .logo span { color: var(--orange); }
+
 .nav-links { display: flex; gap: 30px; align-items: center; list-style: none; }
-.nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
+.nav-links > li > a:not(.btn) { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
 .nav-links > li > a:not(.btn):hover { color: var(--orange); }
 
-/* Mega Menu Logic */
+/* --- MEGA MENU FIX --- */
 .mega-dropdown { position: relative; }
 .mega-menu {
-    position: absolute; top: 70px; left: 50%; transform: translateX(-50%);
-    width: 800px; background: var(--bg-secondary); border: 1px solid var(--border);
-    border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
-    padding: 30px; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    grid-template-columns: repeat(3, 1fr); gap: 20px;
+    position: absolute; 
+    top: 60px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 800px; 
+    background: var(--bg-secondary); 
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--orange); 
+    border-radius: 0 0 12px 12px;
+    padding: 30px; 
+    display: none; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    list-style: none;
 }
 .mega-dropdown:hover .mega-menu { display: grid; }
 .services-menu { width: 300px; grid-template-columns: 1fr; left: 0; transform: none; }
-.mega-menu li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px; transition: 0.2s; }
+.mega-menu li a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    padding: 8px 10px; 
+    display: block; 
+    border-radius: 4px; 
+    transition: 0.2s; 
+}
 .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
 
-/* Buttons */
+/* --- BUTTONS --- */
 .btn { 
-    background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; 
-    padding: 14px 30px; border-radius: 6px; font-weight: 900; font-size: 0.85rem; 
-    text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
+    background: linear-gradient(135deg, var(--purple), var(--orange)); 
+    color: #fff !important; 
+    padding: 14px 30px; 
+    border-radius: 50px; /* Original rounded pill shape */
+    font-weight: 900; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    transition: 0.4s; 
+    border: none; 
+    display: inline-block;
+    cursor: pointer;
 }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4); }
 
-/* Layout Sections */
+/* --- HERO & CONTENT SECTIONS --- */
 section { padding: 140px 0; border-bottom: 1px solid var(--border); }
 .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
-.manifesto-block { background: var(--card); padding: 50px; border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; margin-bottom: 40px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
 
-/* Fixed Footer Logic */
+.visual-asset {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(249, 115, 22, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card { 
+    background: var(--card); 
+    padding: 40px; 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    transition: 0.3s; 
+}
+.card:hover { border-color: var(--orange); transform: translateY(-5px); }
+
+/* --- FOOTER FIX --- */
 footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-.footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; }
 .footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 15px; }
 .footer-col ul li a { 
     color: var(--text-dim) !important; 
     text-decoration: none !important; 
