@@ -1,16 +1,385 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Business Profile Optimization | Your Online Squad</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Google Business Profile Management | Your Online Squad</title>
+    <meta name="description" content="Dominate the Google Map Pack. We engineer and manage your Google Business Profile to capture local territory and force your phone to ring.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #05070a; --bg-secondary: #0b0f1a;
+            --purple: #7c3aed; --orange: #f97316; 
+            --card: rgba(22, 28, 45, 0.6); --border: rgba(45, 55, 72, 0.5); 
+            --text-dim: #94a3b8; --white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; padding-top: 100px; }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        .highlight { color: var(--orange); }
+
+        .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
+
+        header { 
+            background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
+            height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
+            display: flex; align-items: center; backdrop-filter: blur(12px);
+        }
+        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; z-index: 10000; }
+        .logo span { color: var(--orange); }
+
+        ul { list-style: none; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 40px 0; display: inline-block; transition: 0.3s; }
+        .nav-links > li > a:not(.btn):hover { color: var(--orange); }
+
+        .mega-dropdown { position: relative; }
+        .mega-menu {
+            position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
+            width: 800px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
+            padding: 30px; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .mega-dropdown:hover .mega-menu { display: grid; }
+        .services-menu { width: 300px; grid-template-columns: 1fr; left: 0; transform: none; }
+        .mega-menu li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px; transition: 0.2s; text-transform: capitalize; }
+        .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
+
+        .btn { 
+            background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; 
+            padding: 14px 30px; border-radius: 6px; font-weight: 900; font-size: 0.85rem; 
+            text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
+        .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
+
+        section { padding: 140px 0; border-bottom: 1px solid var(--border); }
+        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
+        .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
+
+        .hero { 
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at top left, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            padding: 160px 0 120px; border: none; 
+        }
+        .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
+        .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
+
+        .visual-asset {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(249, 115, 22, 0.5);
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,0,0,0.4);
+            position: relative; overflow: hidden;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+        .visual-asset::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 60%; height: 60%; background: var(--orange); filter: blur(100px); opacity: 0.15; z-index: -1;
+        }
+        .asset-label {
+            color: var(--orange); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+            font-size: 0.9rem; text-align: center; padding: 15px 25px; border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px;
+            background: rgba(11, 15, 26, 0.8);
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
+
+        .float-tag {
+            position: absolute; background: rgba(11, 15, 26, 0.9); border: 1px solid var(--orange);
+            color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+            backdrop-filter: blur(5px); z-index: 5; box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            animation: float 5s ease-in-out infinite reverse;
+        }
+        .tag-1 { top: 10%; right: -5%; animation-delay: 0s; }
+        .tag-2 { bottom: 15%; left: -5%; animation-delay: 1s; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+        .card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
+        .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
+
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
+        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
+        .faq-box p { color: var(--text-dim); font-size: 1.05rem; }
+        .faq-full { grid-column: 1 / -1; }
+
+        footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col p { color: var(--text-dim); margin-bottom: 15px; font-size: 1rem; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--orange); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .container { padding: 0 25px; }
+            .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .hero p { margin: 0 auto 40px; }
+            .grid-split.reverse { direction: ltr; } 
+            .grid-3, .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            
+            .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
+            nav { justify-content: flex-start; } 
+
+            .nav-links { 
+                position: fixed; top: 100px; left: 0; width: 100%; height: calc(100vh - 100px);
+                background: rgba(5, 7, 10, 0.98); flex-direction: column; justify-content: flex-start;
+                gap: 0; padding: 20px 0; display: none; overflow-y: auto;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links > li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .nav-links > li > a:not(.btn) { padding: 25px; display: block; font-size: 1.1rem; }
+            .mega-menu { position: relative; top: 0; left: 0; transform: none; width: 100%; grid-template-columns: 1fr; box-shadow: none; border: none; padding: 10px 0 30px; }
+            .mega-dropdown:hover .mega-menu { display: none; } 
+            .mega-dropdown.active .mega-menu { display: grid; } 
+            .btn { margin: 30px auto; width: 80%; }
+        }
+        @media (max-width: 768px) { 
+            .footer-grid { grid-template-columns: 1fr; text-align: center; } 
+            .float-tag { display: none; } 
+        }
+    </style>
 </head>
 <body>
-    <main class="hero-section">
-        <h1>Optimize Your <span class="highlight">Google Maps</span></h1>
-        <p>The Map Pack is where the calls happen. We optimize your Google Business Profile to ensure you show up in local searches.</p>
-        <a href="../contact.html" class="cta-main">Optimize My Profile</a>
-    </main>
+
+<header>
+    <nav>
+        <a href="../index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+            <li class="mega-dropdown">
+                <a href="#" class="mobile-drop-btn">Industries &nbsp;&#9662;</a>
+                <ul class="mega-menu">
+                    <div>
+                        <li><a href="../industries/roofers.html">Roofing</a></li>
+                        <li><a href="../industries/plumbers.html">Plumbing</a></li>
+                        <li><a href="../industries/hvac.html">HVAC</a></li>
+                        <li><a href="../industries/electricians.html">Electricians</a></li>
+                        <li><a href="../industries/concrete-contractors.html">Concrete</a></li>
+                    </div>
+                    <div>
+                        <li><a href="../industries/general-contractors.html">General Contractors</a></li>
+                        <li><a href="../industries/home-services.html">Home Services</a></li>
+                        <li><a href="../industries/landscapers.html">Landscapers</a></li>
+                        <li><a href="../industries/locksmiths.html">Locksmiths</a></li>
+                        <li><a href="../industries/garage-doors.html">Garage Doors</a></li>
+                    </div>
+                    <div>
+                        <li><a href="../industries/gutter-installation.html">Gutters</a></li>
+                        <li><a href="../industries/house-cleaning.html">Cleaning</a></li>
+                        <li><a href="../industries/junk-removal.html">Junk Removal</a></li>
+                        <li><a href="../industries/pest-control.html">Pest Control</a></li>
+                        <li><a href="../industries/water-damage.html">Water Damage</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="mega-dropdown">
+                <a href="#" class="mobile-drop-btn">Services &nbsp;&#9662;</a>
+                <ul class="mega-menu services-menu">
+                    <li><a href="local-seo.html">Local SEO</a></li>
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="lead-generation.html">Lead Generation</a></li>
+                    <li><a href="google-business-profile.html">GBP Management</a></li>
+                    <li><a href="automation-crm.html">Automation and CRM</a></li>
+                </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html" class="btn">Claim Territory</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="grid-split">
+                <div>
+                    <h1>DOMINATE THE <br><span class="highlight">MAP PACK</span></h1>
+                    <p>Over 70% of high-ticket contractor leads never scroll past the top three map results. We weaponize your Google Business Profile to capture local search traffic and starve your competitors.</p>
+                    <a href="../contact.html" class="btn">Check Territory Availability</a>
+                </div>
+                <div style="position: relative;">
+                    <div class="visual-asset" style="aspect-ratio: 1/1; border-radius: 50%;">
+                        <div class="asset-label">[ Insert Map Pack Ranking Vector Here ]</div>
+                    </div>
+                    <div class="float-tag tag-1">📍 Local Dominance</div>
+                    <div class="float-tag tag-2">⭐ 5-Star Authority</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reality">
+        <div class="container">
+            <div class="grid-split reverse">
+                <div>
+                    <h2 class="fluid-h2">INVISIBLE IN <br><span class="highlight">YOUR CITY</span></h2>
+                    <div class="copy-heavy">
+                        <p>Having a beautiful website is entirely useless if homeowners can't find you. When a pipe bursts or a roof leaks, the customer types "emergency contractor near me" into Google. They do not scroll down. They click one of the top three businesses featured in the local Map Pack.</p>
+                        <p>If you are not in those top three spots, you simply do not exist to that customer. Your competitors are stealing your revenue every single day simply because their Google profile is active, and yours is collecting dust.</p>
+                        <p>We do not just "set up" your profile. We engineer it for maximum localized visibility. We deploy geo-tagged image payloads, keyword-rich service updates, and aggressive review velocity strategies that force the algorithm to push your brand to the top of the local battlefield.</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div class="visual-asset" style="aspect-ratio: 4/5;">
+                        <div class="asset-label">[ Insert Competitor Outranking Vector ]</div>
+                    </div>
+                    <div class="float-tag tag-1" style="border-color: var(--purple);">🎯 Geo-Targeted Leads</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">THE ANATOMY OF A <br><span class="highlight">DOMINANT PROFILE</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 20px auto 50px; font-size: 1.15rem;">A static profile sinks to the bottom. We treat your GBP like a high-performance engine, tuning it daily to maintain peak algorithmic output.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">Geographic Expansion</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">We don't just rank you in the zip code your office sits in. We build optimized location silos and deploy proximity signals that expand your ranking radius, allowing you to capture leads from the wealthiest surrounding neighborhoods in your territory.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">Review Velocity</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">A 5-star rating isn't enough; you need volume and frequency. We integrate automated CRM systems that intercept happy customers and aggressively build your review count. We build an insurmountable wall of trust that competitors cannot match.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #fff; font-size: 1.5rem;">Algorithmic Activity</h3>
+                    <p style="font-size: 1.05rem; color: var(--text-dim);">A dead profile loses rank. We constantly feed Google's algorithm what it craves. We deploy optimized weekly posts, seed strategic Q&A sections, and upload schema-backed project photos, signaling massive relevance to the search engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seo-integration">
+        <div class="container">
+            <div class="grid-split">
+                <div class="visual-asset" style="aspect-ratio: 16/9;">
+                    <div class="asset-label">[ Insert Local Search Grid Tracking Vector Here ]</div>
+                </div>
+                <div>
+                    <h2 class="fluid-h2">WEAPONIZING <br><span class="highlight">LOCAL SEARCH</span></h2>
+                    <div class="copy-heavy">
+                        <p>The Google Map Pack is a zero-sum game. Every time your competitor gets a phone call from the map pack, it is money taken directly out of your pocket. You cannot win by playing defense.</p>
+                        <p>We track your exact keyword rankings across a specialized geographic grid covering your entire service area. We don't guess where you rank; we know exactly where you stand block by block.</p>
+                        <p>If a competitor tries to move in on your territory or your rank slips in a specific neighborhood, our tracking systems detect it immediately. We aggressively deploy algorithmic counter-measures to push them back down the page and reclaim your position. This is absolute local dominance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="fluid-h2" style="text-align: center;">GBP MANAGEMENT <span class="highlight">FAQS</span></h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px;">Direct answers about how we capture your local territory.</p>
+
+            <div class="faq-grid">
+                <div class="faq-box">
+                    <h4>Why is the Map Pack more important than organic search?</h4>
+                    <p>Because it appears at the very top of the Google search page, above traditional website links. For emergency or high-intent home services, homeowners immediately click the first map result with good reviews. If you aren't in those top three spots, you lose the lead.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Can I just manage the profile myself?</h4>
+                    <p>You can, but you are competing against specialized agencies like ours. While you are busy on a job site, we are deploying keyword strategies, uploading geo-tagged images, and optimizing Q&As for your competitors. We outwork and out-optimize them.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How long does it take to get into the top 3 spots?</h4>
+                    <p>It depends entirely on the size of your city and the strength of the competitors currently in those spots. However, with our aggressive optimization and review velocity tactics, we typically see significant positive map movement within the first 30 to 60 days.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What if I have multiple franchise locations?</h4>
+                    <p>We build a customized domination strategy for every single location. We create individual, highly optimized profiles for each physical address and manage them simultaneously to blanket your entire state with your brand.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Do you handle responding to the customer reviews?</h4>
+                    <p>Yes. Google's algorithm monitors how fast you respond to reviews and the specific keywords used in those responses. We strategically manage your reputation to squeeze the maximum SEO value out of every single customer interaction.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is a geo-tagged image and why does it matter?</h4>
+                    <p>It is a photo embedded with hidden metadata that proves exactly where a job took place. When we upload these heavily optimized photos to your profile, it proves to Google that you actively operate in the specific wealthy neighborhoods you are trying to rank in.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px; font-size: 2rem;">YOUR ONLINE <span>SQUAD</span></div>
+                <p>The premier growth department for elite tradesmen and contractors. Stop buying shared leads. Start building digital equity.</p>
+            </div>
+            <div class="footer-col">
+                <h4>INDUSTRIES</h4>
+                <ul>
+                    <li><a href="../industries/roofers.html">Roofing</a></li>
+                    <li><a href="../industries/plumbers.html">Plumbing</a></li>
+                    <li><a href="../industries/hvac.html">HVAC</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="local-seo.html">Local SEO</a></li>
+                    <li><a href="web-design.html">Web Design</a></li>
+                    <li><a href="google-business-profile.html">GBP Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SQUAD HQ</h4>
+                <ul>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Claim Territory</a></li>
+                    <li><a href="mailto:growth@youronlinesquad.com">growth@youronlinesquad.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Your Online Squad LLC. Engineered for Scale.
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const mobileDropBtns = document.querySelectorAll('.mobile-drop-btn');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    mobileDropBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                btn.parentElement.classList.toggle('active');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
