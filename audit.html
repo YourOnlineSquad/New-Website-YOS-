@@ -68,7 +68,7 @@
         .audit-summary-item,
         .audit-issue-card,
         .audit-final-cta {
-            border: 1px solid rgba(124, 138, 164, 0.28);
+            border: 1px solid rgba(249, 115, 22, 0.34);
             box-shadow:
                 0 18px 34px rgba(2, 6, 23, 0.36),
                 inset 0 1px 0 rgba(255, 255, 255, 0.02);
@@ -77,16 +77,23 @@
         }
 
         .audit-score-card:hover,
+        .audit-score-card:focus-within,
+        .audit-score-card:active,
         .audit-summary-item:hover,
+        .audit-summary-item:focus-within,
+        .audit-summary-item:active,
         .audit-issue-card:hover,
-        .audit-final-cta:hover {
-            transform: translateY(-7px);
-            border-color: rgba(199, 161, 255, 0.65);
+        .audit-issue-card:focus-within,
+        .audit-issue-card:active,
+        .audit-final-cta:hover,
+        .audit-final-cta:focus-within,
+        .audit-final-cta:active {
+            transform: translateY(-8px) scale(1.015);
+            border-color: rgba(249, 115, 22, 0.56);
             box-shadow:
-                0 28px 54px rgba(2, 6, 23, 0.48),
-                0 0 0 1px rgba(199, 161, 255, 0.18),
-                0 0 34px rgba(124, 58, 237, 0.34),
-                0 0 58px rgba(249, 115, 22, 0.16);
+                0 30px 56px rgba(2, 6, 23, 0.5),
+                0 0 0 1px rgba(249, 115, 22, 0.16),
+                0 0 38px rgba(124, 58, 237, 0.34);
         }
 
         .audit-summary-item {
@@ -98,11 +105,15 @@
         }
 
         .audit-current-data {
-            border: 1px solid rgba(139, 161, 197, 0.34);
-            background: linear-gradient(160deg, rgba(4, 7, 14, 0.95), rgba(10, 15, 27, 0.9));
-            box-shadow: inset 0 0 0 1px rgba(190, 210, 241, 0.05), inset 0 0 32px rgba(124, 58, 237, 0.1);
-            padding: 13px 14px;
-            color: #eef4ff !important;
+            border: 1px solid rgba(249, 115, 22, 0.38);
+            background: linear-gradient(160deg, rgba(4, 7, 14, 0.97), rgba(14, 19, 31, 0.95));
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+                inset 0 0 24px rgba(11, 16, 30, 0.9),
+                0 14px 26px rgba(2, 6, 23, 0.42);
+            padding: 14px 16px;
+            color: #f4f8ff !important;
+            line-height: 1.55;
         }
 
         .audit-state {
@@ -138,7 +149,7 @@
         .audit-final-cta {
             position: relative;
             overflow: hidden;
-            border-color: rgba(174, 128, 255, 0.5);
+            border-color: rgba(249, 115, 22, 0.46);
             background:
                 linear-gradient(140deg, rgba(124, 58, 237, 0.2), rgba(249, 115, 22, 0.17) 45%, rgba(13, 17, 29, 0.94)),
                 rgba(9, 13, 22, 0.86);
@@ -218,6 +229,99 @@
                 transform: none !important;
             }
         }
+
+        .audit-score-card {
+            background: linear-gradient(160deg, rgba(24, 31, 48, 0.72), rgba(12, 18, 31, 0.82));
+            border-radius: 14px;
+            padding: 24px 22px;
+        }
+
+        .audit-score-label {
+            color: #c8d4e8;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .audit-score-value {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 0.95;
+            text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .audit-score-card:nth-child(1) .audit-score-value { color: #c9d8ef; }
+        .audit-score-card:nth-child(2) .audit-score-value { color: #4ade80; text-shadow: 0 0 18px rgba(34, 197, 94, 0.22); }
+        .audit-score-card:nth-child(3) .audit-score-value { color: #fbbf24; text-shadow: 0 0 18px rgba(251, 191, 36, 0.24); }
+        .audit-score-card:nth-child(4) .audit-score-value { color: #fb7185; text-shadow: 0 0 18px rgba(251, 113, 133, 0.24); }
+
+        .audit-score-value span {
+            color: #9fb2ce;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 960px) {
+            .audit-page {
+                padding-top: 84px;
+            }
+
+            .audit-page header {
+                height: auto;
+                min-height: 76px;
+            }
+
+            .audit-page nav {
+                padding: 10px 16px;
+                gap: 10px;
+            }
+
+            .audit-page .logo {
+                font-size: 1.08rem;
+                letter-spacing: -0.02em;
+            }
+
+            .audit-nav-links {
+                gap: 8px;
+            }
+
+            .audit-nav-links > li > a {
+                font-size: 0.66rem;
+                letter-spacing: 0.06em;
+            }
+
+            .audit-nav-links .btn {
+                padding: 9px 14px;
+                font-size: 0.62rem;
+            }
+
+            .audit-hero {
+                padding: 118px 0 64px;
+            }
+
+            .audit-score-card,
+            .audit-summary-item,
+            .audit-issue-card,
+            .audit-final-cta {
+                border-color: rgba(249, 115, 22, 0.42);
+            }
+
+            .audit-issue-grid {
+                gap: 14px;
+            }
+
+            .audit-issue-card {
+                padding: 18px;
+                border-radius: 13px;
+            }
+
+            .audit-current-data {
+                margin-bottom: 14px;
+            }
+        }
     </style>
 </head>
 <body class="audit-page">
@@ -240,7 +344,6 @@
         <section class="audit-hero">
             <div class="audit-container">
                 <div class="audit-hero-copy">
-                    <p class="audit-eyebrow">Module 1 · Live Homepage Scanner</p>
                     <h1>Free Website SEO Audit for Local Businesses</h1>
                     <p class="audit-subheadline">Get real homepage data in seconds. We scan your submitted URL and surface the on-page and local SEO fundamentals that influence rankings, trust, and lead flow.</p>
 
