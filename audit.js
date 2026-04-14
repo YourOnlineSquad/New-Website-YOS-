@@ -73,11 +73,17 @@
     resultsSection.hidden = false;
     loadingState.hidden = !isLoading;
     report.hidden = isLoading;
+    report.classList.remove('is-visible');
 
     if (isLoading) {
       report.classList.remove('is-visible');
       resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
     }
+
+    requestAnimationFrame(() => {
+      report.classList.add('is-visible');
+    });
   }
 
   function setFeedback(message, state) {
