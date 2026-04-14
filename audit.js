@@ -75,6 +75,7 @@
     report.hidden = isLoading;
 
     if (isLoading) {
+      report.classList.remove('is-visible');
       resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
@@ -93,14 +94,18 @@
     scannedUrlText.textContent = data.url || '';
 
     setLoading(false);
+
+    requestAnimationFrame(() => {
+      report.classList.add('is-visible');
+    });
   }
 
   function renderScores(scores) {
     scoreGrid.innerHTML = scoreKeys
-      .map(({ key, label }) => {
+      .map(({ key, label }, index) => {
         const value = Number.isFinite(scores[key]) ? scores[key] : 0;
         return `
-          <article class="audit-score-card">
+          <article class="audit-score-card audit-lift-card audit-reveal" style="--audit-delay: ${120 + index * 70}ms;">
             <p class="audit-score-label">${label}</p>
             <p class="audit-score-value">${value}<span>/100</span></p>
           </article>
@@ -111,15 +116,15 @@
 
   function renderSummary(counts) {
     summaryStrip.innerHTML = `
-      <article class="audit-summary-item audit-summary-pass">
+      <article class="audit-summary-item audit-summary-pass audit-lift-card audit-reveal" style="--audit-delay: 220ms;">
         <p class="audit-summary-label">Passed Checks</p>
         <p class="audit-summary-value">${counts.pass || 0}</p>
       </article>
-      <article class="audit-summary-item audit-summary-warning">
+      <article class="audit-summary-item audit-summary-warning audit-lift-card audit-reveal" style="--audit-delay: 280ms;">
         <p class="audit-summary-label">Warnings</p>
         <p class="audit-summary-value">${counts.warning || 0}</p>
       </article>
-      <article class="audit-summary-item audit-summary-issue">
+      <article class="audit-summary-item audit-summary-issue audit-lift-card audit-reveal" style="--audit-delay: 340ms;">
         <p class="audit-summary-label">Issues</p>
         <p class="audit-summary-value">${counts.issue || 0}</p>
       </article>
@@ -128,9 +133,9 @@
 
   function renderFindings(findings) {
     issueList.innerHTML = findings
-      .map((item) => {
+      .map((item, index) => {
         return `
-          <article class="audit-issue-card">
+          <article class="audit-issue-card audit-lift-card audit-reveal" style="--audit-delay: ${380 + index * 70}ms;">
             <div class="audit-issue-topline">
               <h3>${escapeHtml(item.label || 'Finding')}</h3>
               <span class="audit-state audit-state-${item.status}">${escapeHtml(item.status || 'issue')}</span>
