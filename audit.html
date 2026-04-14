@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free SEO Audit Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="grid-split">
+    <div>
+      <h1>Free Website SEO Audit</h1>
+      <p>Find out what’s holding your website back from ranking locally.</p>
+
+      <input type="text" id="urlInput" placeholder="Enter your website URL" style="padding:15px; width:100%; margin-bottom:20px;">
+      <button class="btn" onclick="runAudit()">Run Audit</button>
+
+      <div id="results" style="margin-top:30px;"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+function runAudit() {
+  const url = document.getElementById("urlInput").value;
+  document.getElementById("results").innerHTML = "Scanning " + url + "... (this will be upgraded)";
+}
+</script>
+
+</body>
+</html>
