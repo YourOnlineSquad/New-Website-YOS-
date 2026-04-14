@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Free SEO Audit Tool</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Website SEO Audit for Local Businesses | Your Online Squad</title>
+    <meta name="description" content="Run a premium local SEO audit preview and uncover structural issues, local relevance gaps, and missed ranking opportunities.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="audit-page">
+    <header>
+        <nav>
+            <a href="index.html" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+            <ul class="nav-links audit-nav-links">
+                <li><a href="index.html">Back to Home</a></li>
+                <li><a href="contact.html" class="btn">Book Strategy Call</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
-  <div class="grid-split">
-    <div>
-      <h1>Free Website SEO Audit</h1>
-      <p>Find out what’s holding your website back from ranking locally.</p>
+    <main>
+        <section class="audit-hero">
+            <div class="audit-container">
+                <div class="audit-hero-copy">
+                    <p class="audit-eyebrow">Module 1 · Local SEO Audit Preview</p>
+                    <h1>Free Website SEO Audit for Local Businesses</h1>
+                    <p class="audit-subheadline">Uncover the structural issues, local SEO gaps, and missed optimization opportunities that quietly limit your rankings and lead flow.</p>
 
-      <input type="text" id="urlInput" placeholder="Enter your website URL" style="padding:15px; width:100%; margin-bottom:20px;">
-      <button class="btn" onclick="runAudit()">Run Audit</button>
+                    <form id="auditForm" class="audit-form" novalidate>
+                        <label for="websiteUrl" class="audit-label">Enter your website URL</label>
+                        <div class="audit-input-row">
+                            <input id="websiteUrl" name="websiteUrl" type="url" placeholder="https://yourwebsite.com" autocomplete="url" required>
+                            <button type="submit" class="btn">Run Free Audit</button>
+                        </div>
+                        <p id="auditFormFeedback" class="audit-feedback" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-      <div id="results" style="margin-top:30px;"></div>
-    </div>
-  </div>
-</section>
+        <section id="auditResults" class="audit-results" hidden>
+            <div class="audit-container">
+                <div class="audit-loading" id="auditLoading" hidden>
+                    <div class="audit-loader-line"></div>
+                    <p>Analyzing core on-page signals and local positioning factors...</p>
+                </div>
 
-<script>
-function runAudit() {
-  const url = document.getElementById("urlInput").value;
-  document.getElementById("results").innerHTML = "Scanning " + url + "... (this will be upgraded)";
-}
-</script>
+                <div id="auditReport" hidden>
+                    <div class="audit-score-grid" id="scoreGrid"></div>
 
+                    <div class="audit-issues-wrap">
+                        <h2>Priority Findings</h2>
+                        <p class="audit-section-subtext">These results are a structured demo for Module 1 and show how a full live crawl report will be presented.</p>
+                        <div id="issueList" class="audit-issue-grid"></div>
+                    </div>
+
+                    <div class="audit-final-cta">
+                        <h3>Want help fixing these issues and ranking better locally?</h3>
+                        <p>We build implementation roadmaps that turn these gaps into measurable local market growth.</p>
+                        <a href="contact.html" class="btn">Book a Strategy Call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="audit.js" defer></script>
 </body>
 </html>
