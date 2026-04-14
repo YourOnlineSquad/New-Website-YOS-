@@ -23,15 +23,15 @@
         <section class="audit-hero">
             <div class="audit-container">
                 <div class="audit-hero-copy">
-                    <p class="audit-eyebrow">Module 1 · Local SEO Audit Preview</p>
+                    <p class="audit-eyebrow">Module 1 · Live Homepage Scanner</p>
                     <h1>Free Website SEO Audit for Local Businesses</h1>
-                    <p class="audit-subheadline">Uncover the structural issues, local SEO gaps, and missed optimization opportunities that quietly limit your rankings and lead flow.</p>
+                    <p class="audit-subheadline">Get real homepage data in seconds. We scan your submitted URL and surface the on-page and local SEO fundamentals that influence rankings, trust, and lead flow.</p>
 
                     <form id="auditForm" class="audit-form" novalidate>
                         <label for="websiteUrl" class="audit-label">Enter your website URL</label>
                         <div class="audit-input-row">
                             <input id="websiteUrl" name="websiteUrl" type="url" placeholder="https://yourwebsite.com" autocomplete="url" required>
-                            <button type="submit" class="btn">Run Free Audit</button>
+                            <button type="submit" class="btn">Run Live Audit</button>
                         </div>
                         <p id="auditFormFeedback" class="audit-feedback" aria-live="polite"></p>
                     </form>
@@ -43,21 +43,24 @@
             <div class="audit-container">
                 <div class="audit-loading" id="auditLoading" hidden>
                     <div class="audit-loader-line"></div>
-                    <p>Analyzing core on-page signals and local positioning factors...</p>
+                    <p>Scanning your homepage title, metadata, content structure, links, schema, and local intent signals...</p>
                 </div>
 
                 <div id="auditReport" hidden>
+                    <p class="audit-scanned-url">Scanned URL: <span id="scannedUrlText"></span></p>
                     <div class="audit-score-grid" id="scoreGrid"></div>
+                    <div id="auditSummaryStrip" class="audit-summary-strip"></div>
+                    <p id="auditInsightText" class="audit-insight">Your website may be leaving visibility and leads on the table due to missing on-page and local SEO fundamentals.</p>
 
                     <div class="audit-issues-wrap">
                         <h2>Priority Findings</h2>
-                        <p class="audit-section-subtext">These results are a structured demo for Module 1 and show how a full live crawl report will be presented.</p>
+                        <p class="audit-section-subtext">Each finding includes status, your current homepage data, why it matters for local rankings, and what to do next.</p>
                         <div id="issueList" class="audit-issue-grid"></div>
                     </div>
 
                     <div class="audit-final-cta">
-                        <h3>Want help fixing these issues and ranking better locally?</h3>
-                        <p>We build implementation roadmaps that turn these gaps into measurable local market growth.</p>
+                        <h3>See exactly why competitors are outranking you locally and get a strategy to fix it.</h3>
+                        <p>Use this scan as your baseline, then book a strategy call to turn these insights into a focused local growth roadmap.</p>
                         <a href="contact.html" class="btn">Book a Strategy Call</a>
                     </div>
                 </div>
