@@ -346,3 +346,88 @@ h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1; ma
         gap: 12px;
     }
 }
+
+/* ===== Audit Page Enhancements (Version 2 live scanner) ===== */
+.audit-loading p {
+    color: #d7deec;
+    margin-top: 6px;
+}
+
+.audit-scanned-url {
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    font-size: 0.92rem;
+}
+
+.audit-scanned-url span {
+    color: #dce5f4;
+    font-weight: 600;
+}
+
+.audit-summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.audit-summary-item {
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(22, 28, 45, 0.52);
+    padding: 14px 16px;
+}
+
+.audit-summary-label {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.audit-summary-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.audit-summary-pass .audit-summary-value { color: #86efac; }
+.audit-summary-warning .audit-summary-value { color: #fcd34d; }
+.audit-summary-issue .audit-summary-value { color: #fca5a5; }
+
+.audit-insight {
+    background: rgba(13, 18, 32, 0.75);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #d9e2f1;
+    margin-bottom: 30px;
+}
+
+.audit-data-label {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #96a8c3 !important;
+    margin-bottom: 6px;
+}
+
+.audit-current-data {
+    background: rgba(5, 7, 10, 0.72);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #e8eef8 !important;
+}
+
+.audit-issue-explainer {
+    color: #d6dde9;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 960px) {
+    .audit-summary-strip {
+        grid-template-columns: 1fr;
+    }
+}
