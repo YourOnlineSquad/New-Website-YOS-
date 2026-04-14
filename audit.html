@@ -47,18 +47,18 @@
                 </div>
 
                 <div id="auditReport" hidden>
-                    <p class="audit-scanned-url">Scanned URL: <span id="scannedUrlText"></span></p>
-                    <div class="audit-score-grid" id="scoreGrid"></div>
-                    <div id="auditSummaryStrip" class="audit-summary-strip"></div>
-                    <p id="auditInsightText" class="audit-insight">Your website may be leaving visibility and leads on the table due to missing on-page and local SEO fundamentals.</p>
+                    <p class="audit-scanned-url audit-reveal" style="--audit-delay: 40ms;">Scanned URL: <span id="scannedUrlText"></span></p>
+                    <div class="audit-score-grid audit-reveal" id="scoreGrid" style="--audit-delay: 110ms;"></div>
+                    <div id="auditSummaryStrip" class="audit-summary-strip audit-reveal" style="--audit-delay: 180ms;"></div>
+                    <p id="auditInsightText" class="audit-insight audit-reveal audit-lift-card" style="--audit-delay: 250ms;">Your website may be leaving visibility and leads on the table due to missing on-page and local SEO fundamentals.</p>
 
-                    <div class="audit-issues-wrap">
+                    <div class="audit-issues-wrap audit-reveal" style="--audit-delay: 320ms;">
                         <h2>Priority Findings</h2>
                         <p class="audit-section-subtext">Each finding includes status, your current homepage data, why it matters for local rankings, and what to do next.</p>
                         <div id="issueList" class="audit-issue-grid"></div>
                     </div>
 
-                    <div class="audit-final-cta">
+                    <div class="audit-final-cta audit-reveal audit-lift-card" style="--audit-delay: 450ms;">
                         <h3>See exactly why competitors are outranking you locally and get a strategy to fix it.</h3>
                         <p>Use this scan as your baseline, then book a strategy call to turn these insights into a focused local growth roadmap.</p>
                         <a href="contact.html" class="btn">Book a Strategy Call</a>
