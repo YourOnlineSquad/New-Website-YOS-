@@ -162,3 +162,20 @@ footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px
 .footer-col ul li a { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
 .footer-col ul li a:hover { color: var(--orange); }
 .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
+
+/* Shared compact hub/blog navigation overrides */
+body.hub-page .logo { font-size: 1.5rem; }
+body.hub-page .nav-links { gap: 24px; }
+body.hub-page .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+body.hub-page .nav-links a:hover { color: var(--orange); }
+body.hub-page .btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
