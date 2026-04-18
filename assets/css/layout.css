@@ -1,0 +1,10 @@
+.container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+section { padding: 140px 0; border-bottom: 1px solid var(--border); }
+
+.grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.grid-split.reverse { direction: rtl; }
+.grid-split.reverse > * { direction: ltr; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }

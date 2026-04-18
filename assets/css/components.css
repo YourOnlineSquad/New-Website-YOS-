@@ -1,0 +1,24 @@
+.fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
+
+.btn {
+    background: linear-gradient(135deg, var(--purple), var(--orange));
+    color: #fff !important;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s;
+    border: none;
+    display: inline-block;
+}
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
+
+.card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+.card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
+.card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
+
+.faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
+.faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
