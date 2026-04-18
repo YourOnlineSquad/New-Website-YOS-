@@ -6,21 +6,12 @@
     <title>Cleaning Service Web Design & SEO | Your Online Squad</title>
     <meta name="description" content="Stop buying shared cleaning leads. We engineer high-performance digital assets with deep local roots that capture recurring residential contracts and high-ticket commercial janitorial.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
     <style>
-        :root { 
-            --bg: #05070a; --bg-secondary: #0b0f1a;
-            --purple: #7c3aed; --orange: #f97316; 
-            --card: rgba(22, 28, 45, 0.6); --border: rgba(45, 55, 72, 0.5); 
-            --text-dim: #94a3b8; --white: #ffffff;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; padding-top: 100px; }
-        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
-        .highlight { color: var(--orange); }
-
-        .fluid-h2 { font-size: clamp(2.2rem, 8vw, 3.5rem); margin-bottom: 25px; }
 
         header { 
             background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
@@ -49,17 +40,8 @@
         .mega-menu li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px; transition: 0.2s; text-transform: capitalize; }
         .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
 
-        .btn { 
-            background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; 
-            padding: 14px 30px; border-radius: 6px; font-weight: 900; font-size: 0.85rem; 
-            text-transform: uppercase; text-decoration: none; transition: 0.4s; border: none; display: inline-block;
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4); }
         .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
 
-        section { padding: 140px 0; border-bottom: 1px solid var(--border); }
-        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .grid-split.reverse { direction: rtl; } .grid-split.reverse > * { direction: ltr; }
         
         .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
         .manifesto-block { background: var(--card); padding: 50px; border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; margin-bottom: 40px; }
@@ -111,14 +93,6 @@
         .tag-2 { bottom: 15%; left: -5%; animation-delay: 1s; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-        .card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
-        .card:hover { border-color: rgba(249, 115, 22, 0.5); transform: translateY(-5px); }
-        .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
-
-        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
-        .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
-        .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
         .faq-box p { color: var(--text-dim); font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px; }
 
         footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
@@ -132,11 +106,7 @@
         .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
 
         @media (max-width: 1024px) {
-            .container { padding: 0 25px; }
-            .grid-split, .grid-split.reverse { grid-template-columns: 1fr; gap: 60px; text-align: center; }
             .hero p { margin: 0 auto 40px; }
-            .grid-split.reverse { direction: ltr; } 
-            .grid-3, .faq-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             
             .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
@@ -153,7 +123,6 @@
             .mega-menu { position: relative; top: 0; left: 0; transform: none; width: 100%; grid-template-columns: 1fr; box-shadow: none; border: none; padding: 10px 0 30px; }
             .mega-dropdown:hover .mega-menu { display: none; } 
             .mega-dropdown.active .mega-menu { display: grid; } 
-            .btn { margin: 30px auto; width: 80%; }
             .manifesto-block { padding: 30px; border-left: none; border-top: 4px solid var(--orange); border-radius: 0 0 12px 12px; }
         }
     </style>

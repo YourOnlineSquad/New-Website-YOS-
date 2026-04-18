@@ -1,0 +1,30 @@
+:root {
+    --bg: #05070a;
+    --bg-secondary: #0b0f1a;
+    --purple: #7c3aed;
+    --orange: #f97316;
+    --card: rgba(22, 28, 45, 0.6);
+    --border: rgba(45, 55, 72, 0.5);
+    --text-dim: #94a3b8;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.highlight { color: var(--orange); }
