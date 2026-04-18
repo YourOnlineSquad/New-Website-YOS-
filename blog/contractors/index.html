@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTRACTOR BLOG HUB | Your Online Squad</title>
+  <meta name="description" content="Blog hub page for contractors at Your Online Squad.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+:root {
+    --bg: #05070a;
+    --bg-secondary: #0b0f1a;
+    --purple: #7c3aed;
+    --orange: #f97316;
+    --card: rgba(22, 28, 45, 0.6);
+    --border: rgba(45, 55, 72, 0.5);
+    --text-dim: #94a3b8;
+    --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; overflow-x: hidden; padding-top: 100px; }
+.container { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+h1, h2, h3 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+.highlight { color: var(--orange); }
+header { background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; display: flex; align-items: center; backdrop-filter: blur(12px); }
+nav { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; }
+.logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 24px; align-items: center; list-style: none; }
+.nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+.nav-links a:hover { color: var(--orange); }
+.btn { background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; padding: 12px 24px; border-radius: 6px; font-weight: 900; font-size: 0.8rem; text-transform: uppercase; text-decoration: none; display: inline-block; }
+section { padding: 120px 0; border-bottom: 1px solid var(--border); }
+.hero { background-color: var(--bg); background-image: radial-gradient(circle at top left, rgba(124, 58, 237, 0.15) 0%, transparent 50%), linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px); background-size: 100% 100%, 40px 40px, 40px 40px; border: none; }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); margin-bottom: 24px; }
+.hero p { font-size: 1.15rem; color: var(--text-dim); max-width: 760px; margin-bottom: 30px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+.card { background: var(--card); padding: 30px; border: 1px solid var(--border); border-radius: 12px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.card p { color: var(--text-dim); }
+.card a { color: var(--orange); font-weight: 700; text-decoration: none; }
+footer { background: var(--bg-secondary); padding: 60px 0 30px; }
+footer p { color: var(--text-dim); }
+@media (max-width: 900px) { .container, nav { padding: 0 24px; } .grid-3 { grid-template-columns: 1fr; } .nav-links { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services/local-seo.html">Services</a></li>
+      <li><a href="/contact.html" class="btn">Claim Territory</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>CONTRACTOR BLOG HUB</h1>
+      <p>This hub is staged for future silo content. We are preparing category-level publishing lanes while preserving all current live URLs and page locations.</p>
+      <a href="/contact.html" class="btn">Request Content Strategy</a>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>Planned Content <span class="highlight">Pillars</span></h2>
+      <div class="grid-3">
+        <article class="card"><h3>Search Intent Maps</h3><p>Posts targeting commercial local intent with direct conversion pathways.</p></article>
+        <article class="card"><h3>Authority Builders</h3><p>Educational assets that increase trust and improve close rates.</p></article>
+        <article class="card"><h3>Case-Based Playbooks</h3><p>Execution breakdowns grounded in local market mechanics.</p></article>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>Related Hubs <span class="highlight">Now Live</span></h2>
+      <div class="grid-3">
+        <article class="card"><h3>Contractors Industry Hub</h3><p>Built around field-service demand and territory economics.</p><a href="/industries/contractors/">Open hub →</a></article>
+        <article class="card"><h3>Food & Beverage Industry Hub</h3><p>Built for reservation engines, recurring traffic, and local demand.</p><a href="/industries/food-and-beverage/">Open hub →</a></article>
+        <article class="card"><h3>Professional Services Industry Hub</h3><p>Built for trust-driven lead generation and consultative sales flows.</p><a href="/industries/professional-services/">Open hub →</a></article>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><p>© 2026 Your Online Squad. Staged content infrastructure.</p></div></footer>
+</body></html>
