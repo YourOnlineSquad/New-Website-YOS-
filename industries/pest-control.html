@@ -13,35 +13,6 @@
     <link rel="stylesheet" href="../assets/css/mobile.css">
     <style>
 
-        header { 
-            background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
-            height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
-            display: flex; align-items: center; backdrop-filter: blur(12px);
-        }
-        nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; position: relative; }
-        .logo { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; z-index: 10000; }
-        .logo span { color: var(--orange); }
-
-        ul { list-style: none; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links > li > a:not(.btn) { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 40px 0; display: inline-block; transition: 0.3s; }
-        .nav-links > li > a:not(.btn):hover { color: var(--orange); }
-
-        .mega-dropdown { position: relative; }
-        .mega-menu {
-            position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
-            width: 800px; background: var(--bg-secondary); border: 1px solid var(--border);
-            border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
-            padding: 30px; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            grid-template-columns: repeat(3, 1fr); gap: 20px;
-        }
-        .mega-dropdown:hover .mega-menu { display: grid; }
-        .services-menu { width: 300px; grid-template-columns: 1fr; left: 0; transform: none; }
-        .mega-menu li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 10px; display: block; border-radius: 4px; transition: 0.2s; text-transform: capitalize; }
-        .mega-menu li a:hover { background: rgba(255,255,255,0.05); color: #fff; padding-left: 15px; }
-
-        .menu-toggle { display: none; color: #fff; cursor: pointer; z-index: 10000; user-select: none; }
-
         
         .copy-heavy p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; }
         .manifesto-block { background: var(--card); padding: 50px; border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; margin-bottom: 40px; }
@@ -60,29 +31,6 @@
         .hero h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 30px; line-height: 1; }
         .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
 
-        .visual-asset {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px dashed rgba(249, 115, 22, 0.5);
-            border-radius: 20px;
-            aspect-ratio: 4/3;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,0,0,0.4);
-            position: relative; overflow: hidden;
-            backdrop-filter: blur(10px);
-            z-index: 2;
-        }
-        .visual-asset::before {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 60%; height: 60%; background: var(--orange); filter: blur(100px); opacity: 0.15; z-index: -1;
-        }
-        .asset-label {
-            color: var(--orange); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
-            font-size: 0.9rem; text-align: center; padding: 15px 25px; border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px;
-            background: rgba(11, 15, 26, 0.8);
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
-
         .float-tag {
             position: absolute; background: rgba(11, 15, 26, 0.9); border: 1px solid var(--orange);
             color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
@@ -95,26 +43,7 @@
 
         .faq-box p { color: var(--text-dim); font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px; }
 
-        footer { background: var(--bg-secondary); padding: 100px 0 40px; border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: #4a5568; font-size: 0.9rem; }
-
         @media (max-width: 1024px) {
-            .hero p { margin: 0 auto 40px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .menu-toggle { display: block; position: absolute; right: 25px; top: 30px; font-size: 2.2rem; line-height: 1; }
-            nav { justify-content: flex-start; } 
-            .nav-links { 
-                position: fixed; top: 100px; left: 0; width: 100%; height: calc(100vh - 100px);
-                background: rgba(5, 7, 10, 0.98); flex-direction: column; justify-content: flex-start;
-                gap: 0; padding: 20px 0; display: none; overflow-y: auto;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links > li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            .nav-links > li > a:not(.btn) { padding: 25px; display: block; font-size: 1.1rem; }
-            .mega-menu { position: relative; top: 0; left: 0; transform: none; width: 100%; grid-template-columns: 1fr; box-shadow: none; border: none; padding: 10px 0 30px; }
-            .mega-dropdown:hover .mega-menu { display: none; } 
-            .mega-dropdown.active .mega-menu { display: grid; } 
             .manifesto-block { padding: 30px; border-left: none; border-top: 4px solid var(--orange); border-radius: 0 0 12px 12px; }
         }
     </style>
@@ -190,8 +119,8 @@
 
     <section id="the-scam" style="background: var(--bg-secondary);">
         <div class="container">
-            <h2 class="fluid-h2" style="text-align: center;">THE BIG TECH <span class="highlight">NIGHTMARE</span></h2>
-            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 0 auto 50px; font-size: 1.15rem;">Over the last ten years, we have built websites and answered the phone for thousands of service business owners. We have watched professional pest control companies lose thousands to faceless monopolies and DIY-focused algorithmic shifts. It stops here.</p>
+            <h2 class="fluid-h2 section-intro-title">THE BIG TECH <span class="highlight">NIGHTMARE</span></h2>
+            <p class="section-intro-copy">Over the last ten years, we have built websites and answered the phone for thousands of service business owners. We have watched professional pest control companies lose thousands to faceless monopolies and DIY-focused algorithmic shifts. It stops here.</p>
             
             <div class="manifesto-block">
                 <p>The pest control industry is being commoditized by Big Tech. Trillion-dollar platforms like Google love to take your daily ad spend, but they treat your professional biological technicians the same way they treat an unlicensed "bug sprayer" with a hand-can from a big-box store. The digital landscape is rigged against the owner who actually pays for specialized licensing, environmental compliance, and high-level liability insurance. The second a random algorithmic glitch decides to suspend your Google Business Profile, Google disappears. <strong>They do not have call centers. You cannot speak to a human being. They leave your routes empty while non-compliant gig workers steal your local visibility.</strong></p>
@@ -243,7 +172,7 @@
 
     <section id="architecture">
         <div class="container">
-            <h2 class="fluid-h2" style="text-align: center;">PEST CONTROL <br><span class="highlight">ASSET ARCHITECTURE</span></h2>
+            <h2 class="fluid-h2 section-intro-title">PEST CONTROL <br><span class="highlight">ASSET ARCHITECTURE</span></h2>
             <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 20px auto 50px; font-size: 1.15rem;">How we technically structure your site to filter out the small stuff and dominate the high-ticket recurring and commercial markets.</p>
             
             <div class="grid-3">
@@ -265,7 +194,7 @@
 
     <section id="faqs" style="background: var(--bg-secondary);">
         <div class="container">
-            <h2 class="fluid-h2" style="text-align: center;">THE SQUAD <span class="highlight">FAQS</span></h2>
+            <h2 class="fluid-h2 section-intro-title">THE SQUAD <span class="highlight">FAQS</span></h2>
             <p style="text-align: center; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px;">Direct answers about how we manage your digital growth and protect your revenue streams.</p>
 
             <div class="faq-grid">

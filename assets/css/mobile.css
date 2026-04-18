@@ -6,4 +6,51 @@
     .grid-3,
     .faq-grid { grid-template-columns: 1fr; }
     .btn { margin: 30px auto; width: 80%; }
+    .hero p { margin: 0 auto 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: 30px;
+        font-size: 2.2rem;
+        line-height: 1;
+    }
+    nav { justify-content: flex-start; }
+
+    .nav-links {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: rgba(5, 7, 10, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 20px 0;
+        display: none;
+        overflow-y: auto;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links > li { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .nav-links > li > a:not(.btn) { padding: 25px; display: block; font-size: 1.1rem; }
+    .mega-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        grid-template-columns: 1fr;
+        box-shadow: none;
+        border: none;
+        padding: 10px 0 30px;
+    }
+    .mega-dropdown:hover .mega-menu { display: none; }
+    .mega-dropdown.active .mega-menu { display: grid; }
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
 }

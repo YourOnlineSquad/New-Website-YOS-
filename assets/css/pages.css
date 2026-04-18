@@ -1,1 +1,9 @@
-/* Reserved for page-level shared styles in future passes. */
+/* Shared section intro utilities for long-form industry pages */
+.section-intro-title { text-align: center; }
+.section-intro-copy {
+    text-align: center;
+    color: var(--text-dim);
+    max-width: 900px;
+    margin: 0 auto 50px;
+    font-size: 1.15rem;
+}
