@@ -461,14 +461,29 @@ body.home-page #industries .card {
     box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.22);
 }
 
+
+
+body.home-page #industries .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 122, 24, 0.12), transparent 52%);
+    pointer-events: none;
+}
+
+body.home-page #industries .card > * {
+    position: relative;
+    z-index: 1;
+}
+
 body.home-page #industries .card:nth-child(1) {
-    --vertical-image: url('/assets/visuals/roofing-crew.svg');
+    --vertical-image: url('/assets/visuals/roofing-jobsite.svg');
 }
 
 body.home-page #industries .card:nth-child(2) {
-    --vertical-image: url('/assets/visuals/plumbing-system.svg');
+    --vertical-image: url('/assets/visuals/plumbing-service-van.svg');
 }
 
 body.home-page #industries .card:nth-child(3) {
-    --vertical-image: url('/assets/visuals/hvac-airflow.svg');
+    --vertical-image: url('/assets/visuals/hvac-install-team.svg');
 }
