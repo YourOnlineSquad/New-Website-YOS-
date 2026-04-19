@@ -33,3 +33,175 @@ body.hub-page .card p { color: var(--text-dim); }
 body.hub-page .card a { color: var(--orange); font-weight: 700; text-decoration: none; }
 body.hub-page footer { padding: 60px 0 30px; border-top: none; }
 body.hub-page footer p { color: var(--text-dim); }
+
+/* Contractors index page */
+body.contractors-index .copy-heavy p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+body.contractors-index .manifesto-block {
+    background: var(--card);
+    padding: 44px;
+    border-left: 4px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 34px;
+}
+
+body.contractors-index .manifesto-block p {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+
+body.contractors-index .manifesto-block p:last-child {
+    margin-bottom: 0;
+}
+
+body.contractors-index .hero {
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+        linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    padding: 160px 0 120px;
+    border: none;
+}
+
+body.contractors-index .hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+body.contractors-index .hero p {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+body.contractors-index .hero-visual-wrap,
+body.contractors-index .visual-stack {
+    position: relative;
+}
+
+body.contractors-index .hero-visual-circle {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+body.contractors-index .roots-visual {
+    aspect-ratio: 4 / 5;
+}
+
+body.contractors-index .growth-visual {
+    aspect-ratio: 16 / 9;
+}
+
+body.contractors-index .float-tag {
+    position: absolute;
+    background: rgba(11, 15, 26, 0.9);
+    border: 1px solid var(--orange);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    animation: float 5s ease-in-out infinite reverse;
+}
+
+body.contractors-index .tag-1 {
+    top: 10%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+body.contractors-index .tag-2 {
+    bottom: 15%;
+    left: -5%;
+    animation-delay: 1s;
+}
+
+body.contractors-index .tag-purple {
+    border-color: var(--purple);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+body.contractors-index .alt-bg {
+    background: var(--bg-secondary);
+}
+
+body.contractors-index .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+body.contractors-index .cta-center {
+    justify-content: center;
+}
+
+body.contractors-index .link-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+body.contractors-index .link-list a {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+body.contractors-index .card-title {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+body.contractors-index .card-copy {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+}
+
+body.contractors-index .stack-cards .compact-card {
+    margin-bottom: 14px;
+}
+
+body.contractors-index .faq-box p,
+body.contractors-index .faq-intro {
+    color: var(--text-dim);
+}
+
+body.contractors-index .footer-logo {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+    body.contractors-index .manifesto-block {
+        padding: 30px;
+        border-left: none;
+        border-top: 4px solid var(--orange);
+        border-radius: 0 0 12px 12px;
+    }
+}
