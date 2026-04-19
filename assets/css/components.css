@@ -21,7 +21,7 @@
         0 0 20px rgba(52, 211, 153, 0.22);
 }
 
-.card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+.card { background: var(--card); padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
 .card:hover {
     border-color: rgba(249, 115, 22, 0.56);
     transform: translateY(-5px);
@@ -70,7 +70,7 @@ header {
 
 nav {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1220px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;

@@ -815,3 +815,78 @@ body.home-page #industries .card:nth-child(3) {
         aspect-ratio: 16 / 10;
     }
 }
+
+/* Homepage structural polish pass */
+body.home-page .hero {
+    padding: clamp(152px, 12vw, 182px) 0 clamp(110px, 8vw, 128px);
+}
+
+body.home-page .hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: clamp(36px, 4.8vw, 72px);
+}
+
+body.home-page .hero h1 {
+    font-size: clamp(4.4rem, 8.2vw, 7rem);
+    margin-bottom: 28px;
+}
+
+body.home-page section {
+    padding: clamp(94px, 7.4vw, 114px) 0;
+}
+
+body.home-page #problem .grid-split,
+body.home-page #methodology .grid-split {
+    align-items: start;
+}
+
+body.home-page .hero-image-container {
+    min-height: clamp(360px, 40vw, 560px);
+}
+
+body.home-page .homepage-visual-placeholder {
+    border: 1px solid rgba(249, 115, 22, 0.55);
+    background:
+        radial-gradient(circle at 16% 22%, rgba(249, 115, 22, 0.18), transparent 52%),
+        radial-gradient(circle at 84% 78%, rgba(124, 58, 237, 0.16), transparent 56%),
+        linear-gradient(145deg, #0b1325 0%, #0e172b 45%, #091121 100%);
+    box-shadow:
+        inset 0 0 26px rgba(249, 115, 22, 0.14),
+        inset 0 0 40px rgba(124, 58, 237, 0.1),
+        0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+body.home-page .placeholder-hero {
+    --placeholder-width: 620px;
+    --placeholder-height: 620px;
+    aspect-ratio: 1 / 1;
+}
+
+body.home-page .placeholder-equity,
+body.home-page .placeholder-physics,
+body.home-page .placeholder-process {
+    --placeholder-width: 900px;
+    --placeholder-height: 500px;
+    aspect-ratio: 9 / 5;
+}
+
+body.home-page .grid-3 {
+    align-items: stretch;
+}
+
+body.home-page .card {
+    min-height: 100%;
+}
+
+body.home-page .cta-row {
+    margin-top: 30px;
+}
+
+body.home-page .cta-center {
+    justify-content: center;
+}
+
+body.home-page #faqs .cta-row,
+body.home-page #physics .cta-row {
+    margin-top: 34px;
+}
