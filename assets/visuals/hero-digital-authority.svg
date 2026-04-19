@@ -1,0 +1,39 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050A15"/>
+      <stop offset="1" stop-color="#0C172C"/>
+    </linearGradient>
+    <radialGradient id="glowOrange" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 220) rotate(153) scale(520 340)">
+      <stop stop-color="#F97316" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(410 760) rotate(-25) scale(560 380)">
+      <stop stop-color="#22C55E" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="220" y1="760" x2="1330" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="0.55" stop-color="#84CC16"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glowOrange)"/>
+  <rect width="1600" height="1000" fill="url(#glowGreen)"/>
+  <g opacity="0.2" stroke="#F8FAFC" stroke-width="1">
+    <path d="M0 120H1600"/><path d="M0 240H1600"/><path d="M0 360H1600"/><path d="M0 480H1600"/><path d="M0 600H1600"/><path d="M0 720H1600"/><path d="M0 840H1600"/>
+    <path d="M200 0V1000"/><path d="M400 0V1000"/><path d="M600 0V1000"/><path d="M800 0V1000"/><path d="M1000 0V1000"/><path d="M1200 0V1000"/><path d="M1400 0V1000"/>
+  </g>
+  <g>
+    <path d="M220 760C380 700 500 640 640 560C770 486 880 420 1010 340C1130 266 1240 220 1330 200" stroke="url(#line)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="220" cy="760" r="14" fill="#22C55E"/>
+    <circle cx="640" cy="560" r="14" fill="#84CC16"/>
+    <circle cx="1010" cy="340" r="14" fill="#F59E0B"/>
+    <circle cx="1330" cy="200" r="16" fill="#F97316"/>
+  </g>
+  <g opacity="0.9" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-weight="700">
+    <text x="1030" y="155" font-size="48">Search Authority</text>
+    <text x="1030" y="210" font-size="34" fill="#FDBA74">Compounding Growth Engine</text>
+  </g>
+</svg>

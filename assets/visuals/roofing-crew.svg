@@ -1,0 +1,8 @@
+<svg width="900" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="560" fill="#0A1221"/>
+  <path d="M90 390L450 160L810 390" stroke="#F97316" stroke-width="12"/>
+  <path d="M180 388L450 220L720 388" stroke="#22C55E" stroke-width="4" opacity="0.85"/>
+  <g fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-weight="700">
+    <text x="80" y="470" font-size="44">Roofing Crew Demand</text>
+  </g>
+</svg>

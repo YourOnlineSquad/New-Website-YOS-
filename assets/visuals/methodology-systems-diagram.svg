@@ -1,0 +1,21 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#070D1A"/>
+  <g stroke="#1E293B" stroke-width="2">
+    <path d="M150 170H520V350H150Z"/><path d="M640 170H1010V350H640Z"/><path d="M1130 170H1500V350H1130Z"/>
+    <path d="M150 500H520V680H150Z"/><path d="M640 500H1010V680H640Z"/><path d="M1130 500H1500V680H1130Z"/>
+  </g>
+  <g stroke="#F97316" stroke-width="4" stroke-linecap="round">
+    <path d="M520 260H640"/><path d="M1010 260H1130"/><path d="M335 350V500"/><path d="M825 350V500"/><path d="M1320 350V500"/>
+  </g>
+  <g fill="#22C55E">
+    <circle cx="640" cy="260" r="8"/><circle cx="1130" cy="260" r="8"/><circle cx="335" cy="500" r="8"/><circle cx="825" cy="500" r="8"/><circle cx="1320" cy="500" r="8"/>
+  </g>
+  <g fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="34">
+    <text x="200" y="270">Audit + Market Intel</text>
+    <text x="700" y="270">Authority Architecture</text>
+    <text x="1210" y="270">Schema Systems</text>
+    <text x="210" y="600">GBP Synchronization</text>
+    <text x="720" y="600">Conversion Engineering</text>
+    <text x="1215" y="600">Pipeline Reporting</text>
+  </g>
+</svg>
