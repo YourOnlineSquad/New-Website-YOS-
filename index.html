@@ -5,145 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Online Squad | Predictable Growth Engines for Elite Contractors</title>
     <meta name="description" content="Stop buying shared leads. Your Online Squad builds proprietary E EAT SEO and Local Map Pack growth engines for roofers, plumbers, and elite contractors.">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
     <link rel="stylesheet" href="/assets/css/pages.css">
     <link rel="stylesheet" href="/assets/css/mobile.css">
-    <style>
-        .home-page .homepage-visual-placeholder {
-            position: relative;
-            display: grid;
-            place-items: center;
-            border: 1px solid rgba(255, 122, 0, 0.52);
-            background:
-                radial-gradient(circle at 12% 18%, rgba(255, 122, 0, 0.1), transparent 54%),
-                linear-gradient(165deg, rgba(20, 24, 34, 0.82), rgba(8, 10, 16, 0.9));
-            box-shadow:
-                inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-                inset 0 0 36px rgba(255, 122, 0, 0.12),
-                0 18px 44px rgba(0, 0, 0, 0.42);
-            backdrop-filter: blur(4px);
-            overflow: hidden;
-            color: rgba(243, 246, 255, 0.94);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 600;
-            text-shadow: 0 0 16px rgba(255, 122, 0, 0.22);
-        }
 
-        .home-page .homepage-visual-placeholder::before {
-            content: "";
-            position: absolute;
-            inset: 1px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            pointer-events: none;
-        }
-
-        .home-page .hero-image-container {
-            position: relative;
-        }
-
-        .home-page .support-chip {
-            position: absolute;
-            padding: 0.4rem 0.7rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 122, 0, 0.52);
-            background: rgba(11, 15, 24, 0.7);
-            color: rgba(242, 245, 255, 0.92);
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            white-space: nowrap;
-            box-shadow: inset 0 0 10px rgba(255, 122, 0, 0.16), 0 8px 22px rgba(0, 0, 0, 0.35);
-            animation: supportFloat 6.2s ease-in-out infinite;
-            transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
-            z-index: 2;
-        }
-
-        .home-page .support-chip:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 146, 41, 0.88);
-            box-shadow: inset 0 0 12px rgba(255, 122, 0, 0.25), 0 14px 28px rgba(0, 0, 0, 0.42);
-        }
-
-        .home-page .support-chip.alt {
-            animation-delay: -2.1s;
-        }
-
-        .home-page .support-chip.alt-2 {
-            animation-delay: -3.2s;
-        }
-
-        .home-page .chip-top-left { top: 7%; left: -2%; }
-        .home-page .chip-top-right { top: 12%; right: -3%; }
-        .home-page .chip-mid-right { top: 43%; right: -6%; }
-        .home-page .chip-bottom-left { bottom: 11%; left: -4%; }
-        .home-page .chip-bottom-right { bottom: 6%; right: 8%; }
-
-        .home-page .hero .highlight {
-            text-shadow: 0 0 18px rgba(255, 122, 0, 0.3), 0 0 32px rgba(255, 122, 0, 0.17);
-            animation: heroGlowPulse 4.4s ease-in-out infinite;
-        }
-
-        .home-page .card {
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-        }
-
-        .home-page .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34);
-            border-color: rgba(255, 122, 0, 0.46);
-        }
-
-        .home-page .btn {
-            transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
-        }
-
-        .home-page .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-            filter: brightness(1.04);
-        }
-
-        @keyframes supportFloat {
-            0%, 100% { transform: translate3d(0, 0, 0); }
-            50% { transform: translate3d(0, -7px, 0); }
-        }
-
-        @keyframes heroGlowPulse {
-            0%, 100% { text-shadow: 0 0 14px rgba(255, 122, 0, 0.22), 0 0 24px rgba(255, 122, 0, 0.12); }
-            50% { text-shadow: 0 0 22px rgba(255, 122, 0, 0.37), 0 0 38px rgba(255, 122, 0, 0.21); }
-        }
-
-        @media (max-width: 1024px) {
-            .home-page .support-chip {
-                font-size: 0.66rem;
-                padding: 0.35rem 0.6rem;
-            }
-
-            .home-page .chip-top-left,
-            .home-page .chip-bottom-left {
-                left: 2%;
-            }
-
-            .home-page .chip-top-right,
-            .home-page .chip-mid-right {
-                right: 2%;
-            }
-        }
-    </style>
+    <script src="/assets/js/site-nav.js" defer></script>
+    <script src="/assets/js/site-optimizer.js" defer></script>
 </head>
 <body class="home-page">
 
 <header>
     <nav>
         <a href="/" class="logo">YOUR ONLINE <span>SQUAD</span></a>
-        <div class="menu-toggle">☰</div>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
+
             <li class="mega-dropdown">
                 <a href="/industries/contractors/" class="mobile-drop-btn">Industries ▾</a>
                 <ul class="mega-menu">
@@ -167,6 +49,7 @@
                     </div>
                 </ul>
             </li>
+
             <li class="mega-dropdown">
                 <a href="/services/local-seo.html" class="mobile-drop-btn">Services ▾</a>
                 <ul class="mega-menu services-menu">
@@ -177,6 +60,7 @@
                     <li><a href="/services/automation-crm.html">Automation & CRM</a></li>
                 </ul>
             </li>
+
             <li><a href="/about.html">About</a></li>
             <li><a href="/contact.html">Contact</a></li>
             <li><a href="tel:9497580772" class="btn">Call 949 758 0772</a></li>
@@ -193,13 +77,17 @@
                         <span class="hero-brand-logo">YOUR ONLINE <span>SQUAD</span></span>
                         <span class="hero-brand-signal">Growth Authority System</span>
                     </div>
+
                     <h1>BUILDING <br><span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
+
                     <p>We end the feast or famine cycle. Our proprietary growth engines align Google technical E EAT standards with fast lead capture for elite contractors.</p>
+
                     <div class="cta-row cta-row-hero">
                         <a href="/contact.html" class="btn">Secure Your Territory</a>
                         <a href="tel:9497580772" class="btn">Call 949 758 0772</a>
                     </div>
                 </div>
+
                 <div class="hero-image-container">
                     <div class="homepage-visual-placeholder placeholder-hero">HERO VISUAL 600 x 600</div>
                     <span class="support-chip chip-top-left">Exclusive Calls</span>
@@ -222,6 +110,7 @@
                         <p>At Your Online Squad, we build owned infrastructure around your brand. When you invest in your Google Business Profile, website authority, and technical search foundation, you build equity that compounds. When homeowners need urgent help, your brand becomes the clear first call.</p>
                     </div>
                 </div>
+
                 <div class="hero-image-container">
                     <div class="homepage-visual-placeholder placeholder-equity">EQUITY VISUAL 900 x 500</div>
                 </div>
@@ -239,10 +128,12 @@
                     <h3 class="card-title">Roofing SEO and Leads</h3>
                     <p class="card-copy">Storm damage and full roof replacements demand immediate trust. We align your Google Business Profile with urgent local intent so your company appears when homeowners need an answer right now.</p>
                 </div>
+
                 <div class="card">
                     <h3 class="card-title">Plumbing Contractor SEO</h3>
                     <p class="card-copy">Plumbing search demand is crowded and fast. We build focused service silos so Google sees your company as the local authority for each specific plumbing service.</p>
                 </div>
+
                 <div class="card">
                     <h3 class="card-title">HVAC Growth Strategy</h3>
                     <p class="card-copy">HVAC demand moves with the season. We build ranking momentum before market shifts so you secure exclusive calls before competitors react.</p>
@@ -265,10 +156,12 @@
                     <h3>Velocity</h3>
                     <p class="card-copy">We track ranking movement speed across high intent terms and push momentum in the markets that produce qualified calls.</p>
                 </div>
+
                 <div class="card">
                     <h3>Gravity</h3>
                     <p class="card-copy">Most local clicks happen in the Map Pack. We align your Google Business Profile with geographic relevance so demand is pulled toward your brand.</p>
                 </div>
+
                 <div class="card">
                     <h3>Integrity</h3>
                     <p class="card-copy">Google core updates reward proven authority. We build technical content systems that reinforce expertise and strengthen long horizon stability.</p>
@@ -288,6 +181,7 @@
                 <div class="hero-image-container">
                     <div class="homepage-visual-placeholder placeholder-process">PROCESS VISUAL 900 x 500</div>
                 </div>
+
                 <div>
                     <h2 class="fluid-h2">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
                     <div class="copy-heavy">
@@ -309,22 +203,27 @@
                     <h4>Why is my Google Business Profile not ranking in the Local Map Pack?</h4>
                     <p>If your profile is missing from top results, the usual causes are weak local relevance, inconsistent business data, and low authority signals from your website. Our synchronization process fixes these issues so your profile can compete where calls are won.</p>
                 </div>
+
                 <div class="faq-box">
                     <h4>What is E EAT and why does it matter for contractors?</h4>
                     <p>E EAT stands for experience, expertise, authority, and trust. If your site does not prove these signals, rankings stay unstable. We build the pages, schema, and supporting content that verify your credibility.</p>
                 </div>
+
                 <div class="faq-box">
                     <h4>Is Local SEO better than Local Services Ads?</h4>
                     <p>Ads can drive short term volume, but that channel is rented. Local SEO builds a long term asset that keeps producing qualified calls without paying for every click.</p>
                 </div>
+
                 <div class="faq-box">
                     <h4>How do speed and mobile UX affect ranking?</h4>
                     <p>Most urgent contractor searches happen on phones. If your site is slow or hard to use, rankings and conversions both decline. We engineer performance first builds that load fast and convert cleanly.</p>
                 </div>
+
                 <div class="faq-box">
                     <h4>What is technical schema markup?</h4>
                     <p>Schema is structured data that helps search engines read your business details correctly. We implement service, location, and business schema so your offerings and territory are clear.</p>
                 </div>
+
                 <div class="faq-box">
                     <h4>How do reviews impact local visibility?</h4>
                     <p>Reviews are a core trust signal. Strong review volume, quality language, and recency all improve how your profile performs in local discovery.</p>
@@ -346,6 +245,7 @@
                 <a href="/" class="logo footer-logo">YOUR ONLINE <span>SQUAD</span></a>
                 <p>The premier growth department for elite tradesmen and contractors. We build digital assets you own and trust signals that protect your market position.</p>
             </div>
+
             <div class="footer-col">
                 <h4>INDUSTRIES</h4>
                 <ul>
@@ -355,6 +255,7 @@
                     <li><a href="/industries/contractors/electricians.html">Electricians</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>SERVICES</h4>
                 <ul>
@@ -364,6 +265,7 @@
                     <li><a href="/services/automation-crm.html">Automation and CRM</a></li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4>SQUAD HQ</h4>
                 <ul>
@@ -373,32 +275,12 @@
                 </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
             &copy; 2026 Your Online Squad LLC. Engineered for Scale.
         </div>
     </div>
 </footer>
 
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const mobileDropBtns = document.querySelectorAll('.mobile-drop-btn');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
-    });
-
-    mobileDropBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                btn.parentElement.classList.toggle('active');
-            }
-        });
-    });
-</script>
-
-<script src="/assets/js/site-optimizer.js"></script>
 </body>
 </html>
