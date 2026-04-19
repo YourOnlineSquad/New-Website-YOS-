@@ -41,7 +41,7 @@ body.home-page section {
 }
 
 body.home-page .hero {
-    padding: 148px 0 92px;
+    padding: 172px 0 120px;
     border-bottom: 1px solid rgba(167, 183, 208, 0.2);
     background:
         radial-gradient(circle at 15% 5%, rgba(124, 58, 237, 0.22), transparent 40%),
@@ -50,22 +50,28 @@ body.home-page .hero {
 }
 
 body.home-page .hero-grid {
-    gap: 44px;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 56px;
     align-items: center;
 }
 
 body.home-page .hero h1 {
-    font-size: clamp(3.2rem, 7vw, 6rem);
-    line-height: 0.94;
-    letter-spacing: -1.8px;
-    margin-bottom: 20px;
+    font-size: clamp(3.8rem, 8.2vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -2.2px;
+    margin-bottom: 30px;
 }
 
 body.home-page .hero p {
-    color: var(--text-body);
-    font-size: clamp(1.1rem, 1.8vw, 1.33rem);
+    color: #f3f7ff;
+    font-size: clamp(1.14rem, 2vw, 1.42rem);
+    line-height: 1.75;
     max-width: 630px;
-    margin-bottom: 0;
+    margin-bottom: 34px;
+}
+
+body.home-page .hero-copy {
+    max-width: 680px;
 }
 
 body.home-page h2 {
@@ -166,9 +172,24 @@ body.home-page .featured-image-wide {
 
 body.home-page .cta-row {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
     margin-top: 24px;
+}
+
+body.home-page .cta-row-hero {
+    margin-top: 0;
+}
+
+body.home-page .cta-row-hero .btn {
+    padding: 16px 34px;
+    font-size: 0.92rem;
+}
+
+body.home-page .cta-row-hero .btn + .btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.24);
 }
 
 body.home-page .cta-center { justify-content: center; }
