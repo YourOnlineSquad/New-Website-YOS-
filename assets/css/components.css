@@ -179,3 +179,14 @@ body.hub-page .btn {
     border-radius: 6px;
     font-size: 0.8rem;
 }
+
+/* CTA performance and conversion sections */
+.cta-band {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(249, 115, 22, 0.14));
+    border-top: 1px solid rgba(249, 115, 22, 0.35);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.35);
+    text-align: center;
+}
+.cta-band h2 { margin-bottom: 14px; }
+.cta-band p { color: var(--text-dim); max-width: 760px; margin: 0 auto 22px; }
+.cta-row-hero { margin-top: 24px; }
