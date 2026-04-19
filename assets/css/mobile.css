@@ -76,3 +76,51 @@
     .cta-row-hero { gap: 10px; }
     .cta-band { padding: 54px 0; }
 }
+
+@media (max-width: 1024px) {
+    body.home-page .hero {
+        padding: 130px 0 82px;
+    }
+
+    body.home-page .hero-grid {
+        gap: 34px;
+    }
+
+    body.home-page .hero p,
+    body.home-page .section-intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body.home-page .cta-row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    body.home-page section {
+        padding: 74px 0;
+    }
+
+    body.home-page .hero {
+        padding: 118px 0 66px;
+    }
+
+    body.home-page .hero h1 {
+        font-size: clamp(2.4rem, 11vw, 3.6rem);
+        margin-bottom: 16px;
+    }
+
+    body.home-page .float-tag {
+        position: static;
+        display: inline-block;
+        margin: 6px 4px 0;
+    }
+
+    body.home-page .hero-image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+}
