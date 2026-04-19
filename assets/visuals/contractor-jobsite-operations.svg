@@ -1,0 +1,37 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contractor team coordinating work at an active job site">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#05080F"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF7A18" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#FF7A18" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#overlay)"/>
+  <rect y="600" width="1600" height="300" fill="#0F172A"/>
+  <path d="M80 620L430 420L730 580L1060 380L1440 560V900H80V620Z" fill="#1E293B"/>
+  <rect x="220" y="420" width="360" height="170" rx="14" fill="#111827"/>
+  <rect x="268" y="458" width="140" height="58" rx="10" fill="#334155"/>
+  <rect x="425" y="458" width="108" height="58" rx="10" fill="#334155"/>
+  <rect x="720" y="360" width="460" height="240" rx="18" fill="#111827"/>
+  <rect x="770" y="418" width="360" height="18" rx="9" fill="#334155"/>
+  <rect x="770" y="450" width="286" height="16" rx="8" fill="#334155"/>
+  <rect x="770" y="480" width="242" height="16" rx="8" fill="#334155"/>
+  <g>
+    <circle cx="620" cy="574" r="20" fill="#E2E8F0"/>
+    <rect x="606" y="594" width="28" height="76" rx="10" fill="#CBD5E1"/>
+    <rect x="587" y="626" width="16" height="60" rx="8" transform="rotate(15 587 626)" fill="#CBD5E1"/>
+    <rect x="636" y="626" width="16" height="58" rx="8" transform="rotate(-19 636 626)" fill="#CBD5E1"/>
+  </g>
+  <g>
+    <circle cx="684" cy="570" r="20" fill="#D1D5DB"/>
+    <rect x="670" y="590" width="28" height="80" rx="10" fill="#BFC7D2"/>
+    <rect x="652" y="620" width="16" height="64" rx="8" transform="rotate(18 652 620)" fill="#BFC7D2"/>
+    <rect x="700" y="622" width="16" height="60" rx="8" transform="rotate(-18 700 622)" fill="#BFC7D2"/>
+  </g>
+  <rect x="748" y="556" width="88" height="16" rx="8" fill="#FF7A18"/>
+  <circle cx="1220" cy="170" r="110" fill="#FF7A18" fill-opacity="0.2"/>
+</svg>
