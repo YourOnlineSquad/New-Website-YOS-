@@ -14,7 +14,7 @@ body.hub-page nav { max-width: 1300px; }
 body.hub-page h1,
 body.hub-page h2,
 body.hub-page h3 { text-transform: uppercase; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
-body.hub-page section { padding: 120px 0; }
+body.hub-page section { padding: clamp(90px, 7.8vw, 118px) 0; }
 body.hub-page .hero {
     background-color: var(--bg);
     background-image:
@@ -34,6 +34,7 @@ body.hub-page .card a { color: var(--orange); font-weight: 700; text-decoration:
 body.hub-page footer { padding: 60px 0 30px; border-top: none; }
 body.hub-page footer p { color: var(--text-body); }
 body.hub-page section .cta-row { margin-top: 26px; }
+body.hub-page .cta-band { padding: clamp(72px, 6.6vw, 96px) 0; }
 
 /* Homepage premium refinements */
 body.home-page section {

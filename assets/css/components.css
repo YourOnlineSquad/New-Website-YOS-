@@ -32,6 +32,27 @@
 .faq-box { background: var(--bg-secondary); padding: 40px; border-radius: 12px; border-top: 2px solid var(--orange); border: 1px solid var(--border); }
 .faq-box h4 { font-size: 1.25rem; margin-bottom: 15px; color: #fff; line-height: 1.4; text-transform: none; font-weight: 700; }
 
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: clamp(20px, 2.5vw, 28px);
+}
+
+.cta-row + .cta-row {
+    margin-top: 14px;
+}
+
+.cta-row .btn {
+    margin: 0;
+}
+
+.visual-asset {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
 /* Shared long-form industry shell styles */
 header {
     background: rgba(5, 7, 10, 0.95);
