@@ -1,0 +1,11 @@
+<svg width="900" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="560" fill="#0B1424"/>
+  <g stroke="#F97316" stroke-width="14" stroke-linecap="round">
+    <path d="M130 140H420V280H750V420"/>
+    <path d="M220 420H600"/>
+  </g>
+  <g stroke="#22C55E" stroke-width="6" opacity="0.9">
+    <path d="M130 190H370V330H700"/>
+  </g>
+  <text x="80" y="500" fill="#F8FAFC" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="700">Plumbing System Coverage</text>
+</svg>

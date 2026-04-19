@@ -1,0 +1,20 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1600" y2="1000"><stop stop-color="#060B18"/><stop offset="1" stop-color="#121F36"/></linearGradient>
+    <linearGradient id="o" x1="290" y1="860" x2="1290" y2="130"><stop stop-color="#22C55E"/><stop offset="1" stop-color="#F97316"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg2)"/>
+  <g opacity="0.23" stroke="#94A3B8" stroke-width="1">
+    <path d="M120 140H1480V860H120Z"/>
+    <path d="M120 320H1480"/><path d="M120 500H1480"/><path d="M120 680H1480"/>
+    <path d="M380 140V860"/><path d="M640 140V860"/><path d="M900 140V860"/><path d="M1160 140V860"/>
+  </g>
+  <g stroke="url(#o)" stroke-width="4" fill="#0B1220">
+    <circle cx="290" cy="760" r="28"/><circle cx="560" cy="610" r="28"/><circle cx="820" cy="440" r="28"/><circle cx="1080" cy="300" r="28"/><circle cx="1290" cy="190" r="28"/>
+    <path d="M290 760L560 610L820 440L1080 300L1290 190"/>
+  </g>
+  <g fill="#F8FAFC" font-family="Inter, Arial, sans-serif">
+    <text x="230" y="910" font-size="38" font-weight="800">Own Your Infrastructure</text>
+    <text x="230" y="955" font-size="28" fill="#86EFAC" font-weight="600">Brand Equity • Local Authority • Market Control</text>
+  </g>
+</svg>
