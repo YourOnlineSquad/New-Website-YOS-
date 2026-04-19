@@ -135,6 +135,41 @@ body.home-page .hero-image-container {
     justify-content: center;
 }
 
+body.home-page .homepage-visual-placeholder {
+    --placeholder-width: 900px;
+    --placeholder-height: 500px;
+    width: var(--placeholder-width);
+    height: var(--placeholder-height);
+    max-width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(249, 115, 22, 0.45);
+    background: linear-gradient(145deg, #0b1325 0%, #0e172b 45%, #091121 100%);
+    box-shadow: inset 0 0 24px rgba(249, 115, 22, 0.12), 0 18px 36px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    padding: 20px;
+}
+
+body.home-page .placeholder-hero {
+    --placeholder-width: 600px;
+    --placeholder-height: 600px;
+}
+
+body.home-page .placeholder-equity,
+body.home-page .placeholder-physics,
+body.home-page .placeholder-process {
+    --placeholder-width: 900px;
+    --placeholder-height: 500px;
+}
+
 body.home-page .tree-float {
     animation: float 6s ease-in-out infinite;
     width: 100%;
