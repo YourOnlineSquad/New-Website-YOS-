@@ -38,11 +38,11 @@ body.hub-page .cta-band { padding: clamp(72px, 6.6vw, 96px) 0; }
 
 /* Homepage premium refinements */
 body.home-page section {
-    padding: 102px 0;
+    padding: clamp(112px, 8.5vw, 136px) 0;
 }
 
 body.home-page .hero {
-    padding: 164px 0 114px;
+    padding: clamp(176px, 15vw, 220px) 0 clamp(128px, 10vw, 152px);
     border-bottom: 1px solid rgba(167, 183, 208, 0.2);
     background:
         radial-gradient(circle at 15% 5%, rgba(124, 58, 237, 0.22), transparent 40%),
@@ -52,12 +52,12 @@ body.home-page .hero {
 
 body.home-page .hero-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: clamp(32px, 5vw, 74px);
+    gap: clamp(54px, 6vw, 92px);
     align-items: center;
 }
 
 body.home-page .hero h1 {
-    font-size: clamp(4.3rem, 8.6vw, 7.8rem);
+    font-size: clamp(4.8rem, 9.4vw, 8.2rem);
     line-height: 0.88;
     letter-spacing: -2.4px;
     margin-bottom: 34px;
@@ -67,8 +67,8 @@ body.home-page .hero p {
     color: #f3f7ff;
     font-size: clamp(1.16rem, 2.1vw, 1.45rem);
     line-height: 1.82;
-    max-width: 680px;
-    margin-bottom: 40px;
+    max-width: 700px;
+    margin-bottom: 46px;
 }
 
 body.home-page .hero-copy {
@@ -129,45 +129,22 @@ body.home-page .copy-heavy p {
 body.home-page .hero-image-container {
     text-align: center;
     position: relative;
-    min-height: clamp(320px, 38vw, 500px);
+    min-height: clamp(420px, 44vw, 640px);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-body.home-page .homepage-visual-placeholder {
-    --placeholder-width: 900px;
-    --placeholder-height: 500px;
-    width: var(--placeholder-width);
-    height: var(--placeholder-height);
-    max-width: 100%;
-    border-radius: 14px;
-    border: 1px solid rgba(249, 115, 22, 0.45);
-    background: linear-gradient(145deg, #0b1325 0%, #0e172b 45%, #091121 100%);
-    box-shadow: inset 0 0 24px rgba(249, 115, 22, 0.12), 0 18px 36px rgba(0, 0, 0, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #f8fafc;
-    font-weight: 700;
-    font-size: clamp(0.9rem, 1.6vw, 1.15rem);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.35;
-    padding: 20px;
 }
 
 body.home-page .placeholder-hero {
-    --placeholder-width: 600px;
-    --placeholder-height: 600px;
+    --placeholder-width: 680px;
+    --placeholder-height: 680px;
 }
 
 body.home-page .placeholder-equity,
 body.home-page .placeholder-physics,
 body.home-page .placeholder-process {
-    --placeholder-width: 900px;
-    --placeholder-height: 500px;
+    --placeholder-width: 940px;
+    --placeholder-height: 540px;
 }
 
 body.home-page .tree-float {
@@ -273,8 +250,9 @@ body.home-page .section-title-center { text-align: center; }
 body.home-page .section-intro {
     text-align: center;
     max-width: 920px;
-    margin: 16px auto 44px;
-    font-size: 1.16rem;
+    margin: 22px auto 56px;
+    font-size: 1.2rem;
+    line-height: 1.82;
 }
 
 body.home-page .section-intro-tight {
@@ -298,7 +276,7 @@ body.home-page .card-copy {
 
 body.home-page .image-center-wrap {
     text-align: center;
-    margin: 50px 0 34px;
+    margin: 60px 0 44px;
 }
 
 body.home-page .featured-image {
@@ -347,13 +325,18 @@ body.home-page .faq-intro {
 
 body.home-page #problem .grid-split,
 body.home-page #methodology .grid-split {
-    gap: clamp(40px, 5.4vw, 82px);
+    gap: clamp(56px, 6.4vw, 94px);
     align-items: center;
 }
 
 body.home-page #problem .copy-heavy,
 body.home-page #methodology .copy-heavy {
     max-width: 700px;
+}
+
+body.home-page #problem .hero-image-container,
+body.home-page #methodology .hero-image-container {
+    min-height: clamp(360px, 38vw, 560px);
 }
 
 body.home-page .footer-logo {
