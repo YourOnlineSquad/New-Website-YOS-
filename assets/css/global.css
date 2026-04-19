@@ -6,8 +6,8 @@
     --accent-green: #34d399;
     --card: rgba(22, 28, 45, 0.6);
     --border: rgba(45, 55, 72, 0.5);
-    --text-dim: #c1d2ea;
-    --text-body: #edf4ff;
+    --text-dim: #d2ddf0;
+    --text-body: #f2f7ff;
     --white: #ffffff;
 }
 
@@ -34,6 +34,11 @@ p {
     color: var(--text-body);
     font-size: 1.08rem;
     line-height: 1.78;
+    margin-bottom: 1.05rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
 }
 
 .highlight { color: var(--orange); }

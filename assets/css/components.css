@@ -167,7 +167,6 @@ ul { list-style: none; }
 .visual-placeholder {
     min-height: 280px;
 }
-.container > .cta-row + .cta-row { display: none; }
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
     70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
