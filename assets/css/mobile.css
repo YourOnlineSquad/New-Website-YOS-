@@ -79,11 +79,12 @@
 
 @media (max-width: 1024px) {
     body.home-page .hero {
-        padding: 130px 0 82px;
+        padding: 142px 0 96px;
     }
 
     body.home-page .hero-grid {
-        gap: 34px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     body.home-page .hero p,
@@ -95,6 +96,10 @@
     body.home-page .cta-row {
         justify-content: center;
     }
+
+    body.home-page .hero p {
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -103,12 +108,16 @@
     }
 
     body.home-page .hero {
-        padding: 118px 0 66px;
+        padding: 124px 0 74px;
     }
 
     body.home-page .hero h1 {
-        font-size: clamp(2.4rem, 11vw, 3.6rem);
-        margin-bottom: 16px;
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
+        margin-bottom: 22px;
+    }
+
+    body.home-page .hero p {
+        margin-bottom: 24px;
     }
 
     body.home-page .float-tag {
