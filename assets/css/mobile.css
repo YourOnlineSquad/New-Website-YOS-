@@ -80,12 +80,12 @@
 
 @media (max-width: 1024px) {
     body.home-page .hero {
-        padding: 142px 0 96px;
+        padding: 156px 0 108px;
     }
 
     body.home-page .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 52px;
     }
 
     body.home-page .hero-copy {
@@ -109,21 +109,21 @@
     }
 
     body.home-page .hero p {
-        margin-bottom: 30px;
+        margin-bottom: 34px;
     }
 }
 
 @media (max-width: 768px) {
     body.home-page section {
-        padding: 74px 0;
+        padding: 84px 0;
     }
 
     body.home-page .hero {
-        padding: 124px 0 74px;
+        padding: 132px 0 88px;
     }
 
     body.home-page .hero h1 {
-        font-size: clamp(2.8rem, 12vw, 4.2rem);
+        font-size: clamp(3.1rem, 12vw, 4.6rem);
         margin-bottom: 22px;
     }
 
@@ -146,7 +146,7 @@
     }
 
     body.home-page .hero p {
-        margin-bottom: 24px;
+        margin-bottom: 28px;
     }
 
     body.home-page .float-tag {
@@ -172,15 +172,15 @@
     }
 
     body.home-page .placeholder-hero {
-        --placeholder-width: 540px;
-        --placeholder-height: 540px;
+        --placeholder-width: 620px;
+        --placeholder-height: 620px;
     }
 
     body.home-page .placeholder-equity,
     body.home-page .placeholder-physics,
     body.home-page .placeholder-process {
-        --placeholder-width: 860px;
-        --placeholder-height: 470px;
+        --placeholder-width: 920px;
+        --placeholder-height: 520px;
     }
 }
 
@@ -192,15 +192,23 @@
     body.home-page .homepage-visual-placeholder {
         border-radius: 14px;
         font-size: 0.82rem;
+        min-height: 280px;
     }
 
-    body.home-page .placeholder-hero,
+    body.home-page .placeholder-hero {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        min-height: 320px;
+    }
+
     body.home-page .placeholder-equity,
     body.home-page .placeholder-physics,
     body.home-page .placeholder-process {
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 10;
+        min-height: 260px;
     }
 
     body.home-page .cta-row,
