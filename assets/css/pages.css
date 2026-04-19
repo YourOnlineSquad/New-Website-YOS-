@@ -34,6 +34,160 @@ body.hub-page .card a { color: var(--orange); font-weight: 700; text-decoration:
 body.hub-page footer { padding: 60px 0 30px; border-top: none; }
 body.hub-page footer p { color: var(--text-dim); }
 
+/* Homepage premium refinements */
+body.home-page section {
+    padding: 112px 0;
+}
+
+body.home-page .hero {
+    padding: 148px 0 92px;
+    border-bottom: 1px solid rgba(167, 183, 208, 0.2);
+    background:
+        radial-gradient(circle at 15% 5%, rgba(124, 58, 237, 0.22), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(249, 115, 22, 0.15), transparent 45%),
+        linear-gradient(180deg, rgba(5, 7, 10, 0.98), rgba(5, 7, 10, 1));
+}
+
+body.home-page .hero-grid {
+    gap: 44px;
+    align-items: center;
+}
+
+body.home-page .hero h1 {
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 0.94;
+    letter-spacing: -1.8px;
+    margin-bottom: 20px;
+}
+
+body.home-page .hero p {
+    color: var(--text-body);
+    font-size: clamp(1.1rem, 1.8vw, 1.33rem);
+    max-width: 630px;
+    margin-bottom: 0;
+}
+
+body.home-page h2 {
+    font-size: clamp(2rem, 4.7vw, 3.65rem);
+}
+
+body.home-page .copy-heavy p,
+body.home-page .card-copy,
+body.home-page .faq-box p,
+body.home-page .section-intro {
+    color: var(--text-body);
+}
+
+body.home-page .copy-heavy p {
+    margin-bottom: 20px;
+    font-size: 1.13rem;
+    line-height: 1.8;
+}
+
+body.home-page .hero-image-container {
+    text-align: center;
+    position: relative;
+}
+
+body.home-page .tree-float {
+    animation: float 6s ease-in-out infinite;
+    width: 100%;
+    max-width: 510px;
+    filter: drop-shadow(0 26px 44px rgba(0, 0, 0, 0.58));
+}
+
+body.home-page .float-tag {
+    position: absolute;
+    background: rgba(11, 15, 26, 0.9);
+    border: 1px solid var(--orange);
+    color: #fff;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+body.home-page .tag-1 { top: 11%; right: -1%; }
+body.home-page .tag-2 { bottom: 18%; left: -2%; animation-delay: 1s; }
+body.home-page .tag-3 { bottom: 50%; right: -4%; animation-delay: 2s; }
+
+body.home-page .alt-bg { background: var(--bg-secondary); }
+body.home-page .section-title-center { text-align: center; }
+
+body.home-page .section-intro {
+    text-align: center;
+    max-width: 920px;
+    margin: 14px auto 40px;
+    font-size: 1.16rem;
+}
+
+body.home-page .section-intro-tight {
+    max-width: 800px;
+    margin-bottom: 0;
+}
+
+body.home-page .card {
+    padding: 34px;
+}
+
+body.home-page .card-title {
+    color: #fff;
+    font-size: 1.45rem;
+}
+
+body.home-page .card-copy {
+    font-size: 1.06rem;
+    line-height: 1.74;
+}
+
+body.home-page .image-center-wrap {
+    text-align: center;
+    margin: 46px 0 30px;
+}
+
+body.home-page .featured-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.home-page .featured-image-large { max-width: 600px; }
+body.home-page .featured-image-wide {
+    max-width: 800px;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+body.home-page .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+body.home-page .cta-center { justify-content: center; }
+
+body.home-page .faq-intro {
+    margin-top: 8px;
+    margin-bottom: 42px;
+}
+
+body.home-page .footer-logo {
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
+}
+
 /* Contractors index page */
 body.contractors-index .copy-heavy p {
     margin-bottom: 25px;

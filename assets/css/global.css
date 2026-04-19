@@ -5,7 +5,8 @@
     --orange: #f97316;
     --card: rgba(22, 28, 45, 0.6);
     --border: rgba(45, 55, 72, 0.5);
-    --text-dim: #94a3b8;
+    --text-dim: #a7b7d0;
+    --text-body: #d9e4f5;
     --white: #ffffff;
 }
 
@@ -25,6 +26,12 @@ h1, h2, h3, h4 {
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -1px;
+}
+
+p {
+    color: var(--text-body);
+    font-size: 1.08rem;
+    line-height: 1.78;
 }
 
 .highlight { color: var(--orange); }
