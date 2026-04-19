@@ -3,10 +3,11 @@
     --bg-secondary: #0b0f1a;
     --purple: #7c3aed;
     --orange: #f97316;
+    --accent-green: #34d399;
     --card: rgba(22, 28, 45, 0.6);
     --border: rgba(45, 55, 72, 0.5);
-    --text-dim: #a7b7d0;
-    --text-body: #d9e4f5;
+    --text-dim: #c1d2ea;
+    --text-body: #edf4ff;
     --white: #ffffff;
 }
 
@@ -27,6 +28,7 @@ h1, h2, h3, h4 {
     line-height: 1.1;
     letter-spacing: -1px;
 }
+h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); }
 
 p {
     color: var(--text-body);
