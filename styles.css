@@ -1,743 +1,286 @@
- /* REBOOTING THE SQUAD AESTHETIC */
-:root { 
-    --bg: #05070a; --bg-secondary: #0b0f1a;
-    --purple: #7c3aed; --orange: #f97316; 
-    --card: rgba(22, 28, 45, 0.6); --border: rgba(45, 55, 72, 0.5); 
-    --text-dim: #94a3b8; --white: #ffffff;
-}
-
-/* 1. THE LAYOUT FIX (This stops the "bullet point" mess) */
-* { margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); padding-top: 100px; }
-
-/* 2. THE ORIGINAL HEADER (Fixed at top) */
-header { 
-    background: rgba(5, 7, 10, 0.95); border-bottom: 1px solid var(--border); 
-    height: 100px; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999;
-    display: flex; align-items: center; backdrop-filter: blur(12px);
-}
-nav { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
-
-.container,
-.audit-container {
-    width: min(1400px, 100%);
-    margin: 0 auto;
-    padding: 0 clamp(24px, 3.2vw, 40px);
-}
-
-/* 3. THE ORIGINAL LOGO */
-.logo { font-size: 1.6rem; font-weight: 900; color: #fff; letter-spacing: -1px; }
-.logo span { color: var(--orange); }
-
-/* 4. THE NAVIGATION LINKS */
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links > li > a { color: #fff; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
-.nav-links > li > a:hover { color: var(--orange); }
-
-/* 5. THE ORIGINAL MEGA MENU (The fix for your screenshot) */
-.mega-dropdown { position: relative; padding: 35px 0; }
-.mega-menu {
-    position: absolute; top: 90px; left: 50%; transform: translateX(-50%);
-    width: 700px; background: var(--bg-secondary); border: 1px solid var(--border);
-    border-top: 3px solid var(--orange); border-radius: 0 0 12px 12px;
-    padding: 30px; display: none; /* Hidden until hover */
-    grid-template-columns: repeat(3, 1fr); gap: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-}
-.mega-dropdown:hover .mega-menu { display: grid; }
-.mega-menu a { color: var(--text-dim); font-size: 0.85rem; font-weight: 500; transition: 0.2s; }
-.mega-menu a:hover { color: #fff; padding-left: 5px; }
-
-/* 6. THE PREMIUM BUTTONS */
-.btn { 
-    background: linear-gradient(135deg, var(--purple), var(--orange)); color: #fff !important; 
-    padding: 14px 30px; border-radius: 50px; font-weight: 900; font-size: 0.85rem; 
-    text-transform: uppercase; transition: 0.4s; border: none; display: inline-block;
-}
-.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4); }
-
-/* 7. THE ORIGINAL HERO LAYOUT */
-.hero { padding: clamp(96px, 8vw, 128px) 0; }
-.grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 4.5vw, 62px); align-items: center; }
-.grid-split > * { min-width: 0; }
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1; margin-bottom: 25px; }
-.hero p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; }
-
-/* ===== Audit Page Styles (Module 1) ===== */
-.audit-page {
-    line-height: 1.7;
-    overflow-x: hidden;
-    position: relative;
-    isolation: isolate;
-}
-
-.audit-page::before,
-.audit-page::after {
-    content: "";
-    position: fixed;
-    width: clamp(260px, 34vw, 520px);
-    height: clamp(260px, 34vw, 520px);
-    border-radius: 50%;
-    filter: blur(95px);
-    opacity: 0.2;
-    pointer-events: none;
-    z-index: -1;
-    animation: auditAmbientFloat 18s ease-in-out infinite alternate;
-}
-
-.audit-page::before {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.9), transparent 68%);
-    top: 14%;
-    left: -8%;
-}
-
-.audit-page::after {
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.8), transparent 70%);
-    bottom: 6%;
-    right: -10%;
-    animation-duration: 22s;
-    animation-direction: alternate-reverse;
-}
-
-.audit-container {
-    width: min(1100px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
-.audit-nav-links {
-    gap: 24px;
-}
-
-.audit-nav-links a:not(.btn) {
-    text-decoration: none;
-}
-
-.audit-hero {
-    padding: 150px 0 90px;
-    border-bottom: 1px solid var(--border);
-    background:
-        radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.23), transparent 42%),
-        radial-gradient(circle at 85% 30%, rgba(249, 115, 22, 0.16), transparent 48%),
-        linear-gradient(180deg, rgba(11, 15, 26, 0.85), rgba(5, 7, 10, 0.97));
-}
-
-.audit-eyebrow {
-    text-transform: uppercase;
-    color: var(--orange);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    font-size: 0.82rem;
-    margin-bottom: 14px;
-}
-
-.audit-hero h1 {
-    font-size: clamp(2rem, 4.7vw, 4.1rem);
-    line-height: 1.04;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-}
-
-.audit-subheadline {
-    max-width: 760px;
-    color: var(--text-dim);
-    font-size: clamp(1rem, 2.1vw, 1.2rem);
-    margin-bottom: 32px;
-}
-
-.audit-form {
-    background: rgba(12, 18, 31, 0.65);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
-}
-
-.audit-label {
-    display: block;
-    margin-bottom: 12px;
-    color: #cdd6e4;
-    font-size: 0.95rem;
-}
-
-.audit-input-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 14px;
-}
-
-.audit-input-row input {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid rgba(124, 58, 237, 0.45);
-    background: rgba(5, 7, 10, 0.88);
-    color: var(--white);
-    padding: 15px 16px;
-    font-size: 1rem;
-}
-
-.audit-input-row input:focus {
-    outline: none;
-    border-color: rgba(249, 115, 22, 0.72);
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.16);
-}
-
-.audit-feedback {
-    margin-top: 12px;
-    min-height: 1.5em;
-    color: var(--text-dim);
-    font-size: 0.92rem;
-}
-
-.audit-feedback[data-state="error"] {
-    color: #fca5a5;
-}
-
-.audit-feedback[data-state="success"] {
-    color: #86efac;
-}
-
-.audit-results {
-    padding: 70px 0 110px;
-}
-
-.audit-loading {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 20px;
-}
-
-.audit-loader-line {
-    height: 8px;
-    border-radius: 99px;
-    background: linear-gradient(90deg, rgba(124, 58, 237, 0.95), rgba(249, 115, 22, 0.95));
-    background-size: 250% 100%;
-    animation: auditLoad 1.3s linear infinite;
-    margin-bottom: 12px;
-}
-
-@keyframes auditLoad {
-    0% { background-position: 100% 0; }
-    100% { background-position: 0 0; }
-}
-
-.audit-score-grid {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-bottom: 32px;
-}
-
-.audit-score-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px;
-}
-
-.audit-score-label {
-    color: var(--text-dim);
-    margin-bottom: 8px;
-    font-size: 0.92rem;
-}
-
-.audit-score-value {
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
-    font-weight: 900;
-}
-
-.audit-score-value span {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    font-weight: 700;
-    margin-left: 3px;
-}
-
-.audit-issues-wrap h2 {
-    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.audit-section-subtext {
-    color: var(--text-dim);
-    margin-bottom: 24px;
-}
-
-.audit-issue-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.audit-issue-card {
-    background: rgba(22, 28, 45, 0.55);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-}
-
-.audit-issue-topline {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.audit-issue-topline h3 {
-    font-size: 1.08rem;
-    text-transform: uppercase;
-}
-
-.audit-state {
-    border-radius: 999px;
-    padding: 6px 12px;
-    font-size: 0.69rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.09em;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(4px);
-}
-
-.audit-state::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: currentColor;
-    box-shadow: 0 0 10px currentColor;
-}
-
-.audit-state-pass {
-    background: linear-gradient(125deg, rgba(22, 163, 74, 0.3), rgba(34, 197, 94, 0.12));
-    color: #86efac;
-    border: 1px solid rgba(74, 222, 128, 0.45);
-}
-
-.audit-state-warning {
-    background: linear-gradient(125deg, rgba(245, 158, 11, 0.28), rgba(251, 191, 36, 0.1));
-    color: #fcd34d;
-    border: 1px solid rgba(251, 191, 36, 0.45);
-}
-
-.audit-state-issue {
-    background: linear-gradient(125deg, rgba(239, 68, 68, 0.28), rgba(248, 113, 113, 0.1));
-    color: #fca5a5;
-    border: 1px solid rgba(248, 113, 113, 0.45);
-}
-
-.audit-issue-card p {
-    color: #d6dde9;
-    font-size: 0.96rem;
-}
-
-.audit-recommendation {
-    margin-top: 10px;
-    color: #bcc7d7 !important;
-}
-
-.audit-final-cta {
-    margin-top: 34px;
-    background: linear-gradient(145deg, rgba(124, 58, 237, 0.16), rgba(249, 115, 22, 0.14));
-    border: 1px solid rgba(124, 58, 237, 0.4);
-    border-radius: 14px;
-    padding: 28px;
-}
-
-.audit-final-cta h3 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.audit-final-cta p {
-    color: #d3dded;
-    margin-bottom: 18px;
-}
-
-
-.audit-lift-card {
-    position: relative;
-    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
-}
-
-.audit-lift-card::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(120deg, rgba(124, 58, 237, 0.7), rgba(124, 58, 237, 0.06) 40%, rgba(249, 115, 22, 0.55));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-}
-
-.audit-lift-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(124, 58, 237, 0.5);
-    box-shadow: 0 18px 38px rgba(12, 17, 30, 0.52), 0 0 0 1px rgba(124, 58, 237, 0.2), 0 0 35px rgba(124, 58, 237, 0.24), 0 0 18px rgba(249, 115, 22, 0.18);
-}
-
-.audit-lift-card:hover::before {
-    opacity: 1;
-}
-
-.audit-summary-item,
-.audit-final-cta,
-.audit-insight,
-.audit-loading,
-.audit-form {
-    position: relative;
-}
-
-.audit-summary-item,
-.audit-final-cta {
-    overflow: hidden;
-}
-
-.audit-summary-item.audit-lift-card,
-.audit-final-cta.audit-lift-card {
-    background: linear-gradient(155deg, rgba(19, 26, 42, 0.86), rgba(16, 20, 35, 0.75));
-}
-
-.audit-final-cta {
-    margin-top: 34px;
-    border-radius: 14px;
-    padding: 28px;
-}
-
-#auditReport .audit-reveal {
-    opacity: 0;
-    transform: translateY(14px);
-}
-
-#auditReport.is-visible .audit-reveal {
-    animation: auditFadeUp 0.62s cubic-bezier(0.18, 0.89, 0.32, 1.08) both;
-    animation-delay: var(--audit-delay, 0ms);
-}
-
-@keyframes auditAmbientFloat {
-    0% { transform: translate3d(0, 0, 0) scale(1); }
-    50% { transform: translate3d(18px, -14px, 0) scale(1.06); }
-    100% { transform: translate3d(-12px, 16px, 0) scale(0.96); }
-}
-
-@keyframes auditFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 960px) {
-    .audit-input-row,
-    .audit-score-grid,
-    .audit-issue-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .audit-input-row .btn {
-        width: 100%;
-        margin: 0;
-    }
-
-    .audit-nav-links {
-        gap: 12px;
-    }
-}
-
-/* ===== Audit Page Enhancements (Version 2 live scanner) ===== */
-.audit-loading p {
-    color: #d7deec;
-    margin-top: 6px;
-}
-
-.audit-scanned-url {
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    font-size: 0.92rem;
-}
-
-.audit-scanned-url span {
-    color: #dce5f4;
-    font-weight: 600;
-}
-
-.audit-summary-strip {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin-bottom: 14px;
-}
-
-.audit-summary-item {
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: rgba(22, 28, 45, 0.52);
-    padding: 14px 16px;
-}
-
-.audit-summary-label {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-}
-
-.audit-summary-value {
-    font-size: 1.6rem;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.audit-summary-pass .audit-summary-value { color: #86efac; }
-.audit-summary-warning .audit-summary-value { color: #fcd34d; }
-.audit-summary-issue .audit-summary-value { color: #fca5a5; }
-
-.audit-insight {
-    background: rgba(13, 18, 32, 0.75);
-    border: 1px solid rgba(124, 58, 237, 0.3);
-    border-radius: 12px;
-    padding: 14px 16px;
-    color: #d9e2f1;
-    margin-bottom: 30px;
-}
-
-.audit-data-label {
-    font-size: 0.76rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #96a8c3 !important;
-    margin-bottom: 6px;
-}
-
-.audit-current-data {
-    background: linear-gradient(135deg, rgba(9, 13, 24, 0.95), rgba(18, 24, 40, 0.9));
-    border: 1px solid rgba(124, 58, 237, 0.5);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: #e8eef8 !important;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 22px rgba(2, 6, 23, 0.45);
-}
-
-.audit-current-data::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg, rgba(124, 58, 237, 0.13), rgba(249, 115, 22, 0.07));
-    pointer-events: none;
-}
-
-.audit-issue-explainer {
-    color: #d6dde9;
-    margin-bottom: 8px;
-}
-
-@media (max-width: 960px) {
-    .audit-summary-strip {
-        grid-template-columns: 1fr;
-    }
-}
-.home-page .hero-grid {
-    align-items: center;
-    gap: 72px;
-}
-
-.home-page .hero-copy {
-    max-width: 620px;
-}
-
-.home-page .hero-brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-    flex-wrap: wrap;
-}
-
-.home-page .hero-brand-logo {
-    font-size: 0.95rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.home-page .hero-brand-logo span {
-    color: var(--orange);
-}
-
-.home-page .hero-brand-signal {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-}
-
-.home-page .homepage-visual-placeholder {
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 100%;
-    min-height: 280px;
-    border: 1px solid rgba(255, 122, 0, 0.52);
-    border-radius: 18px;
-    background:
-        radial-gradient(circle at 12% 18%, rgba(255, 122, 0, 0.1), transparent 54%),
-        linear-gradient(165deg, rgba(20, 24, 34, 0.82), rgba(8, 10, 16, 0.9));
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-        inset 0 0 36px rgba(255, 122, 0, 0.12),
-        0 18px 44px rgba(0, 0, 0, 0.42);
-    overflow: hidden;
-    color: rgba(243, 246, 255, 0.94);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 700;
-    padding: 24px;
-}
-
-.home-page .homepage-visual-placeholder::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 17px;
-    pointer-events: none;
-}
-
-.home-page .placeholder-hero {
-    max-width: 600px;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-}
-
-.home-page .placeholder-equity,
-.home-page .placeholder-physics,
-.home-page .placeholder-process {
-    max-width: 900px;
-    aspect-ratio: 9 / 5;
-}
-
-.home-page .hero-image-container {
-    position: relative;
-}
-
-.home-page .image-center-wrap {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 40px;
-}
-
-.home-page .support-chip {
-    position: absolute;
-    padding: 0.4rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 122, 0, 0.52);
-    background: rgba(11, 15, 24, 0.7);
-    color: rgba(242, 245, 255, 0.92);
-    font-size: 0.72rem;
-    font-weight: 600;
-    white-space: nowrap;
-    z-index: 2;
-}
-
-.home-page .chip-top-left { top: 7%; left: -2%; }
-.home-page .chip-top-right { top: 12%; right: -3%; }
-.home-page .chip-mid-right { top: 43%; right: -6%; }
-.home-page .chip-bottom-left { bottom: 11%; left: -4%; }
-.home-page .chip-bottom-right { bottom: 6%; right: 8%; }
-
-.home-page .section-title-center,
-.home-page .section-intro,
-.home-page .faq-intro {
-    text-align: center;
-}
-
-.home-page .section-intro {
-    max-width: 860px;
-    margin: 0 auto 48px;
-}
-
-.home-page .section-intro-tight {
-    max-width: 860px;
-    margin: 0 auto 32px;
-}
-
-.home-page .cta-row {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.home-page .cta-row-hero {
-    margin-top: 28px;
-}
-
-.home-page .cta-center {
-    justify-content: center;
-    margin-top: 28px;
-}
-
-@media (max-width: 1024px) {
-    .home-page .hero-grid {
-        gap: 56px;
-    }
-
-    .home-page .hero-copy {
-        max-width: none;
-    }
-
-    .home-page .support-chip {
-        font-size: 0.66rem;
-        padding: 0.35rem 0.6rem;
-    }
-
-    .home-page .chip-top-left,
-    .home-page .chip-bottom-left {
-        left: 2%;
-    }
-
-    .home-page .chip-top-right,
-    .home-page .chip-mid-right {
-        right: 2%;
-    }
-}
-
-@media (max-width: 768px) {
-    .home-page .cta-row,
-    .home-page .cta-center {
-        justify-content: center;
-    }
-
-    .home-page .support-chip {
-        display: none;
-    }
-
-    .home-page .placeholder-equity,
-    .home-page .placeholder-physics,
-    .home-page .placeholder-process {
-        aspect-ratio: 16 / 10;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Online Squad | Predictable Growth Engines for Elite Contractors</title>
+    <meta name="description" content="Stop buying shared leads. Your Online Squad builds proprietary E-EAT SEO, AI Automations, targeted ads, and Local Map Pack growth engines for small businesses and elite contractors.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+
+    <script src="/assets/js/site-nav.js" defer></script>
+    <script src="/assets/js/site-optimizer.js" defer></script>
+</head>
+<body class="home-page">
+
+<header>
+    <nav>
+        <a href="/" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li class="mega-dropdown">
+                <a href="/industries/" class="mobile-drop-btn">Industries ▾</a>
+                <ul class="mega-menu">
+                    <div>
+                        <li><a href="/industries/contractors/">Contractors</a></li>
+                        <li><a href="/industries/automotive/">Automotive</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/industries/food-and-beverage/">Food & Beverage</a></li>
+                        <li><a href="/industries/health-and-wellness/">Health & Wellness</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/industries/professional-services/">Professional Services</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="mega-dropdown">
+                <a href="/services/" class="mobile-drop-btn">Services ▾</a>
+                <ul class="mega-menu services-menu">
+                    <div>
+                        <li><a href="/services/local-seo.html">Local SEO</a></li>
+                        <li><a href="/services/web-design.html">Web Design</a></li>
+                        <li><a href="/services/gbp-management.html">GBP Management</a></li>
+                        <li><a href="/services/automation-and-crm.html">Automation & CRM</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="tel:9497580772" class="btn">Call 949 758 0772</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="grid-split hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-brand">
+                        <span class="hero-brand-logo">YOUR ONLINE <span>SQUAD</span></span>
+                        <span class="hero-brand-signal">Growth Authority System</span>
+                    </div>
+                    <h1>BUILDING <br><span class="highlight">PREDICTABLE</span><br>GROWTH ENGINES</h1>
+                    <p>We end the feast or famine cycle for small businesses. Our proprietary growth engines align Google's technical E-EAT standards with high-performance search engine optimization, AI automations, and targeted ads for elite contractors who are ready to scale their operations efficiently.</p>
+                    <div class="cta-row cta-row-hero">
+                        <a href="/contact.html" class="btn">Secure Your Territory</a>
+                        <a href="/services/" class="btn">Explore Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="homepage-visual-placeholder placeholder-hero"></div>
+                    <span class="support-chip chip-top-left">Exclusive Calls</span>
+                    <span class="support-chip alt chip-top-right">E E A T Sync</span>
+                    <span class="support-chip alt-2 chip-mid-right">Schema Markup</span>
+                    <span class="support-chip chip-bottom-left">Map Pack Gravity</span>
+                    <span class="support-chip alt chip-bottom-right">Search Authority</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem">
+        <div class="container">
+            <div class="grid-split">
+                <div class="hero-image-container">
+                    <div class="homepage-visual-placeholder placeholder-equity"></div>
+                </div>
+                <div>
+                    <h2 class="fluid-h2">OWN THE <br><span class="highlight">EQUITY</span></h2>
+                    <div class="copy-heavy">
+                        <p>For more than a decade, the local contracting and small business industry has been aggressively cornered by giant lead generation platforms. You know the exact cycle: one single homeowner prospect is sold to five different service companies simultaneously. This immediate forced competition triggers a high-stakes race to the bottom on pricing. That shared-lead model fundamentally destroys your profit margins, lowers the perceived quality of your craftsmanship, and keeps your entire business infrastructure dependent on a third-party directory that you have absolutely no control over.</p>
+                        <p>At Your Online Squad, we completely dismantle that broken system. We do not rent you shared leads; we build owned digital infrastructure permanently attached to your brand. When you invest in advanced Search Engine Optimization (SEO), comprehensive Google Business Profile (GBP) dominance, targeted local ads, and elite social media content creation, you build digital equity that compounds year over year. We integrate cutting-edge AI automations into your CRM so that when a homeowner submits an inquiry, your business responds in seconds, locking in the job while your competitors are still manually checking their email.</p>
+                        <p>More importantly, we operate as your dedicated, outsourced growth department. Your Online Squad represents real people working relentlessly on your business every single month. We answer the phone when you call. We get the technical work done promptly, maintaining strict adherence to complex SEO architecture and Google's ever-changing algorithm updates. When homeowners in your local market need urgent help, your brand becomes the undisputed, highly-trusted first choice. Stop renting space in your own market. Start building the equity your business deserves today.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="alt-bg">
+        <div class="container">
+            <h2 class="fluid-h2 section-title-center">VERTICALS WE <span class="highlight">DOMINATE</span></h2>
+            <p class="section-intro">Our E-EAT framework is heavily customized for premium home services and specialized contractors. We deeply understand the mechanical difference between an emergency late-night call out and a multi-month, high-ticket remodel buying cycle.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <a href="/industries/contractors/">
+                        <h3 class="card-title">Roofing SEO & Leads</h3>
+                        <p class="card-copy">Storm damage and full roof replacements demand immediate, undeniable trust signals. Homeowners in a panic do not scroll to the second page of Google. We rigorously align your Google Business Profile with urgent local search intent, combining technical SEO with hyper-targeted ad campaigns. Our team implements automated SMS follow-ups so your company captures the lead the exact moment a homeowner searches for an answer, dominating the Local Map Pack and outmaneuvering slower local competitors.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/industries/contractors/">
+                        <h3 class="card-title">Plumbing Contractor SEO</h3>
+                        <p class="card-copy">The local plumbing search market is incredibly crowded and notoriously fast-paced. We build deeply focused service silos on your website—separating emergency drain cleaning pages from high-ticket tankless water heater installations. By executing advanced on-page SEO, publishing authoritative social media content, and utilizing intelligent lead routing, Google immediately recognizes your company as the definitive local authority. We ensure you capture high-margin jobs, not just low-value maintenance calls.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/industries/contractors/">
+                        <h3 class="card-title">HVAC Growth Strategy</h3>
+                        <p class="card-copy">HVAC demand swings violently with the changing seasons. The businesses that win are the ones that prepare early. Our methodology accurately predicts search volume shifts from summer AC repairs to winter furnace installations. We build immense organic ranking momentum and launch precision ad campaigns weeks before the market shifts. Paired with our CRM automations, you secure exclusive territory leads and fill your dispatch board long before your local competitors even realize the weather has changed.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-center">
+                <h2 class="fluid-h2">READY TO COMMAND YOUR LOCAL MARKET?</h2>
+                <p class="section-intro">Partner with a team that answers the phone, does the work promptly, and scales your business through proven SEO structure.</p>
+                <div class="cta-row cta-center">
+                    <a href="/contact.html" class="btn">Claim Your Exclusivity</a>
+                    <a href="tel:9497580772" class="btn">Call 949 758 0772</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="physics">
+        <div class="container">
+            <h2 class="fluid-h2 section-title-center">THE PHYSICS OF <span class="highlight">DOMINANCE</span></h2>
+            <p class="section-intro section-intro-tight">Search engines do not just care about where your website currently stands; they care about the trajectory of where your authority is moving next. We apply rigorous engineering discipline to your digital marketing execution.</p>
+            
+            <div class="image-center-wrap">
+                <div class="homepage-visual-placeholder placeholder-physics"></div>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <a href="/services/local-seo.html">
+                        <h3 class="card-title">Velocity</h3>
+                        <p class="card-copy">We meticulously track the speed of your ranking movement across high-intent, high-margin commercial and residential terms. Velocity is generated through consistent social media content creation, rapid deployment of optimized landing pages, and perfectly calibrated ad spend. We force momentum into the specific local markets that produce qualified, exclusive calls, ensuring your business outpaces stagnant competitors.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/services/gbp-management.html">
+                        <h3 class="card-title">Gravity</h3>
+                        <p class="card-copy">Over 70% of local contractor clicks happen directly inside the Google Map Pack. We generate massive digital gravity by aggressively synchronizing your Google Business Profile with hyper-local geographic relevance. By managing your reviews, optimizing local citations, and building localized service pages, we create an inescapable digital pull that naturally draws local homeowner demand directly toward your brand.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="/services/automation-and-crm.html">
+                        <h3 class="card-title">Integrity</h3>
+                        <p class="card-copy">Google's core algorithm updates continuously reward proven, unshakable authority. We build flawless technical content systems that reinforce your absolute expertise. Our AI automations ensure no lead falls through the cracks, maintaining operational integrity. We answer your calls, execute monthly maintenance promptly, and safeguard your long-horizon stability against volatile search engine updates.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="alt-bg">
+        <div class="container">
+            <div class="grid-split">
+                <div class="hero-image-container">
+                    <div class="homepage-visual-placeholder placeholder-process"></div>
+                </div>
+                <div>
+                    <h2 class="fluid-h2">THE SQUAD <br><span class="highlight">METHODOLOGY</span></h2>
+                    <div class="copy-heavy">
+                        <p>In today's highly competitive contractor and small business markets, basic template SEO is no longer sufficient. Google's sophisticated algorithmic shifts now strictly reward technical depth, localized proof, and genuine trust signals distributed across your entire digital presence. Your Online Squad refuses to build simple digital brochures; instead, we engineer highly mechanical, fully integrated lead-generation assets designed to completely monopolize your service area.</p>
+                        <p>Our meticulous process begins with a comprehensive audit of your current market share and digital infrastructure. We identify critical leakage points where aggressive competitors are quietly siphoning your geographic leads. From there, our team goes to work—promptly and transparently. We deploy highly advanced LocalBusiness schema markup tailored specifically for your trade, rebuild your site's technical SEO architecture, and launch targeted ad campaigns to generate immediate, predictable cash flow.</p>
+                        <p>Simultaneously, we integrate customized AI automations directly into your workflow. When a prospect engages with your new social media content or requests a quote via your site, our intelligent systems instantly follow up, nurturing the lead while your crews remain focused on the job site. We are a true monthly partner: we manage the backend, we optimize the performance, and we actually answer the phone when you need strategic adjustments. We turn raw search visibility into owned, predictable demand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs">
+        <div class="container">
+            <h2 class="fluid-h2 section-title-center">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h2>
+            <p class="faq-intro section-intro">Real, transparent answers to the contractor marketing and digital growth questions that actually impact your bottom line.</p>
+            <div class="faq-grid">
+                <div class="faq-box">
+                    <h4>Why is my Google Business Profile not ranking in the Local Map Pack?</h4>
+                    <p>If your profile is completely missing from the top three results, the usual culprits are weak geographic relevance, inconsistent business data (NAP) across the web, and a severe lack of underlying authority signals from your primary website. Our intensive synchronization process fixes these fundamental technical issues, optimizing your categories and driving localized signals so your profile can aggressively compete exactly where the majority of service calls are won.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What are E-EAT guidelines and why do contractors need them?</h4>
+                    <p>E-EAT stands for Experience, Expertise, Authoritativeness, and Trustworthiness. Google's algorithm has evolved to penalize "thin," untrustworthy websites. If your digital presence does not mathematically prove these four signals, your search rankings will remain highly unstable. We strategically build the specialized service pages, author bios, project case studies, and supporting social media content that comprehensively verify your industry credibility to search engines.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>Is Local SEO better than paying for Local Services Ads (LSAs)?</h4>
+                    <p>Both serve vital functions in a complete growth engine, but they operate differently. Ads and LSAs can drive exceptional short-term volume and immediate cash flow, but that channel is inherently rented—the moment you stop paying, your phone stops ringing. Local SEO builds a permanent, long-term digital asset that continues producing highly qualified, exclusive calls around the clock without forcing you to pay a premium for every single click.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How do site speed and AI automations affect my lead conversion?</h4>
+                    <p>The vast majority of urgent contractor searches happen on mobile devices. If your website is sluggish or difficult to navigate, both your search rankings and your lead conversions will plummet. We engineer performance-first builds that load instantly. Furthermore, our AI automations ensure that the moment a lead is captured, they receive an immediate, intelligent response, drastically increasing your booking rate before the customer can call a competitor.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>What is technical schema markup and why is it necessary?</h4>
+                    <p>Schema is advanced, structured backend data that helps search engine crawlers read and interpret your specific business details correctly. Without it, Google is just guessing what your website is about. We meticulously implement Service, Location, FAQ, and LocalBusiness schema code into your site's architecture so that your exact offerings, service radius, and contractor credentials are abundantly clear to the algorithm.</p>
+                </div>
+                <div class="faq-box">
+                    <h4>How do we communicate with Your Online Squad during campaigns?</h4>
+                    <p>Unlike massive, faceless marketing agencies that hide behind automated email ticketing systems, Your Online Squad represents real professionals actively working on your business every month. We answer the phone when you call. We execute requested updates and strategic pivots promptly. We believe in total transparency, providing you with direct access to the team that is building and defending your digital SEO and advertising infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg">
+        <div class="container">
+            <div class="cta-center">
+                <h2 class="fluid-h2">STOP RENTING LEADS. START BUILDING EQUITY.</h2>
+                <p class="section-intro">Your competitors are already investing in their digital authority. Secure your zip codes today before your market is entirely locked out.</p>
+                <div class="cta-row cta-center">
+                    <a href="/contact.html" class="btn">Get Your Strategy Blueprint</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="/" class="logo">YOUR ONLINE <span>SQUAD</span></a>
+                <p style="margin-top: 15px; color: var(--text-dim); font-size: 0.95rem;">The premier growth department for elite tradesmen and small businesses. We leverage SEO, Ads, AI Automations, and dedicated monthly support to build digital assets you actually own.</p>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: #fff; margin-bottom: 20px;">INDUSTRIES</h4>
+                <ul>
+                    <li><a href="/industries/contractors/">Contractors</a></li>
+                    <li><a href="/industries/automotive/">Automotive</a></li>
+                    <li><a href="/industries/food-and-beverage/">Food & Beverage</a></li>
+                    <li><a href="/industries/health-and-wellness/">Health & Wellness</a></li>
+                    <li><a href="/industries/professional-services/">Professional Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: #fff; margin-bottom: 20px;">SERVICES</h4>
+                <ul>
+                    <li><a href="/services/local-seo.html">Local SEO</a></li>
+                    <li><a href="/services/web-design.html">Web Design</a></li>
+                    <li><a href="/services/gbp-management.html">GBP Management</a></li>
+                    <li><a href="/services/automation-and-crm.html">Automation and CRM</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 style="color: #fff; margin-bottom: 20px;">SQUAD HQ</h4>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Claim Territory</a></li>
+                    <li><a href="tel:9497580772">949-758-0772</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem;">
+            &copy; 2026 Your Online Squad LLC. Engineered for Scale.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
