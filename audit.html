@@ -13,12 +13,175 @@
     <link rel="stylesheet" href="/assets/css/pages.css">
     <link rel="stylesheet" href="/assets/css/mobile.css">
     <style>
+        body.audit-page {
+            margin: 0;
+            min-height: 100vh;
+            color: #e9eef8;
+            font-family: 'Inter', sans-serif;
+        }
+
         .audit-page {
             position: relative;
             background:
                 radial-gradient(circle at 15% -5%, rgba(124, 58, 237, 0.2), transparent 36%),
                 radial-gradient(circle at 95% 18%, rgba(249, 115, 22, 0.12), transparent 42%),
                 #05070a;
+        }
+
+        body.audit-page main {
+            width: 100%;
+            padding: 112px 0 72px;
+        }
+
+        body.audit-page .audit-container {
+            width: min(100% - 32px, 1120px);
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        body.audit-page .audit-hero {
+            padding: 0 0 34px;
+        }
+
+        body.audit-page .audit-hero-copy {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        body.audit-page .audit-hero-copy h1 {
+            margin: 0 0 14px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        body.audit-page .audit-subheadline {
+            margin: 0 auto 28px;
+            max-width: 74ch;
+            color: #c7d2e8;
+            line-height: 1.65;
+        }
+
+        body.audit-page .audit-form {
+            margin: 0 auto;
+            max-width: 760px;
+            text-align: left;
+            border: 1px solid rgba(249, 115, 22, 0.38);
+            border-radius: 18px;
+            background: linear-gradient(165deg, rgba(12, 18, 31, 0.9), rgba(18, 25, 42, 0.82));
+            box-shadow:
+                0 20px 38px rgba(2, 6, 23, 0.42),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+            padding: 24px;
+        }
+
+        body.audit-page .audit-label {
+            display: block;
+            margin-bottom: 12px;
+            color: #d8e3f6;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        body.audit-page .audit-input-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 12px;
+        }
+
+        body.audit-page .audit-input-row input {
+            width: 100%;
+            min-height: 50px;
+            border-radius: 12px;
+            border: 1px solid rgba(249, 115, 22, 0.34);
+            background: rgba(6, 10, 19, 0.92);
+            color: #f7fbff;
+            padding: 0 14px;
+            font-size: 1rem;
+        }
+
+        body.audit-page .audit-feedback {
+            margin: 10px 0 0;
+            min-height: 1.4em;
+            font-size: 0.92rem;
+            color: #c6d2e8;
+        }
+
+        body.audit-page .audit-feedback[data-state='success'] { color: #7ee5a0; }
+        body.audit-page .audit-feedback[data-state='error'] { color: #ff9b9b; }
+
+        body.audit-page .audit-results {
+            padding-top: 8px;
+        }
+
+        body.audit-page .audit-scanned-url,
+        body.audit-page .audit-insight,
+        body.audit-page .audit-loading,
+        body.audit-page .audit-issues-wrap,
+        body.audit-page .audit-final-cta {
+            margin-bottom: 22px;
+        }
+
+        body.audit-page .audit-loading,
+        body.audit-page .audit-insight,
+        body.audit-page .audit-issues-wrap,
+        body.audit-page .audit-final-cta {
+            border: 1px solid rgba(249, 115, 22, 0.34);
+            border-radius: 16px;
+            background: linear-gradient(160deg, rgba(14, 20, 34, 0.86), rgba(8, 12, 23, 0.92));
+            padding: 22px;
+        }
+
+        body.audit-page .audit-score-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        body.audit-page .audit-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        body.audit-page .audit-signals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        body.audit-page .audit-summary-strip {
+            margin-bottom: 18px;
+        }
+
+        body.audit-page .audit-issue-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        body.audit-page .audit-issue-card {
+            padding: 20px;
+            border-radius: 14px;
+        }
+
+        body.audit-page .audit-issue-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        body.audit-page .audit-issue-topline h3 {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.3;
         }
 
         .audit-ambient {
@@ -277,19 +440,6 @@
             text-shadow: 0 0 18px rgba(251, 113, 133, 0.24);
         }
 
-        .audit-summary-grid,
-        .audit-signals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 14px;
-            margin-bottom: 14px;
-        }
-
-        .audit-signals-grid {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            margin-bottom: 0;
-        }
-
         .audit-summary-item {
             border-radius: 14px;
             padding: 16px;
@@ -318,6 +468,28 @@
         @media (max-width: 960px) {
             .audit-page {
                 padding-top: 84px;
+            }
+
+            body.audit-page main {
+                padding-top: 90px;
+            }
+
+            body.audit-page .audit-input-row {
+                grid-template-columns: 1fr;
+            }
+
+            body.audit-page .audit-input-row .btn {
+                width: 100%;
+            }
+
+            body.audit-page .audit-score-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            body.audit-page .audit-summary-grid,
+            body.audit-page .audit-signals-grid,
+            body.audit-page .audit-issue-grid {
+                grid-template-columns: 1fr;
             }
 
             .audit-page header {
@@ -371,6 +543,12 @@
 
             .audit-current-data {
                 margin-bottom: 14px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body.audit-page .audit-container {
+                width: min(100% - 20px, 1120px);
             }
         }
     </style>

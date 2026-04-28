@@ -194,7 +194,8 @@
   }
 
   function statusClass(status) {
-    if (status === 'pass' || status === 'warning' || status === 'issue') return status;
+    const normalized = String(status || '').trim().toLowerCase();
+    if (normalized === 'pass' || normalized === 'warning' || normalized === 'issue') return normalized;
     return 'issue';
   }
 
