@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.innerHTML = '☰';
         menuToggle.setAttribute('aria-expanded', 'false');
         mobileDropdowns.forEach((dropdown) => dropdown.classList.remove('active'));
+        mobileDropBtns.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
     };
 
     menuToggle.addEventListener('click', () => {
@@ -33,9 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const willOpen = !parentItem.classList.contains('active');
             mobileDropdowns.forEach((dropdown) => dropdown.classList.remove('active'));
+            mobileDropBtns.forEach((dropBtn) => dropBtn.setAttribute('aria-expanded', 'false'));
 
             if (willOpen) {
                 parentItem.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
             }
         });
     });
