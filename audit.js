@@ -1,209 +1,204 @@
 (() => {
-    const form = document.getElementById('auditForm');
-    const urlInput = document.getElementById('websiteUrl');
-    const feedback = document.getElementById('auditFormFeedback');
-    const resultsSection = document.getElementById('auditResults');
-    const loadingState = document.getElementById('auditLoading');
-    const report = document.getElementById('auditReport');
-    const scoreGrid = document.getElementById('scoreGrid');
-    const issueList = document.getElementById('issueList');
+  const form = document.getElementById('auditForm');
+  const urlInput = document.getElementById('websiteUrl');
+  const feedback = document.getElementById('auditFormFeedback');
+  const resultsSection = document.getElementById('auditResults');
+  const loadingState = document.getElementById('auditLoading');
+  const report = document.getElementById('auditReport');
+  const scoreGrid = document.getElementById('scoreGrid');
+  const summaryStrip = document.getElementById('auditSummaryStrip');
+  const insightText = document.getElementById('auditInsightText');
+  const issueList = document.getElementById('issueList');
+  const scannedUrlText = document.getElementById('scannedUrlText');
 
-    const issueDefinitions = [
-        {
-            key: 'titleTag',
-            label: 'Title Tag',
-            issue: 'Your homepage title does not clearly target a service and city.',
-            warning: 'Your title has some keyword intent but local targeting looks weak.',
-            pass: 'Your title likely signals both service intent and local relevance.',
-            fix: 'Use a concise title format like “Primary Service in City | Brand Name”.'
-        },
-        {
-            key: 'metaDescription',
-            label: 'Meta Description',
-            issue: 'Your homepage meta description appears missing or too vague for local click intent.',
-            warning: 'Your meta description exists but may not be persuasive for local searchers.',
-            pass: 'Your meta description likely supports higher local click-through rates.',
-            fix: 'Write a 140–160 character description with service, city, and a clear value proposition.'
-        },
-        {
-            key: 'headers',
-            label: 'Headers',
-            issue: 'Your page structure may not give Google enough context about your core services.',
-            warning: 'Your heading hierarchy is present but may be too broad for key service themes.',
-            pass: 'Your heading structure appears focused and easier for search engines to interpret.',
-            fix: 'Map one clear H1 to your main service, then support with specific H2 sections.'
-        },
-        {
-            key: 'localRelevance',
-            label: 'Local Relevance',
-            issue: 'Your site appears to lack a strong local relevance signal.',
-            warning: 'Local relevance signals are present, but city and service coverage may be inconsistent.',
-            pass: 'Your local trust signals appear strong for city-level ranking intent.',
-            fix: 'Add city/service language, trust badges, and location-specific proof across core pages.'
-        },
-        {
-            key: 'internalLinking',
-            label: 'Internal Linking',
-            issue: 'Your internal links may be too limited to support service page authority.',
-            warning: 'Internal links exist but likely miss opportunities to reinforce revenue pages.',
-            pass: 'Your internal linking structure appears to support crawl depth and authority flow.',
-            fix: 'Link from high-traffic pages to core service pages using descriptive anchor text.'
-        },
-        {
-            key: 'technicalBasics',
-            label: 'Technical Basics',
-            issue: 'Technical baseline signals appear under-optimized for reliable local performance.',
-            warning: 'Technical setup looks partially complete but may still limit crawl confidence.',
-            pass: 'Technical foundation appears healthy for indexing and baseline performance.',
-            fix: 'Validate indexability, mobile rendering quality, speed fundamentals, and schema setup.'
-        },
-        {
-            key: 'contentStructure',
-            label: 'Content Structure',
-            issue: 'Content depth may be too thin to rank for your priority services.',
-            warning: 'Content covers your offer but lacks depth in high-intent local service topics.',
-            pass: 'Content structure likely supports stronger topical authority and intent matching.',
-            fix: 'Build dedicated sections for services, service areas, FAQs, and proof-based trust content.'
-        }
-    ];
+  if (!form || !urlInput || !feedback || !resultsSection || !loadingState || !report) {
+    return;
+  }
 
-    const scoreKeys = [
-        { key: 'seoHealth', label: 'SEO Health Score' },
-        { key: 'onPage', label: 'On Page Score' },
-        { key: 'structure', label: 'Structure Score' },
-        { key: 'local', label: 'Local SEO Score' }
-    ];
+  const SCORE_KEYS = [
+    { key: 'seoHealth', label: 'SEO Health Score' },
+    { key: 'onPage', label: 'On Page Score' },
+    { key: 'structure', label: 'Structure Score' },
+    { key: 'local', label: 'Local SEO Score' }
+  ];
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const normalizedUrl = validateUrl(urlInput.value);
+  form.addEventListener('submit', handleSubmit);
 
-        if (!normalizedUrl) {
-            feedback.textContent = 'Please enter a valid URL (example: https://yourwebsite.com).';
-            feedback.dataset.state = 'error';
-            return;
-        }
+  async function handleSubmit(event) {
+    event.preventDefault();
 
-        feedback.textContent = 'URL validated. Preparing your local SEO snapshot...';
-        feedback.dataset.state = 'success';
+    const normalizedUrl = normalizeUrl(urlInput.value);
+    if (!normalizedUrl) {
+      setFeedback('Please enter a valid URL (example: https://yourwebsite.com).', 'error');
+      return;
+    }
 
-        resultsSection.hidden = false;
-        report.hidden = true;
-        loadingState.hidden = false;
-        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    urlInput.value = normalizedUrl;
+    setFeedback('URL validated. Running a live homepage SEO scan now…', 'success');
 
-        await pause(1650);
+    resultsSection.hidden = false;
+    loadingState.hidden = false;
+    report.hidden = true;
+    report.classList.remove('is-visible');
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        const auditResult = runModuleOneAudit(normalizedUrl);
-        renderScores(auditResult.scores);
-        renderIssues(auditResult.issues);
+    try {
+      const payload = await requestAudit(normalizedUrl);
+      renderReport(payload);
+      loadingState.hidden = true;
+      report.hidden = false;
+      requestAnimationFrame(() => report.classList.add('is-visible'));
+      setFeedback('Live audit completed.', 'success');
+    } catch (error) {
+      loadingState.hidden = true;
+      report.hidden = true;
+      setFeedback(error.message || 'We could not complete the scan right now. Please try again.', 'error');
+    }
+  }
 
-        loadingState.hidden = true;
-        report.hidden = false;
+  async function requestAudit(url) {
+    const response = await fetch('/api/audit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ url })
     });
 
-    function validateUrl(rawValue) {
-        const candidate = rawValue.trim();
-        if (!candidate) return null;
+    const data = await response.json().catch(() => ({}));
 
-        const withProtocol = /^https?:\/\//i.test(candidate) ? candidate : `https://${candidate}`;
-
-        try {
-            const parsed = new URL(withProtocol);
-            if (!parsed.hostname || parsed.hostname.indexOf('.') === -1) return null;
-            return parsed;
-        } catch {
-            return null;
-        }
+    if (!response.ok) {
+      throw new Error(data.error || 'The audit service returned an error.');
     }
 
-    function runModuleOneAudit(parsedUrl) {
-        const hostname = parsedUrl.hostname.toLowerCase();
-        const path = parsedUrl.pathname.toLowerCase();
-        const urlFingerprint = `${hostname}${path}`;
-
-        const indicators = {
-            hasLocalHint: /(city|local|near-me|service-area|county|town)/.test(urlFingerprint),
-            hasServiceHint: /(roof|plumb|hvac|electric|clean|repair|install|service)/.test(urlFingerprint),
-            hasBrandDepth: hostname.split('.').join('').length > 10,
-            isHomepage: path === '/' || path === ''
-        };
-
-        const base = 58 + checksum(urlFingerprint) % 18;
-        const localLift = indicators.hasLocalHint ? 10 : -8;
-        const serviceLift = indicators.hasServiceHint ? 7 : -6;
-        const structureLift = indicators.isHomepage ? -4 : 5;
-        const trustLift = indicators.hasBrandDepth ? 4 : -3;
-
-        const scores = {
-            seoHealth: clamp(base + localLift + serviceLift + trustLift, 39, 94),
-            onPage: clamp(base + serviceLift + 2, 41, 95),
-            structure: clamp(base + structureLift - 1, 36, 92),
-            local: clamp(base + localLift + (indicators.hasServiceHint ? 5 : -2), 32, 96)
-        };
-
-        const issues = issueDefinitions.map((definition, index) => {
-            const keyScoreMap = {
-                titleTag: scores.onPage,
-                metaDescription: scores.onPage - 5,
-                headers: scores.structure,
-                localRelevance: scores.local,
-                internalLinking: scores.structure - 4,
-                technicalBasics: scores.seoHealth - 3,
-                contentStructure: Math.round((scores.onPage + scores.local) / 2) - 4
-            };
-
-            const signal = clamp(keyScoreMap[definition.key] + ((checksum(`${urlFingerprint}-${index}`) % 7) - 3), 20, 98);
-            const state = signal >= 76 ? 'pass' : signal >= 58 ? 'warning' : 'issue';
-            const explanation = state === 'pass' ? definition.pass : state === 'warning' ? definition.warning : definition.issue;
-
-            return {
-                ...definition,
-                state,
-                signal,
-                explanation
-            };
-        });
-
-        return { scores, issues };
+    if (!data || typeof data !== 'object') {
+      throw new Error('The audit service returned an invalid response.');
     }
 
-    function renderScores(scores) {
-        scoreGrid.innerHTML = scoreKeys.map(({ key, label }) => `
-            <article class="audit-score-card">
-                <p class="audit-score-label">${label}</p>
-                <p class="audit-score-value">${scores[key]}<span>/100</span></p>
-            </article>
-        `).join('');
-    }
+    return data;
+  }
 
-    function renderIssues(issues) {
-        issueList.innerHTML = issues.map((issue) => `
-            <article class="audit-issue-card">
-                <div class="audit-issue-topline">
-                    <h3>${issue.label}</h3>
-                    <span class="audit-state audit-state-${issue.state}">${issue.state}</span>
-                </div>
-                <p>${issue.explanation}</p>
-                <p class="audit-recommendation"><strong>Quick Recommendation:</strong> ${issue.fix}</p>
-            </article>
-        `).join('');
-    }
+  function renderReport(data) {
+    scannedUrlText.textContent = data.url || 'N/A';
+    renderScores(data.scoreOverview || {});
+    renderSummary(data.statusCounts || {}, data.rawSignals || {});
+    insightText.textContent = data.insight || 'Audit completed. Review the findings below.';
+    renderFindings(data.findings || []);
+  }
 
-    function checksum(value) {
-        let total = 0;
-        for (let i = 0; i < value.length; i += 1) {
-            total += value.charCodeAt(i) * (i + 1);
-        }
-        return total;
-    }
+  function renderScores(scoreOverview) {
+    scoreGrid.innerHTML = SCORE_KEYS.map(({ key, label }) => {
+      const score = Number(scoreOverview[key] ?? 0);
+      const scoreClass = score >= 85 ? 'audit-score-high' : score >= 60 ? 'audit-score-medium' : 'audit-score-low';
 
-    function clamp(value, min, max) {
-        return Math.max(min, Math.min(max, Math.round(value)));
-    }
+      return `
+        <article class="audit-score-card audit-lift-card">
+          <p class="audit-score-label">${escapeHtml(label)}</p>
+          <p class="audit-score-value ${scoreClass}">${clampScore(score)}<span>/100</span></p>
+        </article>
+      `;
+    }).join('');
+  }
 
-    function pause(ms) {
-        return new Promise((resolve) => window.setTimeout(resolve, ms));
+  function renderSummary(statusCounts, rawSignals) {
+    const statusCards = [
+      { label: 'Pass Checks', value: Number(statusCounts.pass || 0), tone: 'pass' },
+      { label: 'Warnings', value: Number(statusCounts.warning || 0), tone: 'warning' },
+      { label: 'Issues', value: Number(statusCounts.issue || 0), tone: 'issue' }
+    ];
+
+    const signalCards = [
+      { label: 'Title Tag', value: rawSignals.title || 'Missing' },
+      { label: 'Meta Description', value: rawSignals.metaDescription || 'Missing' },
+      { label: 'Primary H1', value: rawSignals.h1Text || 'Missing' },
+      { label: 'H2s', value: rawSignals.h2Count ? `${rawSignals.h2Count} found` : 'None found' },
+      { label: 'Canonical', value: rawSignals.canonical || 'Missing' },
+      { label: 'Robots', value: rawSignals.robotsMeta || 'Not set' },
+      { label: 'Viewport', value: rawSignals.viewportMeta || 'Missing' },
+      { label: 'HTTPS', value: rawSignals.https ? 'Enabled' : 'Not enabled' },
+      {
+        label: 'Image Alt Coverage',
+        value: Number.isFinite(rawSignals.imageCount)
+          ? `${Math.max(0, rawSignals.imageCount - (rawSignals.missingAltCount || 0))}/${rawSignals.imageCount}`
+          : 'N/A'
+      },
+      { label: 'Links', value: `${rawSignals.internalLinkCount || 0} internal, ${rawSignals.externalLinkCount || 0} external` },
+      { label: 'Schema', value: rawSignals.schemaPresent ? 'Detected' : 'Not detected' }
+    ];
+
+    summaryStrip.innerHTML = `
+      <div class="audit-summary-grid">
+        ${statusCards.map((item) => `
+          <article class="audit-summary-item audit-lift-card">
+            <p class="audit-summary-label">${item.label}</p>
+            <p class="audit-summary-value">
+              <span class="audit-state audit-state-${item.tone}">${item.value}</span>
+            </p>
+          </article>
+        `).join('')}
+      </div>
+      <div class="audit-signals-grid">
+        ${signalCards.map((item) => `
+          <article class="audit-summary-item audit-lift-card">
+            <p class="audit-summary-label">${escapeHtml(item.label)}</p>
+            <p class="audit-current-data">${escapeHtml(String(item.value))}</p>
+          </article>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  function renderFindings(findings) {
+    issueList.innerHTML = findings.map((finding) => `
+      <article class="audit-issue-card audit-lift-card">
+        <div class="audit-issue-topline">
+          <h3>${escapeHtml(finding.label || 'Finding')}</h3>
+          <span class="audit-state audit-state-${statusClass(finding.status)}">${escapeHtml((finding.status || 'issue').toUpperCase())}</span>
+        </div>
+        <p class="audit-current-data"><strong>Current data:</strong> ${escapeHtml(finding.currentData || 'N/A')}</p>
+        <p><strong>Why it matters:</strong> ${escapeHtml(finding.whyItMatters || 'N/A')}</p>
+        <p class="audit-recommendation"><strong>Recommendation:</strong> ${escapeHtml(finding.recommendation || 'N/A')}</p>
+      </article>
+    `).join('');
+  }
+
+  function setFeedback(message, state) {
+    feedback.textContent = message;
+    feedback.dataset.state = state;
+  }
+
+  function normalizeUrl(rawValue) {
+    const candidate = String(rawValue || '').trim();
+    if (!candidate) return null;
+
+    const withProtocol = /^https?:\/\//i.test(candidate) ? candidate : `https://${candidate}`;
+
+    try {
+      const parsed = new URL(withProtocol);
+      if (!['http:', 'https:'].includes(parsed.protocol)) return null;
+      if (!parsed.hostname || parsed.hostname.indexOf('.') === -1) return null;
+      parsed.hash = '';
+      return parsed.toString();
+    } catch {
+      return null;
     }
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function statusClass(status) {
+    if (status === 'pass' || status === 'warning' || status === 'issue') return status;
+    return 'issue';
+  }
+
+  function clampScore(score) {
+    return Math.max(0, Math.min(100, Math.round(Number(score) || 0)));
+  }
 })();
- 
