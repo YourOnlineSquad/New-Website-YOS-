@@ -100,64 +100,6 @@
     return a;
   }
 
-  function injectEnhancementStyles() {
-    if (document.getElementById('ysq-nav-footer-enhancement')) return;
-    const style = document.createElement('style');
-    style.id = 'ysq-nav-footer-enhancement';
-    style.textContent = `
-      .ysq-icon{display:inline-flex;width:1rem;height:1rem;align-items:center;justify-content:center;flex:0 0 auto}
-      .ysq-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-      .ysq-nav-upgrade nav{gap:20px}
-      .ysq-nav-upgrade .logo{z-index:10001}
-      .ysq-nav-upgrade .nav-links{gap:18px}
-      .ysq-nav-upgrade .nav-links>li{position:relative}
-      .ysq-nav-upgrade .nav-links>li>a:not(.btn), .ysq-nav-upgrade .ysq-trigger{display:inline-flex;align-items:center;gap:8px;color:#fff;text-transform:uppercase;font-size:.81rem;font-weight:700;padding:38px 0;letter-spacing:.08em;transition:color .22s ease}
-      .ysq-nav-upgrade .ysq-trigger{background:none;border:0;cursor:pointer}
-      .ysq-nav-upgrade .nav-links>li>a:hover,.ysq-nav-upgrade .ysq-trigger:hover{color:var(--orange)}
-      .ysq-nav-upgrade .btn{border-radius:999px;padding:12px 20px;font-size:.8rem;white-space:nowrap}
-      .ysq-nav-upgrade .ysq-mega-panel{position:absolute;top:100px;left:50%;transform:translateX(-50%);width:min(1000px,92vw);padding:26px;background:linear-gradient(180deg,rgba(11,15,26,.98),rgba(5,7,10,.98));border:1px solid var(--border);border-top:2px solid var(--orange);border-radius:0 0 14px 14px;display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr));opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease}
-      .ysq-nav-upgrade .ysq-mega:hover .ysq-mega-panel,.ysq-nav-upgrade .ysq-mega:focus-within .ysq-mega-panel{opacity:1;visibility:visible;pointer-events:auto}
-      .ysq-nav-upgrade .ysq-panel-col{padding:10px 12px;border:1px solid rgba(148,163,184,.12);border-radius:12px;background:rgba(255,255,255,.02)}
-      .ysq-nav-upgrade .ysq-panel-title{display:flex;align-items:center;gap:8px;font-size:.75rem;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
-      .ysq-nav-upgrade .ysq-panel-col a{display:flex;align-items:center;gap:8px;padding:6px 0;color:var(--text-dim);font-size:.83rem;transition:color .2s ease,transform .2s ease}
-      .ysq-nav-upgrade .ysq-panel-col a:hover{color:#fff;transform:translateX(4px)}
-      .ysq-nav-upgrade .ysq-panel-col a .ysq-icon{opacity:.8;transition:transform .2s ease}
-      .ysq-nav-upgrade .ysq-panel-col a:hover .ysq-icon{transform:translateX(2px)}
-      .ysq-nav-upgrade .ysq-top-link.active,.ysq-nav-upgrade .ysq-trigger.active{color:var(--orange)}
-      .ysq-nav-upgrade .menu-toggle{display:none}
-
-      .ysq-footer-upgrade{background:var(--bg-secondary)}
-      .ysq-footer-upgrade .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
-      .ysq-footer-upgrade .footer-col h4{font-size:.82rem;letter-spacing:.11em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
-      .ysq-footer-upgrade .footer-col ul li{margin-bottom:10px}
-      .ysq-footer-upgrade .footer-col a{display:inline-flex;align-items:center;gap:8px;font-size:.92rem}
-      .ysq-footer-upgrade .footer-col a .ysq-icon{transition:transform .2s ease,opacity .2s ease;opacity:.8}
-      .ysq-footer-upgrade .footer-col a:hover .ysq-icon{transform:translateX(3px);opacity:1}
-      .ysq-brand-summary{max-width:35ch;color:var(--text-dim);margin-top:12px}
-      .ysq-footer-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-      .ysq-footer-cta a{font-size:.85rem}
-
-      @media (max-width:1024px){
-        .ysq-nav-upgrade nav{padding:0 20px}
-        .ysq-nav-upgrade .menu-toggle{display:flex;align-items:center;justify-content:center;position:absolute;right:18px;top:27px;width:42px;height:42px;border:1px solid var(--border);border-radius:10px;background:rgba(11,15,26,.8);font-size:1.2rem;color:#fff;cursor:pointer;z-index:10002}
-        .ysq-nav-upgrade .nav-links{position:fixed;left:0;top:100px;width:100%;height:calc(100vh - 100px);overflow:auto;background:rgba(5,7,10,.98);padding:18px;display:none;flex-direction:column;gap:8px;align-items:stretch}
-        .ysq-nav-upgrade .nav-links.active{display:flex}
-        .ysq-nav-upgrade .nav-links>li{border:1px solid rgba(148,163,184,.14);background:rgba(11,15,26,.72);border-radius:12px;overflow:hidden}
-        .ysq-nav-upgrade .nav-links>li>a:not(.btn),.ysq-nav-upgrade .ysq-trigger{width:100%;justify-content:space-between;padding:16px 18px;font-size:.87rem}
-        .ysq-nav-upgrade .ysq-mega-panel{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;width:100%;border-radius:0;border:0;border-top:1px solid rgba(148,163,184,.18);background:transparent;box-shadow:none;padding:8px 14px 12px;display:none;grid-template-columns:1fr;gap:8px}
-        .ysq-nav-upgrade .ysq-mega.open .ysq-mega-panel{display:grid}
-        .ysq-nav-upgrade .ysq-panel-col{padding:8px 0;background:transparent;border:0}
-        .ysq-nav-upgrade .ysq-panel-title{font-size:.78rem;margin-bottom:4px}
-        .ysq-nav-upgrade .btn{width:100%;justify-content:center;margin:0;padding:14px 18px}
-        .ysq-footer-upgrade .footer-grid{grid-template-columns:1fr 1fr}
-      }
-      @media (max-width:680px){
-        .ysq-footer-upgrade .footer-grid{grid-template-columns:1fr}
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
   function renderEnhancedHeader() {
     const header = document.querySelector('header');
     const nav = header && header.querySelector('nav');
@@ -251,7 +193,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-col">
-            <a href="/" class="logo" style="display:inline-block;font-size:1.75rem;">YOUR ONLINE <span>SQUAD</span></a>
+            <a href="/" class="logo ysq-footer-logo">YOUR ONLINE <span>SQUAD</span></a>
             <p class="ysq-brand-summary">Premium local growth systems for service businesses. We build high-conversion digital infrastructure designed for speed, visibility, and owned demand.</p>
             <div class="ysq-footer-cta">
               <a href="tel:${PHONE}" class="btn"><span class="ysq-icon">${icon('phone')}</span>Call 949 758 0772</a>
@@ -319,7 +261,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    injectEnhancementStyles();
     renderEnhancedHeader();
     renderEnhancedFooter();
     ensureHeroCTA();
